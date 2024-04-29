@@ -3,7 +3,6 @@ project(cnearestlib_tests)
 
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
 
 include_directories(../src)
 
@@ -12,8 +11,8 @@ add_executable(cnearest_test ${TEST_SOURCES})
 
 target_link_libraries(
     cnearest_test
-	cnearest_lib
-    GTest::GTest
+    cnearest_lib
+    gtest::gtest
     Eigen3::Eigen
     Threads::Threads
     )
