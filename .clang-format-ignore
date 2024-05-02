@@ -1,0 +1,15 @@
+*.sh
+./.git/*
+./.vscode/*
+./.vs/*
+./.gitignore
+./build/*
+./out/*
+./doc/*
+*CMakeLists.txt
+*CMakeCache.txt
+*README.md
+*LICENSE
+*.clang-format
+*.clang-format-ignore
+*.gitlab-ci.yml
