@@ -1,10 +1,18 @@
 #pragma once
-#include "eigen.h"
+#include "definitions.h"
 
-class ForceNode {
-    ForceNode();
-    ~ForceNode();
+namespace cnearest {
+    class ForceNode {
+      public:
+        ForceNode(const Vector3& position, const Vector3& velocity);
+        ~ForceNode();
+    
+        const Vector3& position() const;
+        const Vector3& velocity() const;
 
-    Eigen::Vector3d position();
-    Eigen::Vector3d velocity();
-};
+      private:
+        Vector3 _position;
+        Vector3 _velocity;
+
+    };
+}
