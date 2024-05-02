@@ -15,7 +15,7 @@ test+coverage:
     - ctest --output-on-failure
 #coverage report
     - lcov -d . -c -o coverage.info
-    - lcov -r coverage.info *test* */c++/* */gcc/* */gtest/* -o coverageFiltered.info
+    - lcov -r coverage.info */c++/* */gcc/* */gtest/* */eigen3/* -o coverageFiltered.info
     - genhtml coverageFiltered.info --output-directory html_coverage
     - lcov --list coverageFiltered.info
   coverage: '/Total:\|\s\d+.\d+%/'
