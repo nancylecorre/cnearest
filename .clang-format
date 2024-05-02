@@ -6,4 +6,4 @@
 ColumnLimit: 90
 Language: Cpp
 BasedOnStyle:  Google
-LineEnding: CRLF
+IndentWidth: 4
