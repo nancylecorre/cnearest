@@ -1,5 +1,14 @@
 ﻿cmake_minimum_required (VERSION 3.8)
 
+set(CMAKE_CXX_STANDARD 20)
+
+if (WIN32)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+else (WIN32)
+set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} --coverage")
+set(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} --coverage")
+endif (WIN32)
+
 project ("cnearest")
 
 find_package(BLAS REQUIRED)
