@@ -18,7 +18,7 @@ test+coverage:
     - lcov -r coverage.info *test* */c++/* */gcc/* */gtest/* -o coverageFiltered.info
     - genhtml coverageFiltered.info --output-directory html_coverage
     - lcov --list coverageFiltered.info
-  coverage: '/Total:\|..\d+.\d+%/'
+  coverage: '/Total:\|\s\d+.\d+%'
   artifacts:
     expire_in: 1 hour
     paths:
