@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "cnearest_lib/force_node.h"
+#include "force_node.h"
 
 class ForceNodesTest : public ::testing::Test {
    protected:

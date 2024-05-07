@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "cnearest_lib/definitions.h"
+#include "definitions.h"
 
 
 class TrivialTest : public ::testing::Test {
