@@ -16,7 +16,7 @@ class LineDescretisation : public iDescretisation {
         : _start_position(start_position),
           _end_position(end_position),
           _midpoints(midpoints){};
-    ~LineDescretisation(){};
+    ~LineDescretisation() = default;
 
     Collection<Vector3> positions() const override { 
         Collection<Vector3> result;
@@ -25,7 +25,7 @@ class LineDescretisation : public iDescretisation {
         Vector3 delta = (_end_position - _start_position) / (_midpoints + 1); 
 
         //2+n nodes starting at start position, seperated by delta
-        for (int i = 0; i < _midpoints+2; i++) {
+        for (unsigned int i = 0; i < _midpoints+2; i++) {
             result.emplace_back(_start_position + i * delta);
         }
         return result;

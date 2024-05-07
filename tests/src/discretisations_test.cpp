@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
-#include "cnearest_lib/discretisations/single_point_discretisation.h"
-#include "cnearest_lib/discretisations/line_discretisation.h"
+#include "discretisations/single_point_discretisation.h"
+#include "discretisations/line_discretisation.h"
+#include "discretisations/uniform_spherical_discretisation.h"
 
 TEST(TestSinglePointDiscretisation, TestSinglePointDiscretisation) {
     
@@ -75,4 +76,18 @@ TEST(TestLineDiscretisation, TestLineDiscretisationWith5MidNodes) {
     ASSERT_EQ(positions[6](0), 2);
     ASSERT_EQ(positions[6](1), 8);
     ASSERT_EQ(positions[6](2), 3);
+}
+
+
+TEST(TestUniformSphericalDiscretisation, TestUniformSphericalDiscretisation) {
+    double radius = 1.1;
+    cnearest::UniformSphericalDescretisation discretisation(radius, 6);
+
+    auto positions = discretisation.positions();
+
+    ASSERT_EQ(positions.size(), 6 * 6 * 6);
+
+    for (auto& position : positions) {
+        ASSERT_NEAR(position.norm(), radius, 1.0e-15);
+    }
 }
