@@ -5,11 +5,11 @@ namespace cnearest {
 /// <summary>
 /// Discretisation scheme giving points all around a sphere according to the fibonacci sphere algorithm
 /// </summary>
-class FibonacciSphericalDescretisation : public iDescretisation {
+class FibonacciSphericalDiscretisation : public iDiscretisation {
    public:
-    FibonacciSphericalDescretisation(double radius, unsigned int number_of_points)
+    FibonacciSphericalDiscretisation(double radius, unsigned int number_of_points)
         : _radius(radius), _number_of_points(number_of_points){};
-    ~FibonacciSphericalDescretisation() = default;
+    ~FibonacciSphericalDiscretisation() = default;
 
     Collection<Vector3> positions() const override;
 

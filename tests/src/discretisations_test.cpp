@@ -6,7 +6,7 @@
 
 TEST(TestSinglePointDiscretisation, TestSinglePointDiscretisation) {
     
-    cnearest::SinglePointDescretisation discretisation(1, 2, 3);
+    cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     auto positions = discretisation.positions();
 
@@ -21,7 +21,7 @@ TEST(TestSinglePointDiscretisation, TestSinglePointDiscretisation) {
 TEST(TestLineDiscretisation, TestLineDiscretisation) {
     cnearest::Vector3 start_position = {1, 5, 7};
     cnearest::Vector3 end_position = {2, 8, 3};
-    cnearest::LineDescretisation discretisation(start_position, end_position);
+    cnearest::LineDiscretisation discretisation(start_position, end_position);
 
     auto positions = discretisation.positions();
 
@@ -39,7 +39,7 @@ TEST(TestLineDiscretisation, TestLineDiscretisation) {
 TEST(TestLineDiscretisation, TestLineDiscretisationWithMidNode) {
     cnearest::Vector3 start_position = {1, 5, 7};
     cnearest::Vector3 end_position = {2, 8, 3};
-    cnearest::LineDescretisation discretisation(start_position, end_position, 1);
+    cnearest::LineDiscretisation discretisation(start_position, end_position, 1);
 
     auto positions = discretisation.positions();
 
@@ -61,7 +61,7 @@ TEST(TestLineDiscretisation, TestLineDiscretisationWithMidNode) {
 TEST(TestLineDiscretisation, TestLineDiscretisationWith5MidNodes) {
     cnearest::Vector3 start_position = {1, 5, 7};
     cnearest::Vector3 end_position = {2, 8, 3};
-    cnearest::LineDescretisation discretisation(start_position, end_position, 5);
+    cnearest::LineDiscretisation discretisation(start_position, end_position, 5);
 
     auto positions = discretisation.positions();
 
@@ -82,7 +82,7 @@ TEST(TestLineDiscretisation, TestLineDiscretisationWith5MidNodes) {
 
 TEST(TestUniformSphericalDiscretisation, TestUniformSphericalDiscretisation) {
     constexpr double radius = 1.1;
-    cnearest::UniformSphericalDescretisation discretisation(radius, 1);
+    cnearest::UniformSphericalDiscretisation discretisation(radius, 1);
 
     auto positions = discretisation.positions();
 
@@ -109,7 +109,7 @@ TEST(TestUniformSphericalDiscretisation, TestUniformSphericalDiscretisation) {
 TEST(TestUniformSphericalDiscretisation, TestUniformSphericalDiscretisationWithHigherNumber) {
     constexpr double radius = 1.1;
     constexpr int msph = 5;
-    cnearest::UniformSphericalDescretisation discretisation(radius, msph);
+    cnearest::UniformSphericalDiscretisation discretisation(radius, msph);
 
     auto positions = discretisation.positions();
 
@@ -135,7 +135,7 @@ TEST(TestUniformSphericalDiscretisation, TestUniformSphericalDiscretisationWithH
 
 TEST(TestFibonacciSphericalDiscretisation, TestFibonacciSphericalDiscretisation) {
     constexpr double radius = 1.1;
-    cnearest::FibonacciSphericalDescretisation discretisation(radius, 100);
+    cnearest::FibonacciSphericalDiscretisation discretisation(radius, 100);
 
     auto positions = discretisation.positions();
 
@@ -161,7 +161,7 @@ TEST(TestFibonacciSphericalDiscretisation, TestFibonacciSphericalDiscretisation)
 
 TEST(TestFibonacciSphericalDiscretisation, TestFibonacciSphericalDiscretisationHiger) {
     constexpr double radius = 1.1;
-    cnearest::FibonacciSphericalDescretisation discretisation(radius, 1000);
+    cnearest::FibonacciSphericalDiscretisation discretisation(radius, 1000);
 
     auto positions = discretisation.positions();
 

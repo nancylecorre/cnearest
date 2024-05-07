@@ -8,15 +8,15 @@ namespace cnearest {
 /// It additionally has n (default 0) midpoint nodes
 /// this gives a line with n+2 nodes and n+1 edges
 /// </summary>
-class LineDescretisation : public iDescretisation {
+class LineDiscretisation : public iDiscretisation {
    public:
-    LineDescretisation(const Vector3& start_position,
+    LineDiscretisation(const Vector3& start_position,
                               const Vector3& end_position,
                               unsigned int midpoints=0)
         : _start_position(start_position),
           _end_position(end_position),
           _midpoints(midpoints){};
-    ~LineDescretisation() = default;
+    ~LineDiscretisation() = default;
 
     Collection<Vector3> positions() const override { 
         Collection<Vector3> result;

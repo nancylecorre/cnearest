@@ -3,7 +3,7 @@
 namespace cnearest {
 
 
-Collection<Vector3> FibonacciSphericalDescretisation::positions() const {
+Collection<Vector3> FibonacciSphericalDiscretisation::positions() const {
     Collection<Vector3> result;
 
     const double phi = M_PI * (std::sqrt(5.0) - 1.0);  // golden angle in radians

@@ -68,7 +68,7 @@ Matrix unif_sphere_discr(double a, int msph) {
 }
 
 
-	Collection<Vector3> UniformSphericalDescretisation::positions() const {
+	Collection<Vector3> UniformSphericalDiscretisation::positions() const {
     auto mat = unif_sphere_discr(_radius, _msph);
     Collection<Vector3> result;
 
