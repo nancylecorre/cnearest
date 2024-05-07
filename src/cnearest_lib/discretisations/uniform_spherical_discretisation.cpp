@@ -5,7 +5,6 @@ namespace cnearest {
 	
 Matrix sph_projector(const Matrix& xp, double a) {
     Matrix xs(xp.rows(), 3);
-    double pi = 3.1415926535;
     int mpts = xp.rows();
     double r, th, phi;
     for (int j = 0; j < mpts; j++) {
@@ -19,7 +18,7 @@ Matrix sph_projector(const Matrix& xp, double a) {
         if (xp(j, 1) < 0)
             phi = acos((xp(j, 0) + 1.0e-9) /
                        pow(pow(xp(j, 0) + 1.0e-9, 2) + pow(xp(j, 1), 2), 0.5)) +
-                  2.0 * pi;
+                  2.0 * M_PI;
         //
         xs(j, 0) = a * sin(th) * cos(phi);
         xs(j, 1) = a * sin(th) * sin(phi);
