@@ -18,7 +18,7 @@ This follows on from an earlier matlab code TODO: reference matlab code base
 TODO: list physics assumptions, eg constant temperature? fixed fluid viscosity? low reynolds number?
 Maybe just tell people to refer to the paper above
 
-##Numerical assumptions
+## Numerical assumptions
 
 ### Units of measurement
 
@@ -37,7 +37,7 @@ The axis of the reference frame obay a right-hand-rule.
 
 All angles are in radians, all angular velocites are in rad/s.
 
-##Coding overview
+## Coding overview
 
 The code is written entirely in C++.
 Our linear algebra is delegated to the Eigen library, which in turn makes use of blas and lapack.
