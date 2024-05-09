@@ -7,11 +7,15 @@ This delivers source code suitable to compile a static library, a set of unit te
 
 ## Literature
 
-This implements the methodology described in the paper the paper TODO: reference paper
+This library implements the methodology described in ref. [1].
 
 ## Precursors
 
-This follows on from an earlier matlab code TODO: reference matlab code base
+This library re-implements the earlier Matlab/GNU Octave code https://github.com/djsmithbham/NearestStokeslets and is planned in due course to include features of later extensions:
+https://gitlab.com/meuriggallagher/NEAREST
+https://gitlab.com/meuriggallagher/passively-parallel-regularized-stokeslets
+https://gitlab.com/djsmithbham/nearest-d
+https://gitlab.com/meuriggallagher/the-art-of-coarse-stokes
 
 ## Physics assumptions
 
