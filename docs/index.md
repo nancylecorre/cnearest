@@ -7,19 +7,19 @@ This delivers source code suitable to compile a static library, a set of unit te
 
 ## Literature
 
-This library implements the methodology described in ref. [1].
+This library implements the nearest-neighbour discretisation of the method of regularised stokeslets methodology described in ref. [1].
 
 ## Precursors
 
 This library re-implements the earlier Matlab/GNU Octave code https://github.com/djsmithbham/NearestStokeslets and is planned in due course to include features of later extensions:
-https://gitlab.com/meuriggallagher/NEAREST
-https://gitlab.com/meuriggallagher/passively-parallel-regularized-stokeslets
-https://gitlab.com/djsmithbham/nearest-d
-https://gitlab.com/meuriggallagher/the-art-of-coarse-stokes
+* https://gitlab.com/meuriggallagher/NEAREST
+* https://gitlab.com/meuriggallagher/passively-parallel-regularized-stokeslets
+* https://gitlab.com/djsmithbham/nearest-d
+* https://gitlab.com/meuriggallagher/the-art-of-coarse-stokes
 
 ## Physics assumptions
 
-CNearest implements the Nearest-Neighbour discretisation of the method of regularised stokeslets to solve viscous-dominated, typically microscale flows [1-3]. The underlying physical assumptions are that the system has Reynolds number much less than 1, and the fluid is Newtonian and has constant  dynamic viscosity. The present library focuses on systems involving volume-conserving particles, with no-slip, no-penetration boundary conditions.
+CNearest solves viscous-dominated, typically microscale flows [1-3]. The underlying physical assumptions are that the system has Reynolds number much less than 1, and the fluid is Newtonian and has constant  dynamic viscosity. The present library focuses on systems involving volume-conserving particles, with no-slip, no-penetration boundary conditions. The method requires only a point cloud rather than a true boundary element mesh.
 
 ## Numerical assumptions
 
