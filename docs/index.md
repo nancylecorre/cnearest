@@ -15,23 +15,19 @@ This follows on from an earlier matlab code TODO: reference matlab code base
 
 ## Physics assumptions
 
-TODO: list physics assumptions, eg constant temperature? fixed fluid viscosity? low reynolds number?
-Maybe just tell people to refer to the paper above
+CNearest implements the Nearest-Neighbour discretisation of the method of regularised stokeslets to solve viscous-dominated, typically microscale flows [1-3]. The underlying physical assumptions are that the system has Reynolds number much less than 1, and the fluid is Newtonian and has constant  dynamic viscosity. The present library focuses on systems involving volume-conserving particles, with no-slip, no-penetration boundary conditions.
 
 ## Numerical assumptions
 
 ### Units of measurement
 
-We don't specify the units used in the code, assuming coherant input values and results are being used at runtime.
-While using it be sure to use a consistent set of base units and derived units.
-For example, if you specify the distances to be in mm, do not attempt to measure the forces in Newtons (kg m/s^2), as this involves differeing units of length.
-If unsure, enter and real all values in SI units.
+Physical variables are position, velocity and force, assuming consistent units (e.g. all SI, or all dimensionless).
 
 ### Frames of reference
 
 All locations and directions are assumed to be in a single globally applicable reference frame.
-The frame of reference is globally carteasian.
-The axis of the reference frame obay a right-hand-rule.
+The frame of reference is globally cartesian.
+The axis of the reference frame obey a right-hand-rule.
 
 ### Angles
 
@@ -59,3 +55,9 @@ We will give an alias to the std::vector, and will call it our Collection.
 While computer scientists may know that collections can be depicted in may alternative ways, we intend to use this versitile class for the majority of collections throughout this codebase, justifing the alias.
 
 	using cnearest::Collection = std::vector;
+
+## References
+
+1. Smith, D. J. (2018). A nearest-neighbour discretisation of the regularized stokeslet boundary integral equation. Journal of Computational Physics, 358, 88-102.
+2. Gallagher, M. T., & Smith, D. J. (2018). Meshfree and efficient modeling of swimming cells. Physical Review Fluids, 3(5), 053101.
+3. Gallagher, M. T., Choudhuri, D., & Smith, D. J. (2019). Sharp quadrature error bounds for the nearest-neighbor discretization of the regularized stokeslet boundary integral equation. SIAM Journal on Scientific Computing, 41(1), B139-B152.
