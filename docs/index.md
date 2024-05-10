@@ -1,6 +1,5 @@
 # CNearest
 
-
 ## Deliverable
 
 This delivers source code suitable to compile a static library, a set of unit tests, and a number of executable examples ....
@@ -11,11 +10,12 @@ This library implements the nearest-neighbour discretisation of the method of re
 
 ## Precursors
 
-This library re-implements the earlier Matlab/GNU Octave code https://github.com/djsmithbham/NearestStokeslets and is planned in due course to include features of later extensions:
-* https://gitlab.com/meuriggallagher/NEAREST
-* https://gitlab.com/meuriggallagher/passively-parallel-regularized-stokeslets
-* https://gitlab.com/djsmithbham/nearest-d
-* https://gitlab.com/meuriggallagher/the-art-of-coarse-stokes
+This library re-implements the earlier Matlab/GNU Octave code <https://github.com/djsmithbham/NearestStokeslets> and is planned in due course to include features of later extensions:
+
++ <https://gitlab.com/meuriggallagher/NEAREST>
++ <https://gitlab.com/meuriggallagher/passively-parallel-regularized-stokeslets>
++ <https://gitlab.com/djsmithbham/nearest-d>
++ <https://gitlab.com/meuriggallagher/the-art-of-coarse-stokes>
 
 ## Physics assumptions
 
@@ -49,16 +49,15 @@ The title "vector" risks being used in 2 different ways,
 + The std c++ libraries use "std::vector" as an ordered collection of any object
 + The eigen library the term Eigen::VectorXd for a ordered list of doubles, these can then be used in numerical calculations such as linear algebra
 
-To avoid confusion in code, we will give an alias to one of these 2 types of "vector". 
+To avoid confusion in code, we will give an alias to one of these 2 types of "vector".
 Since the primary users will be mathematicians and physicists, we'll keep the name vecor to denote the numerical structure with the aliases:
 
-	
-	using cnearest::Vector = Eigen::VectorXd;
-	
-We will give an alias to the std::vector, and will call it our Collection. 
+    using cnearest::Vector = Eigen::VectorXd;
+
+We will give an alias to the std::vector, and will call it our Collection.
 While computer scientists may know that collections can be depicted in may alternative ways, we intend to use this versitile class for the majority of collections throughout this codebase, justifing the alias.
 
-	using cnearest::Collection = std::vector;
+    using cnearest::Collection = std::vector;
 
 ## References
 
