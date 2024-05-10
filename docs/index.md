@@ -2,7 +2,7 @@
 
 ## Deliverable
 
-This delivers source code suitable to compile a static library, a set of unit tests, and a number of executable examples ....
+This delivers source code suitable to compile a static library, a set of unit tests, and a number of executable examples ...
 
 ## Literature
 
@@ -35,27 +35,27 @@ The axis of the reference frame obey a right-hand-rule.
 
 ### Angles
 
-All angles are in radians, all angular velocites are in rad/s.
+All angles are in radians, all angular velocities are in rad/s.
 
 ## Coding overview
 
 The code is written entirely in C++.
-Our linear algebra is delegated to the Eigen library, which in turn makes use of blas and lapack.
+Our linear algebra is delegated to the Eigen library, which in turn makes use of BLAS and LAPACK.
 
 ### Naming Conventions
 
 The title "vector" risks being used in 2 different ways,
 
 + The std c++ libraries use "std::vector" as an ordered collection of any object
-+ The eigen library the term Eigen::VectorXd for a ordered list of doubles, these can then be used in numerical calculations such as linear algebra
++ The Eigen library the term Eigen::VectorXd for a ordered list of doubles, these can then be used in numerical calculations such as linear algebra
 
 To avoid confusion in code, we will give an alias to one of these 2 types of "vector".
-Since the primary users will be mathematicians and physicists, we'll keep the name vecor to denote the numerical structure with the aliases:
+Since the primary users will be mathematicians and physicists, we'll keep the name vector to denote the numerical structure with the aliases:
 
     using cnearest::Vector = Eigen::VectorXd;
 
 We will give an alias to the std::vector, and will call it our Collection.
-While computer scientists may know that collections can be depicted in may alternative ways, we intend to use this versitile class for the majority of collections throughout this codebase, justifing the alias.
+While computer scientists may know that collections can be depicted in may alternative ways, we intend to use this versatile class for the majority of collections throughout this codebase, justifying the alias.
 
     using cnearest::Collection = std::vector;
 
