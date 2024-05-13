@@ -50,7 +50,7 @@ INSTANTIATE_TEST_SUITE_P(
                       cnearest::Vector3({0,0,-1.0}), 
                       cnearest::Vector3({0,0,-1000}),
                       cnearest::Vector3({0, 0, -1e8}), 
-                      cnearest::Vector3({0, 0, -std::numeric_limits<double>::min()})));
+                      cnearest::Vector3({0, 0, -std::numeric_limits<double>::max()})));
 
 
 INSTANTIATE_TEST_SUITE_P(
@@ -65,7 +65,7 @@ INSTANTIATE_TEST_SUITE_P(
                       cnearest::Vector3({0, -1.0, 0}), 
                       cnearest::Vector3({0, -1000,0}),
                       cnearest::Vector3({0, -1e8,0}),
-                      cnearest::Vector3({0, -std::numeric_limits<double>::min(),0})));
+                      cnearest::Vector3({0, -std::numeric_limits<double>::max(), 0})));
 
 
 INSTANTIATE_TEST_SUITE_P(
@@ -81,5 +81,5 @@ INSTANTIATE_TEST_SUITE_P(
                                          -std::numeric_limits<double>::min(), 0}),
                       cnearest::Vector3({-1.0, -1.0,0}), cnearest::Vector3({0, -1000, 0}),
                       cnearest::Vector3({-1e8, -1e8, 0}),
-                      cnearest::Vector3({-std::numeric_limits<double>::min(),
-                                         -std::numeric_limits<double>::min(), 0})));
+                      cnearest::Vector3({-std::numeric_limits<double>::max(),
+                                         -std::numeric_limits<double>::max(), 0})));
