@@ -6,7 +6,7 @@ NearestNeighbourResults::NearestNeighbourResults(
     : _nearest_neighbour_mapping(nearest_neighbour_mapping) {}
 
 const std::map<const QuadratureNode*, const ForceNode*>&
-NearestNeighbourResults::nearest_neighbour_mapping() {
+NearestNeighbourResults::nearest_neighbour_mapping() const {
     return _nearest_neighbour_mapping;
 }
 
