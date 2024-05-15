@@ -2,7 +2,7 @@ stages:
   - test+checks
 
 # See https://gitlab.com/neil.butcher/dockerimageupload for the definition
-image: ergoregion/cpp_build_tools:trial
+image: ergoregion/cpp_build_tools:1.0.0
 
 test+coverage:
   stage: test+checks
@@ -15,7 +15,7 @@ test+coverage:
     - ctest --output-on-failure
 #coverage report
     - lcov -d . -c -o coverage.info
-    - lcov -r coverage.info */c++/* */gcc/* */gtest/* */eigen3/* -o coverageFiltered.info
+    - lcov -r coverage.info */c++/* */gcc/* */tests/* */gtest/* */eigen3/* -o coverageFiltered.info
     - genhtml coverageFiltered.info --output-directory html_coverage
     - lcov --list coverageFiltered.info
   coverage: '/Total:\|\s\d+.\d+%/'
