@@ -1,0 +1,9 @@
+# directly specify style configuration in the -style= command line option 
+# or use:
+# -style=file and put style configuration in the .clang-format or _clang-format file in the project directory.
+# Run manually to reformat a file:
+# clang-format -i --style=file <file>
+ColumnLimit: 90
+Language: Cpp
+BasedOnStyle:  Google
+IndentWidth: 4
