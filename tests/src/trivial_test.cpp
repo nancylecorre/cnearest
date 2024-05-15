@@ -1,6 +1,5 @@
-
 #include "gtest/gtest.h"
-#include "cnearest_lib/force_node.h"
+#include "cnearest_lib/definitions.h"
 
 
 class TrivialTest : public ::testing::Test {
