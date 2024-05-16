@@ -2,6 +2,8 @@
 #include <Eigen/Dense>
 #include <vector>
 #include <memory>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 namespace cnearest {
 

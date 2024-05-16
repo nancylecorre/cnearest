@@ -1,4 +1,4 @@
-#include "cnearest_lib/force_node_set.h"
+#include "force_node_set.h"
 #include "gtest/gtest.h"
 
 class ForceNodeSetTest : public ::testing::Test {

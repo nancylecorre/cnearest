@@ -1,4 +1,4 @@
-#include "cnearest_lib/quadrature_node_set.h"
+#include "quadrature_node_set.h"
 #include "gtest/gtest.h"
 
 class QuadratureNodeSetTest : public ::testing::Test {
