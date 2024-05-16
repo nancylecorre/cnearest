@@ -7,3 +7,5 @@ ColumnLimit: 90
 Language: Cpp
 BasedOnStyle:  Google
 IndentWidth: 4
+NamespaceIndentation: All
+FixNamespaceComments: false # add commend at end:
