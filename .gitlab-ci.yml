@@ -47,4 +47,4 @@ doxygen:
         - doxygen doxygen/Doxyfile
     artifacts:
         paths:
-        - doxygen/documentation/html/
+        - documentation/html/
