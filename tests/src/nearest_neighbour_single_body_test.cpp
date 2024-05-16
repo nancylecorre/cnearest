@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
-#include "nearest_neighbout_tiebreakers.h"
-#include "nearest_neighbour_detection.h"
+#include "nearest_neighbour/nearest_neighbour_tiebreakers.h"
+#include "nearest_neighbour/nearest_neighbour_detection.h"
 #include "discretisations/single_point_discretisation.h"
 #include "discretisations/line_discretisation.h"
 
@@ -32,7 +32,7 @@ TEST_F(NearestNeighbourSingleBodyTest,
 
     ASSERT_EQ(nearest_neighbours.nearest_neighbour_mapping().size(), 1);
     auto sole_mapping =
-        nearest_neighbours.nearest_neighbour_mapping().at(&sole_quadrature_node);
+        nearest_neighbours.nearest_neighbour_mapping().at(&sole_quadrature_node).sole();
     ASSERT_EQ(sole_mapping,&sole_force_node);
 
 }
@@ -60,7 +60,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_single_force_node_detection) {
 
     for (auto& quadrature_node : bodies[0].quadrature_nodes().nodes()) {
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
         ASSERT_EQ(mapped_force_node, &sole_force_node);
     }
 
@@ -86,7 +86,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_two_slighly_offset_lines_detection) 
 
     for (auto& quadrature_node : bodies[0].quadrature_nodes().nodes()) {
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         auto offset = (mapped_force_node->position() - quadrature_node.position());
 
@@ -101,7 +101,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_two_slighly_offset_lines_detection) 
             bodies[0].quadrature_nodes().nodes()[i];
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node, &force_node);
     }
@@ -127,7 +127,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_two_slighly_offset_lines_reversed_de
 
     for (auto& quadrature_node : bodies[0].quadrature_nodes().nodes()) {
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         auto offset = (mapped_force_node->position() - quadrature_node.position());
 
@@ -142,7 +142,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_two_slighly_offset_lines_reversed_de
             bodies[0].quadrature_nodes().nodes()[16-i];
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node, &force_node);
     }
@@ -178,7 +178,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_first) {
     ASSERT_EQ(bodies[0].force_nodes().size(), 3);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighboutTiebreakerFirst>();
+    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerFirst>();
     cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker));
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
@@ -191,7 +191,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_first) {
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, -0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position(), cnearest::Vector3({0, 0, -1.0}));
 
@@ -203,7 +203,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_first) {
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, 0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position(), cnearest::Vector3({0, 0, 0.0}));
     }
@@ -222,7 +222,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_last) {
     ASSERT_EQ(bodies[0].force_nodes().size(), 3);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighboutTiebreakerLast>();
+    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerLast>();
     cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker));
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
@@ -235,7 +235,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_last) {
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, -0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position(), cnearest::Vector3({0, 0, 0}));
     }
@@ -246,7 +246,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_last) {
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, 0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position(), cnearest::Vector3({0, 0, 1}));
     }
@@ -276,7 +276,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance) {
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, -0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_DOUBLE_EQ(mapped_force_node->position()(2), -9.0 / 17.0);
     }
@@ -287,7 +287,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance) {
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, 0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_DOUBLE_EQ(mapped_force_node->position()(2), 9.0 / 17.0);
     }
@@ -311,7 +311,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance_first_t
     ASSERT_EQ(bodies[0].force_nodes().size(), 18);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighboutTiebreakerFirst>();
+    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerFirst>();
     cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker), 0.06);
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
@@ -324,7 +324,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance_first_t
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, -0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_DOUBLE_EQ(mapped_force_node->position()(2), -9.0 / 17.0);
     }
@@ -335,7 +335,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance_first_t
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, 0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_DOUBLE_EQ(mapped_force_node->position()(2), 7.0 / 17.0);
     }
@@ -355,7 +355,7 @@ TEST_F(NearestNeighbourSingleBodyTest,
     ASSERT_EQ(bodies[0].force_nodes().size(), 18);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighboutTiebreakerLast>();
+    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerLast>();
     cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker), 0.06);
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
@@ -368,7 +368,7 @@ TEST_F(NearestNeighbourSingleBodyTest,
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, -0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_DOUBLE_EQ(mapped_force_node->position()(2), -7.0 / 17.0);
     }
@@ -379,7 +379,7 @@ TEST_F(NearestNeighbourSingleBodyTest,
         ASSERT_EQ(quadrature_node.position(), cnearest::Vector3({0, 0, 0.5}));
 
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_DOUBLE_EQ(mapped_force_node->position()(2), 9.0 / 17.0);
     }

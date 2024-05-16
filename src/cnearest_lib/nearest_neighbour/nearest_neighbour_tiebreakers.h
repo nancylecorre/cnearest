@@ -1,14 +1,14 @@
 #pragma once
-#include "inearest_neighbout_tiebreaker.h"
+#include "inearest_neighbour_tiebreaker.h"
 
 namespace cnearest {
 
 /// <summary>
 /// Tiebreaker algorithm taking the first of the candidates
 /// </summary>
-class NearestNeighboutTiebreakerFirst : public iNearestNeighboutTiebreaker {
+class NearestNeighbourTiebreakerFirst : public iNearestNeighbourTiebreaker {
    public:
-    ~NearestNeighboutTiebreakerFirst() = default;
+    ~NearestNeighbourTiebreakerFirst() = default;
 
     const ForceNode* nearest_neighbour(
         const QuadratureNode&, Collection<const ForceNode*> candidates) const override {
@@ -20,9 +20,9 @@ class NearestNeighboutTiebreakerFirst : public iNearestNeighboutTiebreaker {
 /// <summary>
 /// Tiebreaker algorithm taking the last of the candidates
 /// </summary>
-class NearestNeighboutTiebreakerLast : public iNearestNeighboutTiebreaker {
+class NearestNeighbourTiebreakerLast : public iNearestNeighbourTiebreaker {
    public:
-    ~NearestNeighboutTiebreakerLast() = default;
+    ~NearestNeighbourTiebreakerLast() = default;
 
     const ForceNode* nearest_neighbour(
         const QuadratureNode&, Collection<const ForceNode*> candidates) const override {

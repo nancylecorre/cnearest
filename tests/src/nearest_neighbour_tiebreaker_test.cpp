@@ -1,4 +1,4 @@
-#include "nearest_neighbout_tiebreakers.h"
+#include "nearest_neighbour/nearest_neighbour_tiebreakers.h"
 #include "gtest/gtest.h"
 
 TEST(TestNearestNeighbourTiebreakers, TestNearestNeighboutTiebreakerFirst) {
@@ -9,7 +9,7 @@ TEST(TestNearestNeighbourTiebreakers, TestNearestNeighboutTiebreakerFirst) {
 
     cnearest::Collection<const cnearest::ForceNode*> candidates = {&node_1, &node_2};
 
-    cnearest::NearestNeighboutTiebreakerFirst tiebreaker;
+    cnearest::NearestNeighbourTiebreakerFirst tiebreaker;
 
     auto result = tiebreaker.nearest_neighbour(quadrature_node, candidates);
 
@@ -24,7 +24,7 @@ TEST(TestNearestNeighbourTiebreakers, TestNearestNeighboutTiebreakerLast) {
 
     cnearest::Collection<const cnearest::ForceNode*> candidates = {&node_1, &node_2};
 
-    cnearest::NearestNeighboutTiebreakerLast tiebreaker;
+    cnearest::NearestNeighbourTiebreakerLast tiebreaker;
 
     auto result = tiebreaker.nearest_neighbour(quadrature_node, candidates);
 

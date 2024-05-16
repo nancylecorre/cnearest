@@ -3,28 +3,10 @@
 #include <map>
 #include <memory>
 #include "rigid_body.h"
-#include "inearest_neighbout_tiebreaker.h"
+#include "inearest_neighbour_tiebreaker.h"
+#include "nearest_neighbour_results.h"
 
 namespace cnearest {
-
-/// <summary>
-/// Results of an investigation into the nearest neighbours of each quadrature node
-/// Comes in the form of a mapping from each quadrature node to a single force node
-/// </summary>
-class NearestNeighbourResults {
-   public:
-    NearestNeighbourResults(const std::map<const QuadratureNode*, const ForceNode*>&
-                                nearest_neighbour_mapping);
-    ~NearestNeighbourResults() = default;
-
-    /// <summary>
-    /// Mapping from each quadrature node to a single force node
-    /// </summary>
-    const std::map<const QuadratureNode*, const ForceNode*>& nearest_neighbour_mapping() const;
-
-   private:
-    std::map<const QuadratureNode*, const ForceNode*> _nearest_neighbour_mapping;
-};
 
 /// <summary>
 /// Algorithm to detect the nearest neighbours of each quadrature node
@@ -40,7 +22,7 @@ class NearestNeighbourDetectionAlgorithm {
     /// </summary>
     /// <param name="tiebreaker">This is an optional entry to decide how to handle any ties between neighbours, the choise comes in the form of an iNearestNeighboutTiebreaker</param>
     /// <param name="tie_shell_thickness">This values declares what constitues a tie between neighbours, a non-zero value will mean that very close calls are delegated to the tiebreaker</param>
-    NearestNeighbourDetectionAlgorithm(std::unique_ptr<iNearestNeighboutTiebreaker> tiebreaker = nullptr, double tie_shell_thickness=0.0);
+    NearestNeighbourDetectionAlgorithm(std::unique_ptr<iNearestNeighbourTiebreaker> tiebreaker = nullptr, double tie_shell_thickness=0.0);
     ~NearestNeighbourDetectionAlgorithm() = default;
 
     /// <summary>
@@ -52,12 +34,12 @@ class NearestNeighbourDetectionAlgorithm {
     NearestNeighbourResults nearest_neighbours(const Collection<RigidBody>& bodies) const;
 
    private:
-    std::unique_ptr<iNearestNeighboutTiebreaker> _tiebreaker;
+    std::unique_ptr<iNearestNeighbourTiebreaker> _tiebreaker;
     double _tie_shell_thickness;
 
     void populate_nearest_neighbours(
         const QuadratureNode& node, const RigidBody& body,
-        std::map<const QuadratureNode*, const ForceNode*>& results) const;
+        std::map<const QuadratureNode*, NearestNeighbourResult>& results) const;
 };
 
 }  // namespace cnearest
