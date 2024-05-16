@@ -3,18 +3,18 @@
 
 namespace cnearest {
 
-/// <summary>
-/// The result of a quadrature discretisation
-/// Ref: j.jcp2017.12.008, chapter 4.
-/// </summary>
-class QuadratureNodeSet {
-   public:
-    QuadratureNodeSet(const Collection<QuadratureNode>& nodes);
-    ~QuadratureNodeSet();
+    /// <summary>
+    /// The result of a quadrature discretisation
+    /// Ref: j.jcp2017.12.008, chapter 4.
+    /// </summary>
+    class QuadratureNodeSet {
+       public:
+        QuadratureNodeSet(const Collection<QuadratureNode>& nodes);
+        ~QuadratureNodeSet();
 
-    const Collection<QuadratureNode>& nodes() const;
+        const Collection<QuadratureNode>& nodes() const;
 
-   private:
-    Collection<QuadratureNode> _nodes;
-};
+       private:
+        Collection<QuadratureNode> _nodes;
+    };
 }

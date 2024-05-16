@@ -2,9 +2,9 @@
 
 namespace cnearest {
 
-QuadratureNode::QuadratureNode(const Vector3& position) : _position(position) {}
+    QuadratureNode::QuadratureNode(const Vector3& position) : _position(position) {}
 
-QuadratureNode::~QuadratureNode() {}
+    QuadratureNode::~QuadratureNode() {}
 
-const Vector3& QuadratureNode::position() const { return _position; }
+    const Vector3& QuadratureNode::position() const { return _position; }
 }
