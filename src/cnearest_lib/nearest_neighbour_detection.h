@@ -20,7 +20,7 @@ class NearestNeighbourResults {
     /// <summary>
     /// Mapping from each quadrature node to a single force node
     /// </summary>
-    const std::map<const QuadratureNode*, const ForceNode*>& nearest_neighbour_mapping();
+    const std::map<const QuadratureNode*, const ForceNode*>& nearest_neighbour_mapping() const;
 
    private:
     std::map<const QuadratureNode*, const ForceNode*> _nearest_neighbour_mapping;
