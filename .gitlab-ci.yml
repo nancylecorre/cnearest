@@ -1,5 +1,6 @@
 stages:
   - test+checks
+  - documentation
 
 # See https://gitlab.com/neil.butcher/dockerimageupload for the definition
 image: ergoregion/cpp_build_tools:1.0.0
@@ -18,7 +19,7 @@ test+coverage:
     - lcov -r coverage.info */c++/* */gcc/* */tests/* */gtest/* */eigen3/* -o coverageFiltered.info
     - genhtml coverageFiltered.info --output-directory html_coverage
     - lcov --list coverageFiltered.info
-  coverage: '/Total:\|\s\d+.\d+%/'
+  coverage: '/Total:\|\s?\d+.\d+%/'
   artifacts:
     expire_in: 1 hour
     paths:
@@ -35,3 +36,15 @@ lint-clang-format:
     allow_failure: false
     script:
       - find src -iname *.h -o -iname *.cpp | xargs clang-format -i --dry-run -Werror
+
+
+doxygen:
+    image: alpine
+    stage: documentation
+    script:
+        - apk update
+        - apk add doxygen
+        - doxygen doxygen/Doxyfile
+    artifacts:
+        paths:
+        - doxygen/documentation/html/
