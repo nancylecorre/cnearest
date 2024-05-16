@@ -4,8 +4,6 @@ project(cnearestlib_tests)
 find_package(GTest REQUIRED)
 find_package(Threads REQUIRED)
 
-include_directories(../src)
-
 file(GLOB TEST_SOURCES "src/*.cpp")
 add_executable(cnearest_test ${TEST_SOURCES})
 
