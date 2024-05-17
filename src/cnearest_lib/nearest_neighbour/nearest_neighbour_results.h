@@ -19,20 +19,17 @@ class NearestNeighbourResult {
         double weight;
         const ForceNode* force_node;
     };
-    NearestNeighbourResult(const Collection<ForceNodeWithWeight>& result);
     /// <summary>
     /// Single force node with weight one
     /// </summary>
     NearestNeighbourResult(const ForceNode* node);
+
+    NearestNeighbourResult(const Collection<ForceNodeWithWeight>& result);
     
     auto begin() const { return _result.begin(); }
     auto end() const { return _result.end(); }
 
-    const ForceNode* sole() const {
-        return _result.size() == 1
-                   ? _result[0].force_node
-                   : throw std::exception("There was more than one element");
-    }
+    const ForceNode* sole() const;
 
    private:
     const Collection<ForceNodeWithWeight> _result;

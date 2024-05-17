@@ -3,8 +3,8 @@
 namespace cnearest {
 
 NearestNeighbourDetectionAlgorithm::NearestNeighbourDetectionAlgorithm(
-    std::unique_ptr<iNearestNeighbourTiebreaker> tiebreaker, double tie_shell_thickness)
-    : _tiebreaker(std::move(tiebreaker)), _tie_shell_thickness(tie_shell_thickness) {}
+    std::unique_ptr<iNearestNeighbourDistributer> distributer, double tie_shell_thickness)
+    : _distributer(std::move(distributer)), _tie_shell_thickness(tie_shell_thickness) {}
 
 NearestNeighbourResults NearestNeighbourDetectionAlgorithm::nearest_neighbours(
     const Collection<RigidBody>& bodies) const {
@@ -47,7 +47,7 @@ void NearestNeighbourDetectionAlgorithm::populate_nearest_neighbours(
             }),
         potential_ties.end());
 
-    // return or invoke tiebreaker
+    // return or invoke distributer
     switch (potential_ties.size()) {
         case 1:
             results.insert(std::pair(&quadrature_node, NearestNeighbourResult(potential_ties[0])));
@@ -56,12 +56,11 @@ void NearestNeighbourDetectionAlgorithm::populate_nearest_neighbours(
             throw std::exception("no valid neighbours");
             break;
         default:
-            if (_tiebreaker)
-                results.insert(std::pair(&quadrature_node,
-                              NearestNeighbourResult(_tiebreaker->nearest_neighbour(
-                                  quadrature_node, potential_ties))));
+            if (_distributer)
+                results.insert(std::pair(&quadrature_node, _distributer->nearest_neighbour_result(
+                                  quadrature_node, potential_ties)));
             else
-                throw std::exception("There was a tie and no tiebreaker was provided");
+                throw std::exception("There was a tie and no distributer was provided");
             break;
     }
 }

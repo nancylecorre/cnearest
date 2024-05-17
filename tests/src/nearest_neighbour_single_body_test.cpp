@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "nearest_neighbour/nearest_neighbour_tiebreakers.h"
+#include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "nearest_neighbour/nearest_neighbour_detection.h"
 #include "discretisations/single_point_discretisation.h"
 #include "discretisations/line_discretisation.h"
@@ -178,8 +178,8 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_first) {
     ASSERT_EQ(bodies[0].force_nodes().size(), 3);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerFirst>();
-    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker));
+    auto distributer = std::make_unique<cnearest::NearestNeighbourDistributerFirst>();
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(distributer));
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
 
@@ -222,8 +222,8 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_last) {
     ASSERT_EQ(bodies[0].force_nodes().size(), 3);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerLast>();
-    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker));
+    auto distributer = std::make_unique<cnearest::NearestNeighbourDistributerLast>();
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(distributer));
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
 
@@ -300,7 +300,8 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance) {
 }
 
 
-TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance_first_tiebreaker) {
+TEST_F(NearestNeighbourSingleBodyTest,
+       test_tie_detection_with_tolerance_first_distributer) {
     cnearest::LineDiscretisation quad_disretisation({0, 0, -0.5}, {0, 0, 0.5});
     cnearest::LineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 16);
 
@@ -311,8 +312,8 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance_first_t
     ASSERT_EQ(bodies[0].force_nodes().size(), 18);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerFirst>();
-    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker), 0.06);
+    auto distributer = std::make_unique<cnearest::NearestNeighbourDistributerFirst>();
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(distributer), 0.06);
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
 
@@ -344,7 +345,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance_first_t
 
 
 TEST_F(NearestNeighbourSingleBodyTest,
-       test_tie_detection_with_tolerance_last_tiebreaker) {
+       test_tie_detection_with_tolerance_last_distributer) {
     cnearest::LineDiscretisation quad_disretisation({0, 0, -0.5}, {0, 0, 0.5});
     cnearest::LineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 16);
 
@@ -355,8 +356,8 @@ TEST_F(NearestNeighbourSingleBodyTest,
     ASSERT_EQ(bodies[0].force_nodes().size(), 18);
     ASSERT_EQ(bodies[0].quadrature_nodes().size(), 2);
 
-    auto tiebreaker = std::make_unique<cnearest::NearestNeighbourTiebreakerLast>();
-    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(tiebreaker), 0.06);
+    auto distributer = std::make_unique<cnearest::NearestNeighbourDistributerLast>();
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm(std::move(distributer), 0.06);
 
     auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
 

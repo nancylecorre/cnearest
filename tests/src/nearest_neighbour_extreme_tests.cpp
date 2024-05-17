@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "nearest_neighbour/nearest_neighbour_tiebreakers.h"
+#include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "nearest_neighbour_detection.h"
 #include "discretisations/single_point_discretisation.h"
 
