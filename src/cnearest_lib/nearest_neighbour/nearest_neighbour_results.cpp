@@ -3,7 +3,9 @@
 namespace cnearest {
 NearestNeighbourResult::NearestNeighbourResult(
     const Collection<ForceNodeWithWeight>& result)
-    : _result(result) {}
+    : _result(result) {
+    
+}
 NearestNeighbourResult::NearestNeighbourResult(const ForceNode* node)
     : _result({ForceNodeWithWeight{1.0, node}}) {}
 
