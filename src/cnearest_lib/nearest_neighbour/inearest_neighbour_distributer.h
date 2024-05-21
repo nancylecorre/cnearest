@@ -4,13 +4,15 @@
 
 namespace cnearest {
 
-/// <summary>
-/// An interface (interchangeable class), defining a means of distributing between neighbour nodes which are the same (or nearly the same) distance away
-/// </summary>
-class iNearestNeighbourDistributer {
-   public:
-    virtual ~iNearestNeighbourDistributer(){};
+    /// <summary>
+    /// An interface (interchangeable class), defining a means of distributing between
+    /// neighbour nodes which are the same (or nearly the same) distance away
+    /// </summary>
+    class iNearestNeighbourDistributer {
+       public:
+        virtual ~iNearestNeighbourDistributer(){};
 
-    virtual NearestNeighbourResult nearest_neighbour_result(const QuadratureNode&, Collection<const ForceNode*> candidates) const = 0;
-};
-}  // namespace cnearest
+        virtual NearestNeighbourResult nearest_neighbour_result(
+            const QuadratureNode&, Collection<const ForceNode*> candidates) const = 0;
+    };
+}
