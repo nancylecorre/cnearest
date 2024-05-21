@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
-#include "nearest_neighbout_tiebreakers.h"
-#include "nearest_neighbour_detection.h"
+#include "nearest_neighbour/nearest_neighbour_distributers.h"
+#include "nearest_neighbour/nearest_neighbour_detection.h"
 #include "discretisations/single_point_discretisation.h"
 #include "discretisations/line_discretisation.h"
 
@@ -35,7 +35,7 @@ TEST_F(NearestNeighbourMultipleBodyTest, test_multiple_body_detection) {
 
     for (auto& quadrature_node : bodies[0].quadrature_nodes().nodes()) {
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position()(0), 0);
         ASSERT_EQ(mapped_force_node->position()(1), 0);
@@ -44,7 +44,7 @@ TEST_F(NearestNeighbourMultipleBodyTest, test_multiple_body_detection) {
 
     for (auto& quadrature_node : bodies[1].quadrature_nodes().nodes()) {
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position()(0), 0);
         ASSERT_EQ(mapped_force_node->position()(1), 0);
@@ -76,7 +76,7 @@ TEST_F(NearestNeighbourMultipleBodyTest, test_no_inter_body_detection) {
     //body 0, all 7 quadrature nodes should get mapped to the single  
     for (auto& quadrature_node : bodies[0].quadrature_nodes().nodes()) {
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position()(0), 1);
         ASSERT_EQ(mapped_force_node->position()(1), 1);
@@ -86,7 +86,7 @@ TEST_F(NearestNeighbourMultipleBodyTest, test_no_inter_body_detection) {
     //body 1, the single quadrature node should be mapped to the nearest node on the line
     for (auto& quadrature_node : bodies[1].quadrature_nodes().nodes()) {
         auto mapped_force_node =
-            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node);
+            nearest_neighbours.nearest_neighbour_mapping().at(&quadrature_node).sole();
 
         ASSERT_EQ(mapped_force_node->position()(0), 0);
         ASSERT_EQ(mapped_force_node->position()(1), 0);

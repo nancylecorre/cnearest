@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "nearest_neighbout_tiebreakers.h"
+#include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "nearest_neighbour_detection.h"
 #include "discretisations/single_point_discretisation.h"
 
@@ -30,7 +30,7 @@ TEST_P(NearestNeighbourMultipleBodyParameterizedTests, TestQuadraturePosition) {
 
     ASSERT_EQ(nearest_neighbours.nearest_neighbour_mapping().size(), 1);
     auto sole_mapping =
-        nearest_neighbours.nearest_neighbour_mapping().at(&sole_quadrature_node);
+        nearest_neighbours.nearest_neighbour_mapping().at(&sole_quadrature_node).sole();
     ASSERT_EQ(sole_mapping, &sole_force_node);
 }
 
@@ -57,7 +57,7 @@ TEST_P(NearestNeighbourMultipleBodyParameterizedTests, TestForcePosition) {
 
     ASSERT_EQ(nearest_neighbours.nearest_neighbour_mapping().size(), 1);
     auto sole_mapping =
-        nearest_neighbours.nearest_neighbour_mapping().at(&sole_quadrature_node);
+        nearest_neighbours.nearest_neighbour_mapping().at(&sole_quadrature_node).sole();
     ASSERT_EQ(sole_mapping, &sole_force_node);
 }
 
