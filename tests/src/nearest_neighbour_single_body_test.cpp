@@ -366,3 +366,24 @@ TEST_F(NearestNeighbourSingleBodyTest,
         ASSERT_DOUBLE_EQ(mapped_force_node->position()(2), 9.0 / 17.0);
     }
 }
+
+class EmptyDiscretisation : public cnearest::iDiscretisation {
+   public:
+    cnearest::Collection<cnearest::Vector3> positions() const override { return {}; }
+};
+
+TEST_F(NearestNeighbourSingleBodyTest, test_no_node_causes_error) {
+    cnearest::SinglePointDiscretisation quad_disretisation(1, 2, 3);
+    EmptyDiscretisation force_disretisation;
+
+    cnearest::Collection<cnearest::RigidBody> bodies;
+    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+
+    ASSERT_EQ(bodies.size(), 1);
+    ASSERT_EQ(bodies[0].force_nodes().size(), 0);
+    ASSERT_EQ(bodies[0].quadrature_nodes().size(), 1);
+
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm;
+    ASSERT_THROW(auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+                 , std::runtime_error);
+}
