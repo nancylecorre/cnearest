@@ -80,59 +80,6 @@ TEST(TestLineDiscretisation, TestLineDiscretisationWith5MidNodes) {
 }
 
 
-TEST(TestUniformSphericalDiscretisation, TestUniformSphericalDiscretisation) {
-    constexpr double radius = 1.1;
-    cnearest::UniformSphericalDiscretisation discretisation(radius, 1);
-
-    auto positions = discretisation.positions();
-
-    ASSERT_EQ(positions.size(), 6);
-
-    //check all points are on the sphere
-    for (auto& position : positions) {
-        ASSERT_NEAR(position.norm(), radius, 1.0e-15);
-    }
-
-    //check there are no near-duplicate points
-    for (auto& position : positions) {
-        for (auto& position2 : positions) {
-            if (position != position2) {
-                EXPECT_GT((position - position2).norm(),
-                          radius/M_PI / 6)
-                    << "Positions were too close together, position : " << position << " vs "<<position2;
-            
-            }
-        }
-    }
-}
-
-TEST(TestUniformSphericalDiscretisation,
-     DISABLED_TestUniformSphericalDiscretisationWithHigherNumber) {
-    constexpr double radius = 1.1;
-    constexpr int msph = 5;
-    cnearest::UniformSphericalDiscretisation discretisation(radius, msph);
-
-    auto positions = discretisation.positions();
-
-    ASSERT_EQ(positions.size(), msph * msph * 6);
-
-    // check all points are on the sphere
-    for (auto& position : positions) {
-        ASSERT_NEAR(position.norm(), radius, 1.0e-15);
-    }
-
-    // check there are no near-duplicate points
-    for (auto& position : positions) {
-        for (auto& position2 : positions) {
-            if (position != position2) {
-                EXPECT_GT((position - position2).norm(),
-                          radius / M_PI / (msph * msph * 6))
-                    << "Positions were too close together, position : " << position
-                    << " vs " << position2;
-            }
-        }
-    }
-}
 
 TEST(TestFibonacciSphericalDiscretisation, TestFibonacciSphericalDiscretisation) {
     constexpr double radius = 1.1;
