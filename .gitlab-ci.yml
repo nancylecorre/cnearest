@@ -34,4 +34,4 @@ lint-clang-format:
     stage: test+checks
     allow_failure: false
     script:
-      - find src -iname *.h -o -iname *.cpp | xargs clang-format -i --dry-run
+      - find src -iname *.h -o -iname *.cpp | xargs clang-format -i --dry-run -Werror
