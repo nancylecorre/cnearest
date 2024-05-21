@@ -4,7 +4,7 @@
 namespace cnearest {
     /// <summary>
     /// Discretisation scheme giving points along a line
-    /// This has nodes at a startpoint and end point
+    /// This has nodes at a start point and end point
     /// It additionally has n (default 0) midpoint nodes
     /// this gives a line with n+2 nodes and n+1 edges
     /// </summary>
@@ -15,7 +15,6 @@ namespace cnearest {
             : _start_position(start_position),
               _end_position(end_position),
               _midpoints(midpoints){};
-        ~LineDiscretisation() = default;
 
         Collection<Vector3> positions() const override {
             Collection<Vector3> result;
@@ -23,7 +22,7 @@ namespace cnearest {
             // length (inc direction) of an edge
             Vector3 delta = (_end_position - _start_position) / (_midpoints + 1);
 
-            // 2+n nodes starting at start position, seperated by delta
+            // 2+n nodes starting at start position, separated by delta
             for (unsigned int i = 0; i < _midpoints + 2; i++) {
                 result.emplace_back(_start_position + i * delta);
             }
