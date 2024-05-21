@@ -2,11 +2,9 @@
 
 namespace cnearest {
 
-ForceNode::ForceNode(const Vector3& position):
-	_position(position){
-}
+    ForceNode::ForceNode(const Vector3& position) : _position(position) {}
 
-ForceNode::~ForceNode() {}
+    ForceNode::~ForceNode() {}
 
-const Vector3& ForceNode::position() const { return _position; }
+    const Vector3& ForceNode::position() const { return _position; }
 }

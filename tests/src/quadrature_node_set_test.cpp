@@ -19,6 +19,7 @@ TEST_F(QuadratureNodeSetTest, test_nodes) {
     cnearest::Collection<cnearest::QuadratureNode> nodes = {position};
     cnearest::QuadratureNodeSet set(nodes);
 
+    ASSERT_EQ(set.size(), 1);
     ASSERT_EQ(set.nodes().size(), 1);
     ASSERT_EQ(set.nodes()[0].position()(0), position(0));
     ASSERT_EQ(set.nodes()[0].position()(1), position(1));
