@@ -8,4 +8,6 @@ namespace cnearest {
 
     const Collection<ForceNode>& ForceNodeSet::nodes() const { return _nodes; }
 
+    const size_t ForceNodeSet::size() const { return _nodes.size(); }
+
 }

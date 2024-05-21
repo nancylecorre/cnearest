@@ -13,6 +13,7 @@ namespace cnearest {
         ~QuadratureNodeSet();
 
         const Collection<QuadratureNode>& nodes() const;
+        const size_t size() const;
 
        private:
         Collection<QuadratureNode> _nodes;

@@ -12,6 +12,7 @@ namespace cnearest {
         ~ForceNodeSet();
 
         const Collection<ForceNode>& nodes() const;
+        const size_t size() const;
 
        private:
         Collection<ForceNode> _nodes;
