@@ -11,7 +11,7 @@ test+coverage:
 #build
     - conan install . --build=missing --output-folder=out
     - cmake . -DCMAKE_TOOLCHAIN_FILE=/out/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release -DVersionSubstring=${CI_COMMIT_TAG}
-    - cmake --build .
+    - cmake --build . --target cnearest_test
 #test
     - ctest --output-on-failure
 #coverage report
