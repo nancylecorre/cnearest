@@ -43,8 +43,7 @@ namespace cnearest {
         /// Nearest neighbour operator matrix by node (size QxN)
         /// V[q,n]
         /// Ref: j.jcp2017.12.008, eqn 21.
-        /// Note: this may include non-unity weighted entries, not present in the
-        /// original paper
+        /// Note: this may include non-unity weighted entries, not present in the original paper
         /// </summary>
         Eigen::SparseMatrix<double> nearest_neighbour_matrix() const;
 
@@ -52,8 +51,7 @@ namespace cnearest {
         /// Nearest neighbour operator matrix by dof (size 3Qx3N)
         /// V[q,n]
         /// Ref: j.jcp2017.12.008, eqn 21.
-        /// Note: this may include non-unity weighted entries, not present in the
-        /// original paper
+        /// Note: this may include non-unity weighted entries, not present in the original paper
         /// </summary>
         Eigen::SparseMatrix<double> nearest_neighbour_matrix_by_dof() const;
 
@@ -72,12 +70,10 @@ namespace cnearest {
         /// <summary>
         /// interpreting a global vector (length 3Q) as multiple 3d vectors on force nodes
         /// </summary>
-        std::map<const ForceNode*, Vector3> disassemble_vector_to_force_nodes(
-            const Vector& vector) const;
+        std::map<const ForceNode*, Vector3> disassemble_vector_to_force_nodes(const Vector& vector) const;
 
         /// <summary>
-        /// interpreting a global vector (length 3M) as multiple 3d vectors on quadrature
-        /// nodes
+        /// interpreting a global vector (length 3M) as multiple 3d vectors on quadrature nodes
         /// </summary>
         std::map<const QuadratureNode*, Vector3> disassemble_vector_to_quadrature_nodes(
             const Vector& vector) const;
