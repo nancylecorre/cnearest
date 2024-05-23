@@ -2,13 +2,13 @@
 
 namespace cnearest {
 
-QuadratureNodeSet::QuadratureNodeSet(const Collection<QuadratureNode>& nodes)
-    : _nodes(nodes) {}
+    QuadratureNodeSet::QuadratureNodeSet(const Collection<QuadratureNode>& nodes)
+        : _nodes(nodes) {}
 
-QuadratureNodeSet::~QuadratureNodeSet() {}
+    QuadratureNodeSet::~QuadratureNodeSet() {}
 
-const Collection<QuadratureNode>& QuadratureNodeSet::nodes() const { return _nodes; }
+    const Collection<QuadratureNode>& QuadratureNodeSet::nodes() const { return _nodes; }
 
-const size_t QuadratureNodeSet::size() const { return _nodes.size(); }
+    const size_t QuadratureNodeSet::size() const { return _nodes.size(); }
 
 }
