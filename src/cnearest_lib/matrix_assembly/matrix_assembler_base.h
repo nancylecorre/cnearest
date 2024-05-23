@@ -14,12 +14,14 @@ namespace cnearest {
                             const NearestNeighbourResults& neighbour_results);
 
         /// <summary>
+        /// Total number of force nodes across all rigid bodies
         /// Q
         /// Ref: j.jcp2017.12.008, Chapter 4.
         /// </summary>
         size_t number_of_force_nodes() const;
 
         /// <summary>
+        /// Total number of quadrature nodes across all rigid bodies
         /// M
         /// Ref: j.jcp2017.12.008, Chapter 4.
         /// </summary>
