@@ -1,9 +1,7 @@
 #pragma once
 #include <map>
-#include <memory>
 
 #include "definitions.h"
-#include "inearest_neighbout_tiebreaker.h"
 #include "rigid_body.h"
 
 namespace cnearest {
