@@ -29,7 +29,8 @@ namespace cnearest {
                                                    double epsilon) {
         const double R2 = offset.squaredNorm();
         const double regularised_R2 = R2 + epsilon * epsilon;
-        const Matrix3 isotropic = Matrix3::Identity() / std::sqrt(regularised_R2);
+        const Matrix3 isotropic = Matrix3::Identity() * (R2 + 2.0 * epsilon * epsilon) *
+                                  std::pow(regularised_R2, -1.5);
         const Matrix3 dyadic = offset * offset.transpose() * std::pow(regularised_R2, -1.5);
         return isotropic + dyadic;
     }
