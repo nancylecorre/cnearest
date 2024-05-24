@@ -7,9 +7,9 @@ namespace cnearest {
 
     /// <summary>
     /// Equations needed to calculate the regular stokeslet.
-    /// Note that these calculations conform to the equations in the paper(s)
     /// Cortez et al, Phys.Fluids 17,031504 (2005)
     /// Ref: j.jcp2017.12.008, chapter 3.
+    /// Note that these calculations conform to the equations in the paper(s)
     /// They have NOT yet been scaled by 1/8pi  !
     /// </summary>
     class RegularisedStokeslet {
