@@ -24,7 +24,7 @@ namespace cnearest {
 
     RigidBody::RigidBody(const iDiscretisation& force_discretisation,
                          const iDiscretisation& quadrature_discretisation,
-                         const Vector3& displacement, const Matrix3 rotation)
+                         const Vector3& displacement, const Matrix3& rotation)
         : _force_nodes({}), _quadrature_nodes({}) {
         auto force_positions = force_discretisation.positions();
         Collection<ForceNode> force_nodes;

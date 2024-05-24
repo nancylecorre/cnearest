@@ -19,7 +19,7 @@ namespace cnearest {
         RigidBody(const iDiscretisation& force_discretisation,
                   const iDiscretisation& quadrature_discretisation,
                   const Vector3& displacement,
-                  const Matrix3 rotation = Matrix3::Identity());
+                  const Matrix3& rotation = Matrix3::Identity());
         ~RigidBody() = default;
 
         const ForceNodeSet& force_nodes() const;
