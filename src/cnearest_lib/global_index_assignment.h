@@ -9,8 +9,10 @@
 namespace cnearest {
 
     /// <summary>
-    /// Assigning a unique global index to each quadrature node in the collection of rigid bodies
-    /// Assigning a unique global index to each force node in the collection of rigid bodies
+    /// Assigning a unique global index to each quadrature node in the collection of rigid
+    /// bodies.
+    /// Assigning a unique global index to each force node in the collection of
+    /// rigid bodies
     /// </summary>
     class GlobalIndexAssignment {
        public:
