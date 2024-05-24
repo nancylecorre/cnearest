@@ -3,6 +3,7 @@
 #include "discretisations/line_discretisation.h"
 #include "discretisations/uniform_spherical_discretisation.h"
 #include "discretisations/fibonacci_sphere_discretisation.h"
+#include "discretisations/tapered_rod_discretisation.h"
 
 TEST(TestSinglePointDiscretisation, TestSinglePointDiscretisation) {
     
@@ -130,4 +131,14 @@ TEST(TestFibonacciSphericalDiscretisation, TestFibonacciSphericalDiscretisationH
             }
         }
     }
+}
+
+
+TEST(TestTaperedRodDiscretisation, TestTaperedRodDiscretisation) {
+    constexpr double radius = 1.1;
+    cnearest::TaperedRodDiscretisation discretisation(radius, 3, 2);
+
+    auto positions = discretisation.positions();
+
+    ASSERT_EQ(positions.size(), 4);
 }
