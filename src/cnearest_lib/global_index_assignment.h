@@ -1,16 +1,16 @@
 #pragma once
 #include <map>
-#include <memory>
 
 #include "definitions.h"
-#include "inearest_neighbout_tiebreaker.h"
 #include "rigid_body.h"
 
 namespace cnearest {
 
     /// <summary>
-    /// Assigning a unique global index to each quadrature node in the collection of rigid bodies
-    /// Assigning a unique global index to each force node in the collection of rigid bodies
+    /// Assigning a unique global index to each quadrature node in the collection of rigid
+    /// bodies.
+    /// Assigning a unique global index to each force node in the collection of
+    /// rigid bodies
     /// </summary>
     class GlobalIndexAssignment {
        public:
