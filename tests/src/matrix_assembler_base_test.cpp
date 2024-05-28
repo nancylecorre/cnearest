@@ -25,12 +25,12 @@ class MatrixAssemblerBaseTest : public ::testing::Test {
     virtual void TearDown() {};
 };
 
-TEST_F(MatrixAssemblerBaseTest, test_q) {
+TEST_F(MatrixAssemblerBaseTest, test_m) {
     cnearest::MatrixAssemblerBase assembler(assignment.value(), nearest_neighbours.value());
     ASSERT_EQ(assembler.number_of_force_nodes(), 5);
 }
 
-TEST_F(MatrixAssemblerBaseTest, test_m) {
+TEST_F(MatrixAssemblerBaseTest, test_q) {
     cnearest::MatrixAssemblerBase assembler(assignment.value(), nearest_neighbours.value());
     ASSERT_EQ(assembler.number_of_quadrature_nodes(), 12);
 }
@@ -60,20 +60,20 @@ TEST_F(MatrixAssemblerBaseTest, test_quadrature_positions) {
 TEST_F(MatrixAssemblerBaseTest, test_neighbour_matrix) {
     cnearest::MatrixAssemblerBase assembler(assignment.value(), nearest_neighbours.value());
     auto v = assembler.nearest_neighbour_matrix();
-    ASSERT_EQ(v.rows(), 5);
-    ASSERT_EQ(v.cols(), 12);
+    ASSERT_EQ(v.rows(), 12);
+    ASSERT_EQ(v.cols(), 5);
     for (int i = 0; i < 12; i++) {
-        ASSERT_EQ(v.col(i).sum(), 1.0) << "Each quadrature node's weights should sum to 1.0";
+        ASSERT_EQ(v.row(i).sum(), 1.0) << "Each quadrature node's weights should sum to 1.0";
     }
 }
 
 TEST_F(MatrixAssemblerBaseTest, test_neighbour_matrix_by_dof) {
     cnearest::MatrixAssemblerBase assembler(assignment.value(), nearest_neighbours.value());
     auto v = assembler.nearest_neighbour_matrix_by_dof();
-    ASSERT_EQ(v.rows(), 3 * 5);
-    ASSERT_EQ(v.cols(), 3 * 12);
+    ASSERT_EQ(v.rows(), 3 * 12);
+    ASSERT_EQ(v.cols(), 3 * 5);
     for (int i = 0; i < 3 * 12; i++) {
-        ASSERT_EQ(v.col(i).sum(), 1.0) << "Each quadrature node's weights should sum to 1.0";
+        ASSERT_EQ(v.row(i).sum(), 1.0) << "Each quadrature node's weights should sum to 1.0";
     }
 }
 

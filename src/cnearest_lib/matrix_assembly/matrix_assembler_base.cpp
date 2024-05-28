@@ -32,14 +32,14 @@ namespace cnearest {
     Eigen::SparseMatrix<double> MatrixAssemblerBase::nearest_neighbour_matrix() const {
         Collection<Eigen::Triplet<double>> triplets;
 
-        for (auto& [quadrature_node, col] : _index_assignment.quadrature_node_indicies()) {
+        for (auto& [quadrature_node, row] : _index_assignment.quadrature_node_indicies()) {
             auto r = _neighbour_results.nearest_neighbour_mapping().at(quadrature_node);
             for (auto& weighting : r) {
-                int row = _index_assignment.index(weighting.force_node);
+                int col = _index_assignment.index(weighting.force_node);
                 triplets.push_back({row, col, weighting.weight});
             }
         }
-        Eigen::SparseMatrix<double> result(number_of_force_nodes(), number_of_quadrature_nodes());
+        Eigen::SparseMatrix<double> result(number_of_quadrature_nodes() , number_of_force_nodes());
         result.setFromTriplets(triplets.begin(), triplets.end());
         return result;
     }
@@ -47,16 +47,16 @@ namespace cnearest {
     Eigen::SparseMatrix<double> MatrixAssemblerBase::nearest_neighbour_matrix_by_dof() const {
         Collection<Eigen::Triplet<double>> triplets;
 
-        for (auto& [quadrature_node, col] : _index_assignment.quadrature_node_indicies()) {
+        for (auto& [quadrature_node, row] : _index_assignment.quadrature_node_indicies()) {
             auto r = _neighbour_results.nearest_neighbour_mapping().at(quadrature_node);
             for (auto& weighting : r) {
-                int row = _index_assignment.index(weighting.force_node);
+                int col = _index_assignment.index(weighting.force_node);
                 triplets.push_back({3 * row + 0, 3 * col + 0, weighting.weight});
                 triplets.push_back({3 * row + 1, 3 * col + 1, weighting.weight});
                 triplets.push_back({3 * row + 2, 3 * col + 2, weighting.weight});
             }
         }
-        Eigen::SparseMatrix<double> result(3 * number_of_force_nodes(), 3 * number_of_quadrature_nodes());
+        Eigen::SparseMatrix<double> result(3 * number_of_quadrature_nodes() , 3 * number_of_force_nodes());
         result.setFromTriplets(triplets.begin(), triplets.end());
         return result;
     }
