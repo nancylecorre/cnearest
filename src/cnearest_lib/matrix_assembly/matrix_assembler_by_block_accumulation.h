@@ -4,7 +4,7 @@
 
 namespace cnearest {
     /// <summary>
-    /// Assemble global matrix by building a zero matrix then accumulating stokeslets at the correct index of the nearest neighbour
+    /// Assemble discretised resistance matrix by building a zero matrix then accumulating stokeslets at the correct index of the nearest neighbour
     /// </summary>
     class MatrixAssemblerByBlockAccumulation : MatrixAssemblerBase {
        public:
@@ -12,8 +12,9 @@ namespace cnearest {
                                           const NearestNeighbourResults& neighbour_results, double epsilon);
 
         /// <summary>
-        /// Generate the reduced matrix by accumulating stokeslets
-        /// (3M*3M)
+        /// Generate the discretised resistance matrix by accumulating stokeslets (3M*3M)
+        /// A
+        /// Ref: j.jcp2017.12.008, eqn 26.
         /// This includes a 1/8pi multiplication
         /// </summary>
         Matrix generate_matrix() const;
