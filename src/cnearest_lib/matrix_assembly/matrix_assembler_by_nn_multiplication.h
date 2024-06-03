@@ -2,19 +2,19 @@
 #include "definitions.h"
 #include "matrix_assembler_base.h"
 
-
 namespace cnearest {
     /// <summary>
-    /// Assemble discretised resistance by building a block matrix of stokeslets, then reducing it with the nearest neighbour matrix
+    /// Assemble discretised resistance by building a block matrix of stokeslets, then reducing it with the
+    /// nearest neighbour matrix
     /// </summary>
     class MatrixAssemblerByNNMultiplication : MatrixAssemblerBase {
        public:
         MatrixAssemblerByNNMultiplication(const GlobalIndexAssignment& index_assignment,
-                                          const NearestNeighbourResults& neighbour_results,
-                                          double epsilon);
+                                          const NearestNeighbourResults& neighbour_results, double epsilon);
 
         /// <summary>
-        /// Generate the discretised resistance matrix by multiplying the stokeslets by the nearest neighbour matrix (3M*3M)
+        /// Generate the discretised resistance matrix by multiplying the stokeslets by the nearest neighbour
+        /// matrix (3M*3M)
         /// A
         /// Ref: j.jcp2017.12.008, eqn 26.
         /// This includes a 1/8pi multiplication

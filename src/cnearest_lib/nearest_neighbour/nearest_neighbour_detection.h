@@ -39,8 +39,7 @@ namespace cnearest {
         /// </summary>
         /// <returns>The results of the nearest neighbour investigation in the form of a
         /// NearestNeighbourResults</returns>
-        NearestNeighbourResults nearest_neighbours(
-            const Collection<RigidBody>& bodies) const;
+        NearestNeighbourResults nearest_neighbours(const Collection<RigidBody>& bodies) const;
 
        private:
         std::unique_ptr<iNearestNeighbourDistributer> _distributer;

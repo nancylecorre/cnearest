@@ -4,12 +4,13 @@
 
 namespace cnearest {
     /// <summary>
-    /// Assemble discretised resistance matrix by building a zero matrix then accumulating stokeslets at the correct index of the nearest neighbour
+    /// Assemble discretised resistance matrix by building a zero matrix then accumulating stokeslets at the
+    /// correct index of the nearest neighbour
     /// </summary>
     class MatrixAssemblerByBlockAccumulation : MatrixAssemblerBase {
        public:
         MatrixAssemblerByBlockAccumulation(const GlobalIndexAssignment& index_assignment,
-                                          const NearestNeighbourResults& neighbour_results, double epsilon);
+                                           const NearestNeighbourResults& neighbour_results, double epsilon);
 
         /// <summary>
         /// Generate the discretised resistance matrix by accumulating stokeslets (3M*3M)
