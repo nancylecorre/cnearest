@@ -19,6 +19,7 @@ TEST_F(RegularisedStokesletTest, test_stokeslet_tensor_size) {
 }
 
 TEST_F(RegularisedStokesletTest, test_stokeslet_trivial) { 
+
     ASSERT_TRUE(true); 
 }
 
