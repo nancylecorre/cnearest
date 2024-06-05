@@ -18,7 +18,9 @@ TEST_F(RegularisedStokesletTest, test_stokeslet_tensor_size) {
     ASSERT_EQ(s.cols(), 3);
 }
 
-TEST_F(RegularisedStokesletTest, test_stokeslet_trivial) { ASSERT_TRUE(true); }
+TEST_F(RegularisedStokesletTest, test_stokeslet_trivial) { 
+    ASSERT_TRUE(true); 
+}
 
 TEST_F(RegularisedStokesletTest, test_stokeslet_tensor_finite_values) {
     cnearest::ForceNode f({0, 0, 0});
