@@ -7,9 +7,11 @@ namespace cnearest {
     /// Assemble discretised resistance by building a block matrix of stokeslets, then reducing it with the
     /// nearest neighbour matrix
     /// </summary>
-    /// <typeparam name="SortByDOF"> The sorting off the indicies in the global matrix. 
-    ///  If false then all the dofs of a single node will be adjacent (partitioning the matrix into 3*3 blocks)
-    ///  If true then all dofs in the x/y/z direction will be adjacent (partitioning the matrix into M*M blocks)</typeparam>
+    /// <typeparam name="SortByDOF"> The sorting off the indicies in the global matrix.
+    ///  If false then all the dofs of a single node will be adjacent (partitioning the matrix into 3*3
+    ///  blocks) 
+    /// If true then all dofs in the x/y/z direction will be adjacent (partitioning the matrix into
+    ///  M*M blocks)</typeparam>
     template <bool SortByDOF = false>
     class MatrixAssemblerByNNMultiplication : MatrixAssemblerBase<SortByDOF> {
        public:
