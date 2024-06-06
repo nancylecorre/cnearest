@@ -7,7 +7,11 @@ namespace cnearest {
     /// Assemble discretised resistance matrix by building a zero matrix then accumulating stokeslets at the
     /// correct index of the nearest neighbour
     /// </summary>
-    class MatrixAssemblerByBlockAccumulation : MatrixAssemblerBase {
+    /// <typeparam name="SortByDOF"> The sorting off the indicies in the global matrix. 
+    ///  If false then all the dofs of a single node will be adjacent (partitioning the matrix into 3*3 blocks)
+    ///  If true then all dofs in the x/y/z direction will be adjacent (partitioning the matrix into M*M blocks)</typeparam>
+    template <bool SortByDOF = false>
+    class MatrixAssemblerByBlockAccumulation : MatrixAssemblerBase<SortByDOF> {
        public:
         MatrixAssemblerByBlockAccumulation(const GlobalIndexAssignment& index_assignment,
                                            const NearestNeighbourResults& neighbour_results, double epsilon);
