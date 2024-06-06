@@ -3,7 +3,7 @@
 namespace cnearest {
 
     template <bool SortByDOF>
-    MatrixAssemblerBase<SortByDOF>::MatrixAssemblerBase<SortByDOF>(
+    MatrixAssemblerBase<SortByDOF>::MatrixAssemblerBase(
         const GlobalIndexAssignment& index_assignment, const NearestNeighbourResults& neighbour_results)
         : _index_assignment(index_assignment), _neighbour_results(neighbour_results) {}
 
