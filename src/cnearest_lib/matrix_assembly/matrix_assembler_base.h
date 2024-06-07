@@ -11,7 +11,7 @@ namespace cnearest {
     /// </summary>
     /// <typeparam name="SortByDOF"> The sorting off the indicies in the global matrix.
     ///  If false then all the dofs of a single node will be adjacent (partitioning the matrix into 3*3
-    ///  blocks) 
+    ///  blocks)
     /// If true then all dofs in the x/y/z direction will be adjacent (partitioning the matrix into
     ///  M*M blocks)</typeparam>
     template <bool SortByDOF = false>
