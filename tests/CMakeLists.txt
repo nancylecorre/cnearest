@@ -14,3 +14,19 @@ target_link_libraries(
     Eigen3::Eigen
     Threads::Threads
     )
+
+project(cnearest_matlab_tests)
+
+find_package(GTest REQUIRED)
+find_package(Threads REQUIRED)
+
+file(GLOB TEST_SOURCES "matlab_test/*.cpp")
+add_executable(cnearest_matlab_tests ${TEST_SOURCES})
+
+target_link_libraries(
+    cnearest_matlab_tests
+    cnearest_lib
+    gtest::gtest
+    Eigen3::Eigen
+    Threads::Threads
+    )
