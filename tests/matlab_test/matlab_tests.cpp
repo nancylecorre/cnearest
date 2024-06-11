@@ -3,6 +3,7 @@
 #include "discretisations/uniform_spherical_discretisation.h"
 #include "discretisations/empirical_discretisation.h"
 #include "matrix_assembly/matrix_assembler_by_nn_multiplication.h"
+#include "matrix_assembly/matrix_assembler_by_block_accumulation.h"
 #include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "regularised_stokeslet.h"
 
@@ -258,7 +259,7 @@ TEST_F(MatlabTest, test_nearest_neighbour_matrix) {
     auto nearest_neighbour_results = algorithm.nearest_neighbours(bodies);
 
 
-    // Construct the assembled matrix
+    // Construct the nearest neighbour matrix
     cnearest::MatrixAssemblerBase<true> m(index_assignment, nearest_neighbour_results);
 
     
@@ -276,6 +277,92 @@ TEST_F(MatlabTest, test_nearest_neighbour_matrix) {
     for (int i = 0; i < nu.rows(); i++) {
         for (int j = 0; j < nu.cols(); j++) {
             EXPECT_EQ(nu(i, j), nearest_neighbour_matrix.coeff(i, j)) << "Difference at:" << i << "," << j;
+        }
+    }
+}
+
+
+TEST_F(MatlabTest, test_resistance_matrix_assembly) {
+    double epsilon = 0.02;
+
+    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Collection<cnearest::Vector3> force_positions;
+    for (int i = 0; i < 54; i++) {
+        force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
+    }
+    cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
+
+    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Collection<cnearest::Vector3> quad_positions;
+    for (int i = 0; i < 864; i++) {
+        quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
+    }
+    cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
+
+    cnearest::Matrix nu_A = read_csv("../../../../../tests/matlab_test/data/nu_A.dat", 162, 162);
+
+    // Create a collection with one rigid body
+    cnearest::Collection<cnearest::RigidBody> bodies{
+        cnearest::RigidBody(force_discretisation, quad_discretisation)};
+
+    // Assign global ids to the nodes (trivial with one rigid body)
+    cnearest::GlobalIndexAssignment index_assignment(bodies);
+
+    // Detect the nearest neighbours
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm = matlab_matching_detection(index_assignment);
+    auto nearest_neighbour_results = algorithm.nearest_neighbours(bodies);
+
+    // Construct the assembled matrix
+    cnearest::MatrixAssemblerByNNMultiplication<true> m(index_assignment, nearest_neighbour_results, epsilon);
+
+    cnearest::Matrix resistance_matrix = m.generate_matrix();
+
+    for (int i = 0; i < nu_A.rows(); i++) {
+        for (int j = 0; j < nu_A.cols(); j++) {
+            EXPECT_NEAR(nu_A(i, j), resistance_matrix(i, j), 1.0e-4) << "Difference at:" << i << "," << j;
+        }
+    }
+}
+
+
+TEST_F(MatlabTest, test_resistance_matrix_assembly_by_accuulation) {
+    double epsilon = 0.02;
+
+    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Collection<cnearest::Vector3> force_positions;
+    for (int i = 0; i < 54; i++) {
+        force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
+    }
+    cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
+
+    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Collection<cnearest::Vector3> quad_positions;
+    for (int i = 0; i < 864; i++) {
+        quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
+    }
+    cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
+
+    cnearest::Matrix nu_A = read_csv("../../../../../tests/matlab_test/data/nu_A.dat", 162, 162);
+
+    // Create a collection with one rigid body
+    cnearest::Collection<cnearest::RigidBody> bodies{
+        cnearest::RigidBody(force_discretisation, quad_discretisation)};
+
+    // Assign global ids to the nodes (trivial with one rigid body)
+    cnearest::GlobalIndexAssignment index_assignment(bodies);
+
+    // Detect the nearest neighbours
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm = matlab_matching_detection(index_assignment);
+    auto nearest_neighbour_results = algorithm.nearest_neighbours(bodies);
+
+    // Construct the assembled matrix
+    cnearest::MatrixAssemblerByBlockAccumulation<true> m(index_assignment, nearest_neighbour_results, epsilon);
+
+    cnearest::Matrix resistance_matrix = m.generate_matrix();
+
+    for (int i = 0; i < nu_A.rows(); i++) {
+        for (int j = 0; j < nu_A.cols(); j++) {
+            EXPECT_NEAR(nu_A(i, j), resistance_matrix(i, j), 1.0e-4) << "Difference at:" << i << "," << j;
         }
     }
 }
