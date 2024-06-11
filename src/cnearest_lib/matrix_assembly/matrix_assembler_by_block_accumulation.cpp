@@ -1,4 +1,5 @@
 #include "matrix_assembler_by_block_accumulation.h"
+#include "regularised_stokeslet.h"
 
 namespace cnearest {
     template <bool SortByDOF>
@@ -19,7 +20,8 @@ namespace cnearest {
                 for (const NearestNeighbourResult::ForceNodeWithWeight& weight :
                      this->_neighbour_results.nearest_neighbour_mapping().at(quadrature_node)) {
                     int neighbour_index = this->_index_assignment.index(weight.force_node);
-                    Matrix3 m = weight.weight * Matrix3::Identity();
+                    Matrix3 m = weight.weight * RegularisedStokeslet::stokeslet_tensor(
+                                                    *force_node, *quadrature_node, _epsilon);
                     if (SortByDOF) {
                         result(force_index, neighbour_index) += m(0, 0);
                         result(force_index, neighbour_index + n) += m(0, 1);
