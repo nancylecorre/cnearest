@@ -7,6 +7,8 @@
 #include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "regularised_stokeslet.h"
 
+const std::string data_folder = "./tests/matlab_test/data/";
+
 class NearestNeighbourDistributerForMatlabTest : public cnearest::iNearestNeighbourDistributer {
    public:
 
@@ -56,38 +58,38 @@ class MatlabTest : public ::testing::Test {
 };
 
 TEST_F(MatlabTest, test_loading_data) {
-    cnearest::Matrix A3 = read_csv("../../../../../tests/matlab_test/data/A3.dat", 162, 162);
+    cnearest::Matrix A3 = read_csv(data_folder + "A3.dat", 162, 162);
     ASSERT_EQ(A3.rows(), 162);
     ASSERT_EQ(A3.cols(), 162);
     ASSERT_FALSE(A3.hasNaN());
 
-    cnearest::Matrix r1 = read_csv("../../../../../tests/matlab_test/data/r1.dat", 54, 54);
+    cnearest::Matrix r1 = read_csv(data_folder + "r1.dat", 54, 54);
     ASSERT_EQ(r1.rows(), 54);
     ASSERT_EQ(r1.cols(), 54);
     ASSERT_FALSE(r1.hasNaN());
 
-    cnearest::Matrix r2 = read_csv("../../../../../tests/matlab_test/data/r2.dat", 54, 54);
+    cnearest::Matrix r2 = read_csv(data_folder + "r2.dat", 54, 54);
     ASSERT_EQ(r2.rows(), 54);
     ASSERT_EQ(r2.cols(), 54);
     ASSERT_FALSE(r2.hasNaN());
 
-    cnearest::Matrix r3 = read_csv("../../../../../tests/matlab_test/data/r3.dat", 54, 54);
+    cnearest::Matrix r3 = read_csv(data_folder + "r3.dat", 54, 54);
     ASSERT_EQ(r3.rows(), 54);
     ASSERT_EQ(r3.cols(), 54);
     ASSERT_FALSE(r3.hasNaN());
 
     
-    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     ASSERT_EQ(xQuad.size(), 2592);
     ASSERT_FALSE(xQuad.hasNaN());
 
     
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     ASSERT_EQ(xTrac.size(), 162);
     ASSERT_FALSE(xTrac.hasNaN());
 
     
-    cnearest::Matrix SxX = read_csv("../../../../../tests/matlab_test/data/_S_xX.dat", 162, 2592);
+    cnearest::Matrix SxX = read_csv(data_folder + "_S_xX.dat", 162, 2592);
     ASSERT_EQ(SxX.rows(), 162);
     ASSERT_EQ(SxX.cols(), 2592);
     ASSERT_FALSE(SxX.hasNaN());
@@ -97,7 +99,7 @@ TEST_F(MatlabTest, test_trac_positions) {
 
     double radius = 5.0;
 
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
 
     cnearest::UniformSphericalDiscretisation d(radius, 3);
     auto positions = d.positions();
@@ -123,15 +125,15 @@ TEST_F(MatlabTest, test_trac_positions) {
 TEST_F(MatlabTest, test_single_stokeslet_maths) {
     double epsilon = 0.02;
 
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Vector3 first_force_position = {xTrac(0), xTrac(54), xTrac(108)};
     cnearest::ForceNode first_force_node(first_force_position);
 
-    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Vector3 first_quad_position = {xQuad(0), xQuad(864), xQuad(864 + 864)};
     cnearest::QuadratureNode first_quad_node(first_quad_position);
 
-    cnearest::Matrix SxX = read_csv("../../../../../tests/matlab_test/data/_S_xX.dat", 162, 2592);
+    cnearest::Matrix SxX = read_csv(data_folder + "_S_xX.dat", 162, 2592);
 
     auto stokeslet = cnearest::RegularisedStokeslet::stokeslet_tensor(first_force_node, first_quad_node, epsilon)/8/M_PI;
 
@@ -151,15 +153,15 @@ TEST_F(MatlabTest, test_single_stokeslet_maths) {
 TEST_F(MatlabTest, test_single_stokeslet_maths_2) {
     double epsilon = 0.02;
 
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Vector3 first_force_position = {xTrac(0), xTrac(54), xTrac(108)};
     cnearest::ForceNode first_force_node(first_force_position);
 
-    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Vector3 first_quad_position = {xQuad(1812-864-864), xQuad(1812 - 864), xQuad(1812)};
     cnearest::QuadratureNode first_quad_node(first_quad_position);
 
-    cnearest::Matrix SxX = read_csv("../../../../../tests/matlab_test/data/_S_xX.dat", 162, 2592);
+    cnearest::Matrix SxX = read_csv(data_folder + "_S_xX.dat", 162, 2592);
 
     auto stokeslet =
         cnearest::RegularisedStokeslet::stokeslet_tensor(first_force_node, first_quad_node, epsilon) / 8 /
@@ -180,7 +182,7 @@ TEST_F(MatlabTest, test_stokeslet_matrix_assembly) {
 
     double epsilon = 0.02;
 
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
         force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
@@ -188,7 +190,7 @@ TEST_F(MatlabTest, test_stokeslet_matrix_assembly) {
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
     
-    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
         quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
@@ -196,7 +198,7 @@ TEST_F(MatlabTest, test_stokeslet_matrix_assembly) {
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 
     
-    cnearest::Matrix SxX = read_csv("../../../../../tests/matlab_test/data/_S_xX.dat", 162, 2592);
+    cnearest::Matrix SxX = read_csv(data_folder + "_S_xX.dat", 162, 2592);
 
 
     // Create a collection with one rigid body
@@ -228,14 +230,14 @@ TEST_F(MatlabTest, test_stokeslet_matrix_assembly) {
 TEST_F(MatlabTest, test_nearest_neighbour_matrix) {
     double epsilon = 0.02;
 
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
         force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
     }
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
-    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
         quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
@@ -243,8 +245,8 @@ TEST_F(MatlabTest, test_nearest_neighbour_matrix) {
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 
     
-    cnearest::Matrix NClosest1 = read_csv("../../../../../tests/matlab_test/data/NClosest1.dat", 864, 54);
-    cnearest::Matrix nu = read_csv("../../../../../tests/matlab_test/data/nu.dat", 2592, 162);
+    cnearest::Matrix NClosest1 = read_csv(data_folder + "NClosest1.dat", 864, 54);
+    cnearest::Matrix nu = read_csv(data_folder + "nu.dat", 2592, 162);
 
     // Create a collection with one rigid body
     cnearest::Collection<cnearest::RigidBody> bodies{
@@ -285,21 +287,21 @@ TEST_F(MatlabTest, test_nearest_neighbour_matrix) {
 TEST_F(MatlabTest, test_resistance_matrix_assembly) {
     double epsilon = 0.02;
 
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
         force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
     }
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
-    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
         quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
     }
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 
-    cnearest::Matrix nu_A = read_csv("../../../../../tests/matlab_test/data/nu_A.dat", 162, 162);
+    cnearest::Matrix nu_A = read_csv(data_folder + "nu_A.dat", 162, 162);
 
     // Create a collection with one rigid body
     cnearest::Collection<cnearest::RigidBody> bodies{
@@ -328,21 +330,21 @@ TEST_F(MatlabTest, test_resistance_matrix_assembly) {
 TEST_F(MatlabTest, test_resistance_matrix_assembly_by_accuulation) {
     double epsilon = 0.02;
 
-    cnearest::Vector xTrac = read_csv("../../../../../tests/matlab_test/data/xTrac.dat", 162);
+    cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
         force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
     }
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
-    cnearest::Vector xQuad = read_csv("../../../../../tests/matlab_test/data/xQuad.dat", 2592);
+    cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
         quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
     }
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 
-    cnearest::Matrix nu_A = read_csv("../../../../../tests/matlab_test/data/nu_A.dat", 162, 162);
+    cnearest::Matrix nu_A = read_csv(data_folder + "nu_A.dat", 162, 162);
 
     // Create a collection with one rigid body
     cnearest::Collection<cnearest::RigidBody> bodies{
