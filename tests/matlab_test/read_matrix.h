@@ -34,6 +34,8 @@ inline cnearest::Matrix read_csv(std::string file, int rows, int cols) {
         }
 
         in.close();
+    } else {
+        throw std::runtime_error("File could not be opened");
     }
     return res;
 }
