@@ -12,9 +12,8 @@ const std::string data_folder = "./tests/matlab_test/data/";
 class NearestNeighbourDistributerForMatlabTest : public cnearest::iNearestNeighbourDistributer {
    public:
 
-    NearestNeighbourDistributerForMatlabTest(const cnearest::GlobalIndexAssignment& a,
-                                             const std::map<int, int>& m)
-        : assignment(a), mapping(m) {}
+    NearestNeighbourDistributerForMatlabTest(const cnearest::GlobalIndexAssignment& a)
+        : assignment(a) {}
 
     cnearest::NearestNeighbourResult nearest_neighbour_result(
         const cnearest::QuadratureNode& n,
@@ -31,7 +30,9 @@ class NearestNeighbourDistributerForMatlabTest : public cnearest::iNearestNeighb
     }
 
     const cnearest::GlobalIndexAssignment& assignment;
-    std::map<int, int> mapping;
+    // overrule some of the detected nearest neighbours with ones exactly matching the matlab ones
+    std::map<int, int> mapping = {{234, 18}, {239, 11}, {264, 30}, {269, 11},
+                                           {594, 18}, {599, 47}, {624, 30}, {629, 47}};
 };
 
 //We need a very special detection algorithm to make sure that the 8 near-tied nodes get
@@ -39,11 +40,8 @@ class NearestNeighbourDistributerForMatlabTest : public cnearest::iNearestNeighb
 cnearest::NearestNeighbourDetectionAlgorithm matlab_matching_detection(
     const cnearest::GlobalIndexAssignment& a) {
 
-    // overrule some of the detected nearest neighbours with ones exactly matching the matlab ones
-    std::map<int, int> mapping_override = {{234, 18}, {239, 11}, {264, 30}, {269, 11},
-                                           {594, 18}, {599, 47}, {624, 30}, {629, 47}};
     // define our matlab inspired tiebreaker
-    auto tiebreaker = std::make_unique<NearestNeighbourDistributerForMatlabTest>(a, mapping_override);
+    auto tiebreaker = std::make_unique<NearestNeighbourDistributerForMatlabTest>(a);
     // Detect the nearest neighbours
      return cnearest::NearestNeighbourDetectionAlgorithm(std::move(tiebreaker), 1.0e-9);
 }
