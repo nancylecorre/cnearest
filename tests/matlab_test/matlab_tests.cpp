@@ -8,7 +8,7 @@
 #include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "regularised_stokeslet.h"
 
-const std::string data_folder = "../../../../../tests/matlab_test/data/";
+const std::string data_folder = "./tests/matlab_test/data/";
 
 class MatlabTest : public ::testing::Test {
    protected:
