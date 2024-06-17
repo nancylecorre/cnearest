@@ -27,8 +27,7 @@ namespace cnearest {
     /// </summary>
     class UniformSphericalDiscretisation : public iDiscretisation {
        public:
-        UniformSphericalDiscretisation(double radius, unsigned int msph)
-            : _radius(radius), _msph(msph){};
+        UniformSphericalDiscretisation(double radius, unsigned int msph) : _radius(radius), _msph(msph){};
 
         Collection<Vector3> positions() const override;
 

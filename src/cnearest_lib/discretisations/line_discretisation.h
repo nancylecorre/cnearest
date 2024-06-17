@@ -12,9 +12,7 @@ namespace cnearest {
        public:
         LineDiscretisation(const Vector3& start_position, const Vector3& end_position,
                            unsigned int midpoints = 0)
-            : _start_position(start_position),
-              _end_position(end_position),
-              _midpoints(midpoints){};
+            : _start_position(start_position), _end_position(end_position), _midpoints(midpoints){};
 
         Collection<Vector3> positions() const override {
             Collection<Vector3> result;

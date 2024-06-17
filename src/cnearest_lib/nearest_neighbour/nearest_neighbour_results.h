@@ -43,18 +43,15 @@ namespace cnearest {
     class NearestNeighbourResults {
        public:
         NearestNeighbourResults(
-            const std::map<const QuadratureNode*, NearestNeighbourResult>&
-                nearest_neighbour_mapping);
+            const std::map<const QuadratureNode*, NearestNeighbourResult>& nearest_neighbour_mapping);
         ~NearestNeighbourResults() = default;
 
         /// <summary>
         /// Mapping from each quadrature node result
         /// </summary>
-        const std::map<const QuadratureNode*, NearestNeighbourResult>&
-        nearest_neighbour_mapping() const;
+        const std::map<const QuadratureNode*, NearestNeighbourResult>& nearest_neighbour_mapping() const;
 
        private:
-        std::map<const QuadratureNode*, NearestNeighbourResult>
-            _nearest_neighbour_mapping;
+        std::map<const QuadratureNode*, NearestNeighbourResult> _nearest_neighbour_mapping;
     };
 }
