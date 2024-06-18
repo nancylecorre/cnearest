@@ -277,7 +277,7 @@ TEST_F(MatlabTest, test_resistance_matrix_assembly) {
     // Construct the assembled matrix
     cnearest::MatrixAssemblerByNNMultiplication<true> m(index_assignment, nearest_neighbour_results, epsilon);
 
-    cnearest::Matrix resistance_matrix = m.generate_matrix();
+    cnearest::Matrix resistance_matrix = m.generate_summed_stokeslet_matrix();
 
     for (int i = 0; i < nu_A.rows(); i++) {
         for (int j = 0; j < nu_A.cols(); j++) {
@@ -320,7 +320,7 @@ TEST_F(MatlabTest, test_resistance_matrix_assembly_by_accuulation) {
     // Construct the assembled matrix
     cnearest::MatrixAssemblerByBlockAccumulation<true> m(index_assignment, nearest_neighbour_results, epsilon);
 
-    cnearest::Matrix resistance_matrix = m.generate_matrix();
+    cnearest::Matrix resistance_matrix = m.generate_summed_stokeslet_matrix();
 
     for (int i = 0; i < nu_A.rows(); i++) {
         for (int j = 0; j < nu_A.cols(); j++) {

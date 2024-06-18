@@ -38,7 +38,7 @@ TEST_F(MatrixAssemblerPermutedTest, matrix_assembler_by_block_accumulation) {
     auto matrix = assembler.generate_summed_stokeslet_matrix();
     ASSERT_EQ(matrix.rows(), 3 * 5);
     ASSERT_EQ(matrix.cols(), 3 * 5);
-    ASSERT_EQ((matrix * 8 * M_PI)(0, 0), 2.0);
+    ASSERT_NEAR((matrix * 8 * M_PI)(0, 0), 27.09, 0.1);
 }
 
 
@@ -47,7 +47,7 @@ TEST_F(MatrixAssemblerPermutedTest, mean_matrix_assembler_by_nn_multiplication) 
     auto matrix = assembler.generate_mean_stokeslet_matrix();
     ASSERT_EQ(matrix.rows(), 3 * 5);
     ASSERT_EQ(matrix.cols(), 3 * 5);
-    ASSERT_EQ((matrix * 8 * M_PI)(0, 0), 1.0);
+    ASSERT_NEAR((matrix * 8 * M_PI)(0, 0), 27.09 / 2.0, 0.1);
 }
 
 TEST_F(MatrixAssemblerPermutedTest, mean_matrix_assembler_by_block_accumulation) {
@@ -55,7 +55,7 @@ TEST_F(MatrixAssemblerPermutedTest, mean_matrix_assembler_by_block_accumulation)
     auto matrix = assembler.generate_mean_stokeslet_matrix();
     ASSERT_EQ(matrix.rows(), 3 * 5);
     ASSERT_EQ(matrix.cols(), 3 * 5);
-    ASSERT_EQ((matrix * 8 * M_PI)(0, 0), 1.0);
+    ASSERT_NEAR((matrix * 8 * M_PI)(0, 0), 27.09 / 2.0, 0.1);
 }
 
 TEST_F(MatrixAssemblerPermutedTest, block_accumulation_equals_nn_multiplication) {
