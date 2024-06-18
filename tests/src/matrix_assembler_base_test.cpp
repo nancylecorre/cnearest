@@ -125,10 +125,7 @@ TEST_F(MatrixAssemblerBaseTest, test_inverse_quadrature_node_sum) {
     for (auto& [node, index] : assignment->force_node_indicies()) {
 
         // elements 1 and 3 have 3 quadrature nodes, the others have 2 quadrature nodes
-        std::set<int> nodes_with_3_quads{1,3};
-
-        double expected =
-                (nodes_with_3_quads.find(index) != nodes_with_3_quads.end()) ? 1.0 / 3.0 : 1.0 / 2.0;
+        double expected = (std::set({1, 3}).count(index) != 0) ? 1.0 / 3.0 : 1.0 / 2.0;
 
         EXPECT_DOUBLE_EQ(expected, v[3 * index + 0]);
         EXPECT_DOUBLE_EQ(expected, v[3 * index + 1]);
