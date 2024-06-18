@@ -27,30 +27,46 @@ class MatrixAssemblerTest : public ::testing::Test {
 
 TEST_F(MatrixAssemblerTest, matrix_assembler_by_nn_multiplication) {
     cnearest::MatrixAssemblerByNNMultiplication assembler(*assignment, *nearest_neighbours, 1.0e-5);
-    auto matrix = assembler.generate_matrix();
-    ASSERT_EQ(matrix.rows(), 3 * 5);
-    ASSERT_EQ(matrix.cols(), 3 * 5);
-}
-
-
-TEST_F(MatrixAssemblerTest, matrix_assembler_by_block_accumulation) {
-    cnearest::MatrixAssemblerByBlockAccumulation assembler(*assignment, *nearest_neighbours,
-                                                          1.0e-5);
-    auto matrix = assembler.generate_matrix();
+    auto matrix = assembler.generate_summed_stokeslet_matrix();
     ASSERT_EQ(matrix.rows(), 3 * 5);
     ASSERT_EQ(matrix.cols(), 3 * 5);
     ASSERT_NEAR((matrix * 8 * M_PI)(0, 0), 27.09, 0.1);
 }
 
 
+TEST_F(MatrixAssemblerTest, matrix_assembler_by_block_accumulation) {
+    cnearest::MatrixAssemblerByBlockAccumulation assembler(*assignment, *nearest_neighbours,
+                                                          1.0e-5);
+    auto matrix = assembler.generate_summed_stokeslet_matrix();
+    ASSERT_EQ(matrix.rows(), 3 * 5);
+    ASSERT_EQ(matrix.cols(), 3 * 5);
+    ASSERT_EQ((matrix * 8 * M_PI)(0, 0), 2.0);
+}
+
+TEST_F(MatrixAssemblerTest, mean_matrix_assembler_by_nn_multiplication) {
+    cnearest::MatrixAssemblerByNNMultiplication assembler(*assignment, *nearest_neighbours, 1.0e-5);
+    auto matrix = assembler.generate_mean_stokeslet_matrix();
+    ASSERT_EQ(matrix.rows(), 3 * 5);
+    ASSERT_EQ(matrix.cols(), 3 * 5);
+    ASSERT_EQ((matrix * 8 * M_PI)(0, 0), 1.0);
+}
+
+TEST_F(MatrixAssemblerTest, mean_matrix_assembler_by_block_accumulation) {
+    cnearest::MatrixAssemblerByBlockAccumulation assembler(*assignment, *nearest_neighbours, 1.0e-5);
+    auto matrix = assembler.generate_mean_stokeslet_matrix();
+    ASSERT_EQ(matrix.rows(), 3 * 5);
+    ASSERT_EQ(matrix.cols(), 3 * 5);
+    ASSERT_EQ((matrix * 8 * M_PI)(0, 0), 1.0);
+}
+
 TEST_F(MatrixAssemblerTest, block_accumulation_equals_nn_multiplication) {
 
     cnearest::MatrixAssemblerByNNMultiplication nn_assembler(*assignment, *nearest_neighbours,
                                                           1.0e-5);
-    auto nn_matrix = nn_assembler.generate_matrix();
+    auto nn_matrix = nn_assembler.generate_summed_stokeslet_matrix();
     cnearest::MatrixAssemblerByBlockAccumulation ba_assembler(*assignment, *nearest_neighbours,
                                                            1.0e-5);
-    auto ba_matrix = ba_assembler.generate_matrix();
+    auto ba_matrix = ba_assembler.generate_summed_stokeslet_matrix();
     ASSERT_EQ(nn_matrix.norm(), ba_matrix.norm());
     ASSERT_EQ((nn_matrix - ba_matrix).norm(), 0.0);
 }

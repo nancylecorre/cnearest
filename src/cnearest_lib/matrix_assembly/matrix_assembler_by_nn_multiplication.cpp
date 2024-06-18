@@ -10,7 +10,7 @@ namespace cnearest {
 
     
     template <bool SortByDOF>
-    Matrix MatrixAssemblerByNNMultiplication<SortByDOF>::generate_matrix() const {
+    Matrix MatrixAssemblerByNNMultiplication<SortByDOF>::generate_summed_stokeslet_matrix() const {
         return generate_stokeslet_matrix() * this->nearest_neighbour_matrix_by_dof() / 8.0 / M_PI;
     }
     template <bool SortByDOF>
@@ -48,6 +48,10 @@ namespace cnearest {
         return result;
     }
 
+    template <bool SortByDOF>    
+    Matrix MatrixAssemblerByNNMultiplication<SortByDOF>::generate_mean_stokeslet_matrix() const {
+        return generate_summed_stokeslet_matrix() * this->inverse_quadrature_node_sum_by_dof().asDiagonal();
+    }
     
     // Explicit template instantiation
     template class MatrixAssemblerByNNMultiplication<true>;

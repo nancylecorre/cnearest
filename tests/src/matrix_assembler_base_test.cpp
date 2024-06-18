@@ -116,3 +116,19 @@ TEST_F(MatrixAssemblerBaseTest, test_assembly_disassembly_of_quadrature_vector) 
         ASSERT_EQ(recomposition(i), v(i));
     }
 }
+
+
+TEST_F(MatrixAssemblerBaseTest, test_inverse_quadrature_node_sum) {
+    cnearest::MatrixAssemblerBase assembler(*assignment, *nearest_neighbours);
+    auto v = assembler.inverse_quadrature_node_sum_by_dof();
+    ASSERT_EQ(v.size(), 3 * 5);
+    for (auto& [node, index] : assignment->force_node_indicies()) {
+
+        // elements 1 and 3 have 3 quadrature nodes, the others have 2 quadrature nodes
+        double expected = (std::set({1, 3}).count(index) != 0) ? 1.0 / 3.0 : 1.0 / 2.0;
+
+        EXPECT_DOUBLE_EQ(expected, v[3 * index + 0]);
+        EXPECT_DOUBLE_EQ(expected, v[3 * index + 1]);
+        EXPECT_DOUBLE_EQ(expected, v[3 * index + 2]);
+    }
+}

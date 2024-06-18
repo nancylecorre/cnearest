@@ -154,6 +154,25 @@ namespace cnearest {
         return result;
     }
 
+    template <bool SortByDOF>
+    Vector MatrixAssemblerBase<SortByDOF>::inverse_quadrature_node_sum_by_dof() const {
+        Vector result = Vector::Zero(3 * number_of_force_nodes());
+        for (auto& [node, index] : _index_assignment.force_node_indicies()) {
+            double inverse_quadrature_node_sum = 1.0 / _neighbour_results.quadrature_node_sum(*node);
+            if (SortByDOF) {
+                result(index) = inverse_quadrature_node_sum;
+                result(index + number_of_force_nodes()) = inverse_quadrature_node_sum;
+                result(index + 2 * number_of_force_nodes()) = inverse_quadrature_node_sum;
+            } else {
+                result(3 * index+0) = inverse_quadrature_node_sum;
+                result(3 * index+1) = inverse_quadrature_node_sum;
+                result(3 * index+2) = inverse_quadrature_node_sum;
+            }
+        }
+        return result;
+    }
+
+
     // Explicit template instantiation
     template class MatrixAssemblerBase<true>;
     template class MatrixAssemblerBase<false>;

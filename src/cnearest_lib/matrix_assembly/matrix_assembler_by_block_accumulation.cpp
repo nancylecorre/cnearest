@@ -10,7 +10,7 @@ namespace cnearest {
         : MatrixAssemblerBase<SortByDOF>(index_assignment, neighbour_results), _epsilon(epsilon) {}
 
     template <bool SortByDOF>
-    Matrix MatrixAssemblerByBlockAccumulation<SortByDOF>::generate_matrix() const {
+    Matrix MatrixAssemblerByBlockAccumulation<SortByDOF>::generate_summed_stokeslet_matrix() const {
         Matrix result = Matrix::Zero(3 * this->number_of_force_nodes(), 3 * this->number_of_force_nodes());
 
         int n = this->number_of_force_nodes();
@@ -43,6 +43,12 @@ namespace cnearest {
         return result / 8.0 / M_PI;
     }
 
+    template <bool SortByDOF>
+    Matrix MatrixAssemblerByBlockAccumulation<SortByDOF>::generate_mean_stokeslet_matrix() const {
+        return generate_summed_stokeslet_matrix() * this->inverse_quadrature_node_sum_by_dof().asDiagonal();
+    }
+    
+    
     // Explicit template instantiation
     template class MatrixAssemblerByBlockAccumulation<true>;
     template class MatrixAssemblerByBlockAccumulation<false>;
