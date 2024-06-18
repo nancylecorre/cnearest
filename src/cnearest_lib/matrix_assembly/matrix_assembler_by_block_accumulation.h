@@ -28,7 +28,7 @@ namespace cnearest {
 
         /// <summary>
         /// Generate the mean stokeslet matrix
-        /// dividing the summed stokeslet matrix by the number of stokeslets assigned to the force node 
+        /// Divide the summed stokeslet matrix by the number of stokeslets assigned to the force node
         /// </summary>
         Matrix generate_mean_stokeslet_matrix() const;
 
