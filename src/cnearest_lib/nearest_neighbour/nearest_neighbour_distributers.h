@@ -11,8 +11,7 @@ namespace cnearest {
         ~NearestNeighbourDistributerFirst() = default;
 
         NearestNeighbourResult nearest_neighbour_result(
-            const QuadratureNode&,
-            Collection<const ForceNode*> candidates) const override {
+            const QuadratureNode&, Collection<const ForceNode*> candidates) const override {
             return NearestNeighbourResult(candidates[0]);
         }
     };
@@ -25,8 +24,7 @@ namespace cnearest {
         ~NearestNeighbourDistributerLast() = default;
 
         NearestNeighbourResult nearest_neighbour_result(
-            const QuadratureNode&,
-            Collection<const ForceNode*> candidates) const override {
+            const QuadratureNode&, Collection<const ForceNode*> candidates) const override {
             return NearestNeighbourResult(candidates.back());
         }
     };
