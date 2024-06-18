@@ -21,7 +21,7 @@ class MatrixAssemblerBaseTestPermuted : public ::testing::Test {
         nearest_neighbours = algorithm.nearest_neighbours(bodies);
     };
 
-    virtual void TearDown(){};
+    virtual void TearDown() {};
 };
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_m) {
@@ -113,5 +113,23 @@ TEST_F(MatrixAssemblerBaseTestPermuted, test_assembly_disassembly_of_quadrature_
     auto recomposition = assembler.assemble_vector_from_nodal_values(decomposition);
     for (int i = 0; i < 3 * 12; i++) {
         ASSERT_EQ(recomposition(i), v(i));
+    }
+}
+
+TEST_F(MatrixAssemblerBaseTestPermuted, test_inverse_quadrature_node_sum) {
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto v = assembler.inverse_quadrature_node_sum_by_dof();
+    ASSERT_EQ(v.size(), 3 * 5);
+    for (auto& [node, index] : assignment->force_node_indicies()) {
+
+        // elements 1 and 3 have 3 quadrature nodes, the others have 2 quadrature nodes
+        std::set<int> nodes_with_3_quads{1, 3};
+
+        double expected =
+            (nodes_with_3_quads.find(index) != nodes_with_3_quads.end()) ? 1.0 / 3.0 : 1.0 / 2.0;
+
+        EXPECT_DOUBLE_EQ(expected, v[index + 0]);
+        EXPECT_DOUBLE_EQ(expected, v[index + 5]);
+        EXPECT_DOUBLE_EQ(expected, v[index + 10]);
     }
 }

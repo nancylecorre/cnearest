@@ -87,7 +87,15 @@ namespace cnearest {
         std::map<const QuadratureNode*, Vector3> disassemble_vector_to_quadrature_nodes(
             const Vector& vector) const;
 
+        /// <summary>
+        /// The vector where each term is the inverse of the sum of quadrature node weightings for the associated force node (length 3M)
+        /// Used to scale from the summed stokeslet matrix to the mean stokeslet matrix
+        /// </summary>
+        Vector inverse_quadrature_node_sum_by_dof() const;
+
        protected:
+
+
         const GlobalIndexAssignment& _index_assignment;
         const NearestNeighbourResults& _neighbour_results;
     };
