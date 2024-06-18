@@ -24,7 +24,14 @@ namespace cnearest {
         /// Ref: j.jcp2017.12.008, eqn 26.
         /// This includes a 1/8pi multiplication
         /// </summary>
-        Matrix generate_matrix() const;
+        Matrix generate_summed_stokeslet_matrix() const;
+
+        
+        /// <summary>
+        /// Generate the mean stokeslet matrix
+        /// dividing the summed stokeslet matrix by the number of stokeslets assigned to the force node 
+        /// </summary>
+        Matrix generate_mean_stokeslet_matrix() const;
 
        private:
         const double _epsilon;
