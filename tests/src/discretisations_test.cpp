@@ -4,6 +4,8 @@
 #include "discretisations/uniform_spherical_discretisation.h"
 #include "discretisations/fibonacci_sphere_discretisation.h"
 #include "discretisations/tapered_rod_discretisation.h"
+#include "discretisations/empirical_discretisation.h"
+#include "discretisations/conglomerate_discretisation.h"
 
 TEST(TestSinglePointDiscretisation, TestSinglePointDiscretisation) {
     
@@ -141,4 +143,74 @@ TEST(TestTaperedRodDiscretisation, TestTaperedRodDiscretisation) {
     auto positions = discretisation.positions();
 
     ASSERT_EQ(positions.size(), 4);
+}
+
+TEST(TestEmpiricalDiscretisation, TestEmpiricalDiscretisation) {
+    cnearest::EmpiricalDiscretisation discretisation(
+        {
+            {1,2,3},
+            {4,5,6},
+            {-1.0,0.0,2.0}
+        });
+
+    auto positions = discretisation.positions();
+
+    ASSERT_EQ(positions.size(), 3);
+    ASSERT_EQ(positions[0](0), 1);
+    ASSERT_EQ(positions[0](1), 2);
+    ASSERT_EQ(positions[0](2), 3);
+
+    ASSERT_EQ(positions[1](0), 4);
+    ASSERT_EQ(positions[1](1), 5);
+    ASSERT_EQ(positions[1](2), 6);
+
+    ASSERT_EQ(positions[2](0), -1.0);
+    ASSERT_EQ(positions[2](1), 0);
+    ASSERT_EQ(positions[2](2), 2);
+}
+
+
+TEST(TestConglomerateDiscretisation, TestConglomerateDiscretisation) {
+
+    cnearest::SinglePointDiscretisation d1(1, 2, 3);
+    cnearest::SinglePointDiscretisation d2(4, 5, 6);
+    cnearest::SinglePointDiscretisation d3(-1, 0, 2);
+
+    cnearest::ConglomerateDiscretisation discretisation(
+        {&d1,&d2,&d3});
+
+    auto positions = discretisation.positions();
+
+    ASSERT_EQ(positions.size(), 3);
+    ASSERT_EQ(positions[0](0), 1);
+    ASSERT_EQ(positions[0](1), 2);
+    ASSERT_EQ(positions[0](2), 3);
+
+    ASSERT_EQ(positions[1](0), 4);
+    ASSERT_EQ(positions[1](1), 5);
+    ASSERT_EQ(positions[1](2), 6);
+
+    ASSERT_EQ(positions[2](0), -1.0);
+    ASSERT_EQ(positions[2](1), 0);
+    ASSERT_EQ(positions[2](2), 2);
+}
+
+
+TEST(TestConglomerateDiscretisation, TestConglomerateDiscretisation2) {
+    cnearest::SinglePointDiscretisation d1(1, 2, 3);
+    cnearest::SinglePointDiscretisation d2(4, 5, 6);
+
+    cnearest::ConglomerateDiscretisation discretisation(d1, d2);
+
+    auto positions = discretisation.positions();
+
+    ASSERT_EQ(positions.size(), 2);
+    ASSERT_EQ(positions[0](0), 1);
+    ASSERT_EQ(positions[0](1), 2);
+    ASSERT_EQ(positions[0](2), 3);
+
+    ASSERT_EQ(positions[1](0), 4);
+    ASSERT_EQ(positions[1](1), 5);
+    ASSERT_EQ(positions[1](2), 6);
+
 }
