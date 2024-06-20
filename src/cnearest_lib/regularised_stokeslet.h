@@ -29,8 +29,7 @@ namespace cnearest {
         /// Ref: eqn 10.a , Cortez et al, Phys.Fluids 17,031504 (2005)
         /// </summary>
         static Vector3 pressure(const ForceNode& force_node,
-                                       const QuadratureNode& quadrature_node,
-                                       double epsilon);
+                                const QuadratureNode& quadrature_node, double epsilon);
 
         /// <summary>
         /// Unnamed stress tensor precursor
