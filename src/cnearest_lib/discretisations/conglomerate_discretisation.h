@@ -7,8 +7,7 @@ namespace cnearest {
     /// </summary>
     class ConglomerateDiscretisation : public iDiscretisation {
        public:
-        ConglomerateDiscretisation(
-            const Collection<const iDiscretisation*>& discretisations)
+        ConglomerateDiscretisation(const Collection<const iDiscretisation*>& discretisations)
             : _discretisations(discretisations){};
 
         ConglomerateDiscretisation(const iDiscretisation& discretisation1,

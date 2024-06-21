@@ -1,4 +1,5 @@
 #include "matrix_assembler_by_nn_multiplication.h"
+#include "regularised_stokeslet.h"
 
 
 namespace cnearest {
@@ -23,7 +24,7 @@ namespace cnearest {
             for (auto& [quadrature_node, quadrature_index] :
                  this->_index_assignment.quadrature_node_indicies()) {
 
-                Matrix3 m = Matrix3::Identity();
+                Matrix3 m = RegularisedStokeslet::stokeslet_tensor(*force_node, *quadrature_node, _epsilon);
                 if (SortByDOF) {
                     result(force_index, quadrature_index) = m(0, 0);
                     result(force_index, quadrature_index + q) = m(0, 1);

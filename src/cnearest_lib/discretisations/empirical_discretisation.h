@@ -7,8 +7,7 @@ namespace cnearest {
     /// </summary>
     class EmpiricalDiscretisation : public iDiscretisation {
        public:
-        EmpiricalDiscretisation(const Collection<Vector3>& positions)
-            : _positions(positions){};
+        EmpiricalDiscretisation(const Collection<Vector3>& positions) : _positions(positions){};
 
         Collection<Vector3> positions() const override;
 
