@@ -31,6 +31,13 @@ namespace cnearest {
 
         const ForceNode* sole() const;
 
+        /// <summary>
+        /// The sum of all weights applicable to a force node
+        /// We called it K while think-tanking
+        /// Absent from the documentation
+        /// </summary>
+        double quadrature_node_sum(const ForceNode& node) const;
+
        private:
         const Collection<ForceNodeWithWeight> _result;
     };
@@ -50,6 +57,13 @@ namespace cnearest {
         /// Mapping from each quadrature node result
         /// </summary>
         const std::map<const QuadratureNode*, NearestNeighbourResult>& nearest_neighbour_mapping() const;
+
+        /// <summary>
+        /// The sum of all weights applicable to a force node
+        /// We called it K while think-tanking
+        /// Absent from the documentation
+        /// </summary>
+        double quadrature_node_sum(const ForceNode& node) const;
 
        private:
         std::map<const QuadratureNode*, NearestNeighbourResult> _nearest_neighbour_mapping;
