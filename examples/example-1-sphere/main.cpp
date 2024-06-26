@@ -35,6 +35,6 @@ int main(int argc, char *argv[]) {
     // Construct the assembled matrix
     cnearest::MatrixAssemblerByNNMultiplication m(index_assignment, nearest_neighbour_results, epsilon);
 
-    cnearest::Matrix resistance_matrix = m.generate_matrix();
+    cnearest::Matrix resistance_matrix = m.generate_summed_stokeslet_matrix();
 
 }
