@@ -9,6 +9,7 @@ namespace cnearest {
     class ForceNodeCollection {
        public:
         ForceNodeCollection(const Collection<ForceNode>& nodes);
+        ForceNodeCollection(const Collection<Vector3>& positions);
         ~ForceNodeCollection();
 
         const Collection<ForceNode>& nodes() const;

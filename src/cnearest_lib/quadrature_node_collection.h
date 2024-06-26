@@ -10,6 +10,7 @@ namespace cnearest {
     class QuadratureNodeCollection {
        public:
         QuadratureNodeCollection(const Collection<QuadratureNode>& nodes);
+        QuadratureNodeCollection(const Collection<Vector3>& positions);
         ~QuadratureNodeCollection();
 
         const Collection<QuadratureNode>& nodes() const;
