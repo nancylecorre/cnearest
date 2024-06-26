@@ -1,4 +1,4 @@
-#include "discretisations/line_discretisation.h"
+#include "discretisations/straight_line_discretisation.h"
 #include "discretisations/single_point_discretisation.h"
 #include "gtest/gtest.h"
 #include "global_index_assignment.h"
@@ -41,7 +41,7 @@ TEST_F(GlobalIndexTest, test_single_body_single_node) {
 
 
 TEST_F(GlobalIndexTest, test_single_body_multiple_quadrature_node) {
-    cnearest::LineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
+    cnearest::StraightLineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
@@ -72,7 +72,7 @@ TEST_F(GlobalIndexTest, test_single_body_multiple_quadrature_node) {
 
 
 TEST_F(GlobalIndexTest, test_single_body_multiple_force_node) {
-    cnearest::LineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
+    cnearest::StraightLineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
@@ -129,7 +129,7 @@ TEST_F(GlobalIndexTest, test_multiple_body_single_node) {
 
 TEST_F(GlobalIndexTest, test_multiple_body_multiple_node) {
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
-    cnearest::LineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
+    cnearest::StraightLineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
     bodies.push_back(cnearest::RigidBody(discretisation, line_disretisation));

@@ -1,6 +1,6 @@
 #include <optional>
 
-#include "discretisations/line_discretisation.h"
+#include "discretisations/straight_line_discretisation.h"
 #include "global_index_assignment.h"
 #include "gtest/gtest.h"
 #include "matrix_assembly/matrix_assembler_by_block_accumulation.h"
@@ -12,8 +12,8 @@ class MatrixAssemblerPermutedTest : public ::testing::Test {
     std::optional<cnearest::NearestNeighbourResults> nearest_neighbours;
     std::optional<cnearest::GlobalIndexAssignment> assignment;
     virtual void SetUp() {
-        cnearest::LineDiscretisation force_discretisation({0, 0, 1}, {0, 0, -1}, 3);
-        cnearest::LineDiscretisation quadrature_discretisation({0, 0, 1.05}, {0, 0, -1.05}, 10);
+        cnearest::StraightLineDiscretisation force_discretisation({0, 0, 1}, {0, 0, -1}, 3);
+        cnearest::StraightLineDiscretisation quadrature_discretisation({0, 0, 1.05}, {0, 0, -1.05}, 10);
 
         bodies.push_back(cnearest::RigidBody(force_discretisation, quadrature_discretisation));
 

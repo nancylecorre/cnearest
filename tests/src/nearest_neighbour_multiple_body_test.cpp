@@ -2,7 +2,7 @@
 #include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "nearest_neighbour/nearest_neighbour_detection.h"
 #include "discretisations/single_point_discretisation.h"
-#include "discretisations/line_discretisation.h"
+#include "discretisations/straight_line_discretisation.h"
 
 class NearestNeighbourMultipleBodyTest : public ::testing::Test {
    protected:
@@ -54,7 +54,7 @@ TEST_F(NearestNeighbourMultipleBodyTest, test_multiple_body_detection) {
 
 
 TEST_F(NearestNeighbourMultipleBodyTest, test_no_inter_body_detection) {
-    cnearest::LineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
+    cnearest::StraightLineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
     cnearest::SinglePointDiscretisation point_discretisation(1, 1, 0.6);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
