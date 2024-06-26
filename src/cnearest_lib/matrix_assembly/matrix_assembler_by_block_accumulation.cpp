@@ -13,7 +13,7 @@ namespace cnearest {
     Matrix MatrixAssemblerByBlockAccumulation<SortByDOF>::generate_summed_stokeslet_matrix() const {
         Matrix result = Matrix::Zero(3 * this->number_of_force_nodes(), 3 * this->number_of_force_nodes());
 
-        int n = this->number_of_force_nodes();
+        int n = static_cast<int>(this->number_of_force_nodes());
 
         for (auto& [force_node, force_index] : this->_index_assignment.force_node_indicies()) {
             for (auto& [quadrature_node, _] : this->_index_assignment.quadrature_node_indicies()) {

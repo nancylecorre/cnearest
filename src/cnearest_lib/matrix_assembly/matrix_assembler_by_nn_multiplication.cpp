@@ -16,8 +16,8 @@ namespace cnearest {
     template <bool SortByDOF>
     Matrix MatrixAssemblerByNNMultiplication<SortByDOF>::generate_stokeslet_matrix() const { 
         
-        int n = this->number_of_force_nodes();
-        int q = this->number_of_quadrature_nodes();
+        int n = static_cast<int>(this->number_of_force_nodes());
+        int q = static_cast<int>(this->number_of_quadrature_nodes());
         Matrix result(3 * this->number_of_force_nodes(), 3 * this->number_of_quadrature_nodes());
 
         for (auto& [force_node, force_index] : this->_index_assignment.force_node_indicies()) {

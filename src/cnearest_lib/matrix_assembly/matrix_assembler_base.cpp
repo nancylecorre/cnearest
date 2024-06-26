@@ -67,17 +67,19 @@ namespace cnearest {
     Eigen::SparseMatrix<double> MatrixAssemblerBase<SortByDOF>::nearest_neighbour_matrix_by_dof() const {
         Collection<Eigen::Triplet<double>> triplets;
 
-        for (auto& [quadrature_node, i] : _index_assignment.quadrature_node_indicies()) {
-            int q_index = i;
+        auto q = static_cast<int>(number_of_quadrature_nodes());
+        auto m = static_cast<int>(number_of_force_nodes());
+
+        for (auto& [quadrature_node, q_index] : _index_assignment.quadrature_node_indicies()) {
             auto r = _neighbour_results.nearest_neighbour_mapping().at(quadrature_node);
             for (auto& weighting : r) {
                 int f_index = _index_assignment.index(weighting.force_node);
                 if (SortByDOF) {
                     triplets.push_back({q_index, f_index, weighting.weight});
-                    triplets.push_back({q_index + (int)number_of_quadrature_nodes(),
-                                        f_index + (int)number_of_force_nodes(), weighting.weight});
-                    triplets.push_back({q_index + 2 * (int)number_of_quadrature_nodes(),
-                                        f_index + 2 * (int)number_of_force_nodes(), weighting.weight});
+                    triplets.push_back({q_index + q,
+                                        f_index + m, weighting.weight});
+                    triplets.push_back({q_index + 2 * q,
+                                        f_index + 2 * m, weighting.weight});
                 } else {
                     triplets.push_back({3 * q_index, 3 * f_index, weighting.weight});
                     triplets.push_back({3 * q_index+1, 3 * f_index+1, weighting.weight});
