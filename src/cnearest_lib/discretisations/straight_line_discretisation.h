@@ -11,7 +11,7 @@ namespace cnearest {
     class StraightLineDiscretisation : public iDiscretisation {
        public:
         StraightLineDiscretisation(const Vector3& start_position, const Vector3& end_position,
-                           unsigned int midpoints = 0)
+                                   unsigned int midpoints = 0)
             : _start_position(start_position), _end_position(end_position), _midpoints(midpoints){};
 
         Collection<Vector3> positions() const override {
