@@ -11,7 +11,7 @@ namespace cnearest {
         std::transform(force_positions.begin(), force_positions.end(),
                        std::back_inserter(force_nodes),
                        [](const Vector3& v) { return ForceNode(v); });
-        _force_nodes = ForceNodeSet(force_nodes);
+        _force_nodes = ForceNodeCollection(force_nodes);
 
         auto quadrature_positions = quadrature_discretisation.positions();
         Collection<QuadratureNode> quadrature_nodes;
@@ -19,7 +19,7 @@ namespace cnearest {
         std::transform(quadrature_positions.begin(), quadrature_positions.end(),
                        std::back_inserter(quadrature_nodes),
                        [](const Vector3& v) { return QuadratureNode(v); });
-        _quadrature_nodes = QuadratureNodeSet(quadrature_nodes);
+        _quadrature_nodes = QuadratureNodeCollection(quadrature_nodes);
     }
 
     RigidBody::RigidBody(const iDiscretisation& force_discretisation,
@@ -33,7 +33,7 @@ namespace cnearest {
                        std::back_inserter(force_nodes), [&rotation, &displacement](const Vector3& v) {
                            return ForceNode(rotation * v + displacement);
                        });
-        _force_nodes = ForceNodeSet(force_nodes);
+        _force_nodes = ForceNodeCollection(force_nodes);
 
         auto quadrature_positions = quadrature_discretisation.positions();
         Collection<QuadratureNode> quadrature_nodes;
@@ -43,12 +43,12 @@ namespace cnearest {
                        [&rotation, &displacement](const Vector3& v) {
                            return QuadratureNode(rotation * v + displacement);
                        });
-        _quadrature_nodes = QuadratureNodeSet(quadrature_nodes);
+        _quadrature_nodes = QuadratureNodeCollection(quadrature_nodes);
     }
 
-    const ForceNodeSet& RigidBody::force_nodes() const { return _force_nodes; }
+    const ForceNodeCollection& RigidBody::force_nodes() const { return _force_nodes; }
 
-    const QuadratureNodeSet& RigidBody::quadrature_nodes() const {
+    const QuadratureNodeCollection& RigidBody::quadrature_nodes() const {
         return _quadrature_nodes;
     }
 

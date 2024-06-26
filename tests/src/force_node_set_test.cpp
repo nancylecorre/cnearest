@@ -1,4 +1,4 @@
-#include "force_node_set.h"
+#include "force_node_collection.h"
 #include "gtest/gtest.h"
 
 class ForceNodeSetTest : public ::testing::Test {
@@ -11,13 +11,13 @@ class ForceNodeSetTest : public ::testing::Test {
 TEST_F(ForceNodeSetTest, test_creation) {
     cnearest::Vector3 position = {1, 2, 3};
     cnearest::Collection<cnearest::ForceNode> nodes = {position};
-    cnearest::ForceNodeSet set(nodes);
+    cnearest::ForceNodeCollection set(nodes);
 }
 
 TEST_F(ForceNodeSetTest, test_nodes) {
     cnearest::Vector3 position = {1, 2, 3};
     cnearest::Collection<cnearest::ForceNode> nodes = {position};
-    cnearest::ForceNodeSet set(nodes);
+    cnearest::ForceNodeCollection set(nodes);
 
     ASSERT_EQ(set.size(), 1);
     ASSERT_EQ(set.nodes().size(), 1);

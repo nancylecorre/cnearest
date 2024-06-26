@@ -1,4 +1,4 @@
-#include "quadrature_node_set.h"
+#include "quadrature_node_collection.h"
 #include "gtest/gtest.h"
 
 class QuadratureNodeSetTest : public ::testing::Test {
@@ -11,13 +11,13 @@ class QuadratureNodeSetTest : public ::testing::Test {
 TEST_F(QuadratureNodeSetTest, test_creation) {
     cnearest::Vector3 position = {1, 2, 3};
     cnearest::Collection<cnearest::QuadratureNode> nodes = {position};
-    cnearest::QuadratureNodeSet set(nodes);
+    cnearest::QuadratureNodeCollection set(nodes);
 }
 
 TEST_F(QuadratureNodeSetTest, test_nodes) {
     cnearest::Vector3 position = {1, 2, 3};
     cnearest::Collection<cnearest::QuadratureNode> nodes = {position};
-    cnearest::QuadratureNodeSet set(nodes);
+    cnearest::QuadratureNodeCollection set(nodes);
 
     ASSERT_EQ(set.size(), 1);
     ASSERT_EQ(set.nodes().size(), 1);
