@@ -13,7 +13,7 @@ target_link_libraries(
     gtest::gtest
     Eigen3::Eigen
     BLAS::BLAS
-	LAPACK::LAPACK
+    LAPACK::LAPACK
     Threads::Threads
     )
 
@@ -31,6 +31,6 @@ target_link_libraries(
     gtest::gtest
     Eigen3::Eigen
     BLAS::BLAS
-	LAPACK::LAPACK
+    LAPACK::LAPACK
     Threads::Threads
     )
