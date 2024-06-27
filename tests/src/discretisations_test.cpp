@@ -167,6 +167,9 @@ TEST(TestEmpiricalDiscretisation, TestEmpiricalDiscretisation) {
     ASSERT_EQ(positions[2](0), -1.0);
     ASSERT_EQ(positions[2](1), 0);
     ASSERT_EQ(positions[2](2), 2);
+
+    cnearest::EmpiricalDiscretisation discretisation2(positions);
+    cnearest::EmpiricalDiscretisation discretisation3(std::move(positions));
 }
 
 

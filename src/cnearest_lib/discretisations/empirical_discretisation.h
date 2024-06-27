@@ -9,6 +9,9 @@ namespace cnearest {
        public:
         EmpiricalDiscretisation(const Collection<Vector3>& positions) : _positions(positions){};
 
+        //This constructor may prevent one copy of the collection if used 
+        EmpiricalDiscretisation(Collection<Vector3>&& positions) : _positions(std::move(positions)){};
+
         Collection<Vector3> positions() const override;
 
        private:
