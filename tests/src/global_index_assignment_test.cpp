@@ -14,7 +14,7 @@ TEST_F(GlobalIndexTest, test_single_body_single_node) {
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(discretisation, discretisation));
+    bodies.emplace_back(discretisation, discretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);
@@ -45,7 +45,7 @@ TEST_F(GlobalIndexTest, test_single_body_multiple_quadrature_node) {
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(discretisation, line_disretisation));
+    bodies.emplace_back(discretisation, line_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);
@@ -76,7 +76,7 @@ TEST_F(GlobalIndexTest, test_single_body_multiple_force_node) {
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(line_disretisation, discretisation));
+    bodies.emplace_back(line_disretisation, discretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 7);
@@ -105,8 +105,8 @@ TEST_F(GlobalIndexTest, test_multiple_body_single_node) {
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(discretisation, discretisation));
-    bodies.push_back(cnearest::RigidBody(discretisation, discretisation));
+    bodies.emplace_back(discretisation, discretisation);
+    bodies.emplace_back(discretisation, discretisation);
 
     ASSERT_EQ(bodies.size(), 2);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);
@@ -132,8 +132,8 @@ TEST_F(GlobalIndexTest, test_multiple_body_multiple_node) {
     cnearest::StraightLineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(discretisation, line_disretisation));
-    bodies.push_back(cnearest::RigidBody(line_disretisation, discretisation));
+    bodies.emplace_back(discretisation, line_disretisation);
+    bodies.emplace_back(line_disretisation, discretisation);
 
     ASSERT_EQ(bodies.size(), 2);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);

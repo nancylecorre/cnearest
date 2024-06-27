@@ -17,7 +17,7 @@ namespace cnearest {
                 double radius = std::sqrt(1 - y * y);  // radius of 2d circle at at y-slice
                 double theta = phi * i;                // golden angle increment
                 double x = std::cos(theta) * radius;
-                result.push_back({_radius * x, _radius * y, _radius * z});
+                result.emplace_back(_radius * x, _radius * y, _radius * z);
             }
         }
         return result;

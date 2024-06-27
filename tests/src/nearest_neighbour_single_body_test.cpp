@@ -15,7 +15,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_single_matching_point_detection) {
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(discretisation, discretisation));
+    bodies.emplace_back (discretisation, discretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);
@@ -40,7 +40,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_single_force_node_detection) {
     cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(discretisation, line_discretisation));
+    bodies.emplace_back(discretisation, line_discretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);
@@ -66,7 +66,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_two_slighly_offset_lines_detection) 
     cnearest::StraightLineDiscretisation force_disretisation({0.1, 0, 1}, {0.1, 0, -1}, 15);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back (force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 17);
@@ -106,7 +106,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_two_slighly_offset_lines_reversed_de
     cnearest::StraightLineDiscretisation force_disretisation({0.1, 0, -1}, {0.1, 0, 1}, 15);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 17);
@@ -146,7 +146,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_ties_cause_error) {
     cnearest::StraightLineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 1);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 3);
@@ -162,7 +162,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_first) {
     cnearest::StraightLineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 1);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 3);
@@ -203,7 +203,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tiebreaking_with_last) {
     cnearest::StraightLineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 1);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 3);
@@ -244,7 +244,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_tie_detection_with_tolerance) {
     cnearest::StraightLineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 16);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 18);
@@ -289,7 +289,7 @@ TEST_F(NearestNeighbourSingleBodyTest,
     cnearest::StraightLineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 16);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 18);
@@ -331,7 +331,7 @@ TEST_F(NearestNeighbourSingleBodyTest,
     cnearest::StraightLineDiscretisation force_disretisation({0, 0, -1}, {0, 0, 1}, 16);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 18);
@@ -377,7 +377,7 @@ TEST_F(NearestNeighbourSingleBodyTest, test_no_node_causes_error) {
     EmptyDiscretisation force_disretisation;
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_disretisation, quad_disretisation));
+    bodies.emplace_back(force_disretisation, quad_disretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 0);

@@ -14,7 +14,7 @@ namespace cnearest {
             double x = std::cos(theta) * radius;
             double z = std::sin(theta) * radius;
 
-            result.push_back({_radius * x, _radius * y, _radius * z});
+            result.emplace_back(_radius * x, _radius * y, _radius * z);
         }
         return result;
     }

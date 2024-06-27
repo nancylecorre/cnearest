@@ -15,7 +15,7 @@ class MatrixAssemblerTest : public ::testing::Test {
         cnearest::StraightLineDiscretisation force_discretisation({0, 0, 1}, {0, 0, -1}, 3);
         cnearest::StraightLineDiscretisation quadrature_discretisation({0, 0, 1.05}, {0, 0, -1.05}, 10);
 
-        bodies.push_back(cnearest::RigidBody(force_discretisation, quadrature_discretisation));
+        bodies.emplace_back(force_discretisation, quadrature_discretisation);
 
         assignment = cnearest::GlobalIndexAssignment(bodies);
         cnearest::NearestNeighbourDetectionAlgorithm algorithm;

@@ -145,7 +145,7 @@ TEST_F(MatlabTest, test_stokeslet_matrix_assembly) {
     cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
-        force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
+        force_positions.emplace_back(xTrac(i), xTrac(i + 54), xTrac(i + 108));
     }
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
@@ -153,7 +153,7 @@ TEST_F(MatlabTest, test_stokeslet_matrix_assembly) {
     cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
-        quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
+        quad_positions.emplace_back(xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864));
     }
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 
@@ -193,14 +193,14 @@ TEST_F(MatlabTest, test_nearest_neighbour_matrix) {
     cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
-        force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
+        force_positions.emplace_back(xTrac(i), xTrac(i + 54), xTrac(i + 108));
     }
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
     cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
-        quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
+        quad_positions.emplace_back(xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864));
     }
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 
@@ -250,14 +250,14 @@ TEST_F(MatlabTest, test_resistance_matrix_assembly) {
     cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
-        force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
+        force_positions.emplace_back(xTrac(i), xTrac(i + 54), xTrac(i + 108));
     }
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
     cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
-        quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
+        quad_positions.emplace_back(xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864));
     }
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 
@@ -293,14 +293,14 @@ TEST_F(MatlabTest, test_resistance_matrix_assembly_by_accuulation) {
     cnearest::Vector xTrac = read_csv(data_folder + "xTrac.dat", 162);
     cnearest::Collection<cnearest::Vector3> force_positions;
     for (int i = 0; i < 54; i++) {
-        force_positions.push_back({xTrac(i), xTrac(i + 54), xTrac(i + 108)});
+        force_positions.emplace_back(xTrac(i), xTrac(i + 54), xTrac(i + 108));
     }
     cnearest::EmpiricalDiscretisation force_discretisation(force_positions);
 
     cnearest::Vector xQuad = read_csv(data_folder + "xQuad.dat", 2592);
     cnearest::Collection<cnearest::Vector3> quad_positions;
     for (int i = 0; i < 864; i++) {
-        quad_positions.push_back({xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864)});
+        quad_positions.emplace_back(xQuad(i), xQuad(i + 864), xQuad(i + 864 + 864));
     }
     cnearest::EmpiricalDiscretisation quad_discretisation(quad_positions);
 

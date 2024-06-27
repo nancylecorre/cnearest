@@ -14,7 +14,7 @@ TEST_P(NearestNeighbourMultipleBodyParameterizedTests, TestQuadraturePosition) {
     cnearest::SinglePointDiscretisation force_discretisation(0, 0, 0);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(force_discretisation, discretisation));
+    bodies.emplace_back(force_discretisation, discretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);
@@ -41,7 +41,7 @@ TEST_P(NearestNeighbourMultipleBodyParameterizedTests, TestForcePosition) {
     cnearest::SinglePointDiscretisation quadrature_discretisation(0, 0, 0);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(discretisation, quadrature_discretisation));
+    bodies.emplace_back(discretisation, quadrature_discretisation);
 
     ASSERT_EQ(bodies.size(), 1);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);

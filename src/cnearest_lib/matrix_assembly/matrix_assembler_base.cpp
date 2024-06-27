@@ -55,7 +55,7 @@ namespace cnearest {
             auto r = _neighbour_results.nearest_neighbour_mapping().at(quadrature_node);
             for (auto& weighting : r) {
                 int col = _index_assignment.index(weighting.force_node);
-                triplets.push_back({row, col, weighting.weight});
+                triplets.emplace_back(row, col, weighting.weight);
             }
         }
         Eigen::SparseMatrix<double> result(number_of_quadrature_nodes(), number_of_force_nodes());
@@ -75,15 +75,15 @@ namespace cnearest {
             for (auto& weighting : r) {
                 int f_index = _index_assignment.index(weighting.force_node);
                 if (SortByDOF) {
-                    triplets.push_back({q_index, f_index, weighting.weight});
-                    triplets.push_back({q_index + q,
-                                        f_index + m, weighting.weight});
-                    triplets.push_back({q_index + 2 * q,
-                                        f_index + 2 * m, weighting.weight});
+                    triplets.emplace_back(q_index, f_index, weighting.weight);
+                    triplets.emplace_back(q_index + q,
+                                        f_index + m, weighting.weight);
+                    triplets.emplace_back(q_index + 2 * q,
+                                        f_index + 2 * m, weighting.weight);
                 } else {
-                    triplets.push_back({3 * q_index, 3 * f_index, weighting.weight});
-                    triplets.push_back({3 * q_index+1, 3 * f_index+1, weighting.weight});
-                    triplets.push_back({3 * q_index+2, 3 * f_index+2, weighting.weight});
+                    triplets.emplace_back(3 * q_index, 3 * f_index, weighting.weight);
+                    triplets.emplace_back(3 * q_index + 1, 3 * f_index + 1, weighting.weight);
+                    triplets.emplace_back(3 * q_index + 2, 3 * f_index + 2, weighting.weight);
                 }
             }
         }
