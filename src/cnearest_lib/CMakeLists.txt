@@ -12,4 +12,6 @@ target_include_directories(cnearest_lib PUBLIC nearest_neighbour)
 target_link_libraries(
 	cnearest_lib
 	Eigen3::Eigen
+    BLAS::BLAS
+	LAPACK::LAPACK
     )

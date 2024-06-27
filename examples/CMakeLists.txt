@@ -9,5 +9,7 @@ target_link_libraries(
     example1sphere
     cnearest_lib
     Eigen3::Eigen
+    BLAS::BLAS
+	LAPACK::LAPACK
     Threads::Threads
     )
