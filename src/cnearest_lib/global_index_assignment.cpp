@@ -3,8 +3,8 @@
 namespace cnearest {
 
     GlobalIndexAssignment::GlobalIndexAssignment(const Collection<RigidBody>& bodies) {
-        int quadrature_node_count = 0;
-        int force_node_count = 0;
+        unsigned int quadrature_node_count = 0;
+        unsigned int force_node_count = 0;
         for (auto& body : bodies) {
             for (auto& force_node : body.force_nodes().nodes()) {
                 _force_node_indicies.insert({&force_node, force_node_count});

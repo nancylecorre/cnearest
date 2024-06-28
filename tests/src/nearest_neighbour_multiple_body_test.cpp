@@ -2,7 +2,7 @@
 #include "nearest_neighbour/nearest_neighbour_distributers.h"
 #include "nearest_neighbour/nearest_neighbour_detection.h"
 #include "discretisations/single_point_discretisation.h"
-#include "discretisations/line_discretisation.h"
+#include "discretisations/straight_line_discretisation.h"
 
 class NearestNeighbourMultipleBodyTest : public ::testing::Test {
    protected:
@@ -18,8 +18,8 @@ TEST_F(NearestNeighbourMultipleBodyTest, test_multiple_body_detection) {
     cnearest::SinglePointDiscretisation point_discretisation_4(0,0,4);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(point_discretisation_1, point_discretisation_2));
-    bodies.push_back(cnearest::RigidBody(point_discretisation_3, point_discretisation_4));
+    bodies.emplace_back(point_discretisation_1, point_discretisation_2);
+    bodies.emplace_back(point_discretisation_3, point_discretisation_4);
 
     ASSERT_EQ(bodies.size(), 2);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);
@@ -54,12 +54,12 @@ TEST_F(NearestNeighbourMultipleBodyTest, test_multiple_body_detection) {
 
 
 TEST_F(NearestNeighbourMultipleBodyTest, test_no_inter_body_detection) {
-    cnearest::LineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
+    cnearest::StraightLineDiscretisation line_disretisation({0, 0, 1}, {0, 0, -1}, 5);
     cnearest::SinglePointDiscretisation point_discretisation(1, 1, 0.6);
 
     cnearest::Collection<cnearest::RigidBody> bodies;
-    bodies.push_back(cnearest::RigidBody(point_discretisation, line_disretisation));
-    bodies.push_back(cnearest::RigidBody(line_disretisation, point_discretisation));
+    bodies.emplace_back(point_discretisation, line_disretisation);
+    bodies.emplace_back(line_disretisation, point_discretisation);
 
     ASSERT_EQ(bodies.size(), 2);
     ASSERT_EQ(bodies[0].force_nodes().size(), 1);

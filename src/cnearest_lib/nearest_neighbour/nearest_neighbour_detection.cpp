@@ -23,38 +23,27 @@ namespace cnearest {
     void NearestNeighbourDetectionAlgorithm::populate_nearest_neighbours(
         const QuadratureNode& quadrature_node, const RigidBody& body,
         std::map<const QuadratureNode*, NearestNeighbourResult>& results) const {
-        Collection<const ForceNode*> potential_ties;
         double best_candidate_distance = std::numeric_limits<double>::infinity();
 
+        //find the distance to the closest node
         for (auto& force_node : body.force_nodes().nodes()) {
             double d = (force_node.position() - quadrature_node.position()).norm();
             if (d < best_candidate_distance) {
-                potential_ties.push_back(&force_node);
                 best_candidate_distance = d;
-                // this potentially invalidates the existing list of
-                // potential ties, so we will filter them again at the end.
-            } else if (d <= best_candidate_distance + _tie_shell_thickness) {
-                potential_ties.push_back(&force_node);
-            }
+            } 
         }
 
-        // filter the potential ties list for invalidated ones (added before the best
-        // candidate was found)
-        potential_ties.erase(
-            std::remove_if(potential_ties.begin(), potential_ties.end(),
-                           [&best_candidate_distance, &quadrature_node,
-                            this](const ForceNode* item) {
-                               double d =
-                                   (item->position() - quadrature_node.position()).norm();
-                               return d > best_candidate_distance + _tie_shell_thickness;
-                           }),
-            potential_ties.end());
-
+        //find nodes at (or close to) the best distance
+        Collection<const ForceNode*> tied_nodes;
+        for (auto& force_node : body.force_nodes().nodes()) {
+            if ((force_node.position() - quadrature_node.position()).norm() <=
+                (best_candidate_distance + _tie_shell_thickness))
+                tied_nodes.emplace_back(&force_node);
+        }
         // return or invoke distributer
-        switch (potential_ties.size()) {
+        switch (tied_nodes.size()) {
             case 1:
-                results.insert(std::pair(&quadrature_node,
-                                         NearestNeighbourResult(potential_ties[0])));
+                results.insert(std::pair(&quadrature_node, NearestNeighbourResult(tied_nodes[0])));
                 break;
             case 0:
                 throw std::runtime_error("no valid neighbours");
@@ -63,7 +52,7 @@ namespace cnearest {
                 if (_distributer)
                     results.insert(std::pair(&quadrature_node,
                                              _distributer->nearest_neighbour_result(
-                                                 quadrature_node, potential_ties)));
+                                                                   quadrature_node, tied_nodes)));
                 else
                     throw std::runtime_error(
                         "There was a tie and no distributer was provided");

@@ -1,8 +1,8 @@
 #pragma once
 #include "definitions.h"
-#include "force_node_set.h"
+#include "force_node_collection.h"
 #include "idiscretisation.h"
-#include "quadrature_node_set.h"
+#include "quadrature_node_collection.h"
 
 namespace cnearest {
 
@@ -21,12 +21,12 @@ namespace cnearest {
                   const Matrix3& rotation = Matrix3::Identity());
         ~RigidBody() = default;
 
-        const ForceNodeSet& force_nodes() const;
-        const QuadratureNodeSet& quadrature_nodes() const;
+        const ForceNodeCollection& force_nodes() const;
+        const QuadratureNodeCollection& quadrature_nodes() const;
 
        private:
-        ForceNodeSet _force_nodes;
-        QuadratureNodeSet _quadrature_nodes;
+        ForceNodeCollection _force_nodes;
+        QuadratureNodeCollection _quadrature_nodes;
     };
 
 }

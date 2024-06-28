@@ -6,10 +6,11 @@ namespace cnearest {
     /// The result of a force discretisation
     /// Ref: j.jcp2017.12.008, chapter 4.
     /// </summary>
-    class ForceNodeSet {
+    class ForceNodeCollection {
        public:
-        ForceNodeSet(const Collection<ForceNode>& nodes);
-        ~ForceNodeSet();
+        ForceNodeCollection(const Collection<ForceNode>& nodes);
+        ForceNodeCollection(const Collection<Vector3>& positions);
+        ~ForceNodeCollection();
 
         const Collection<ForceNode>& nodes() const;
         const size_t size() const;

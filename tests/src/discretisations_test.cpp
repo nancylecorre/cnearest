@@ -1,6 +1,6 @@
 #include "gtest/gtest.h"
 #include "discretisations/single_point_discretisation.h"
-#include "discretisations/line_discretisation.h"
+#include "discretisations/straight_line_discretisation.h"
 #include "discretisations/uniform_spherical_discretisation.h"
 #include "discretisations/fibonacci_sphere_discretisation.h"
 #include "discretisations/tapered_rod_discretisation.h"
@@ -24,7 +24,7 @@ TEST(TestSinglePointDiscretisation, TestSinglePointDiscretisation) {
 TEST(TestLineDiscretisation, TestLineDiscretisation) {
     cnearest::Vector3 start_position = {1, 5, 7};
     cnearest::Vector3 end_position = {2, 8, 3};
-    cnearest::LineDiscretisation discretisation(start_position, end_position);
+    cnearest::StraightLineDiscretisation discretisation(start_position, end_position);
 
     auto positions = discretisation.positions();
 
@@ -42,7 +42,7 @@ TEST(TestLineDiscretisation, TestLineDiscretisation) {
 TEST(TestLineDiscretisation, TestLineDiscretisationWithMidNode) {
     cnearest::Vector3 start_position = {1, 5, 7};
     cnearest::Vector3 end_position = {2, 8, 3};
-    cnearest::LineDiscretisation discretisation(start_position, end_position, 1);
+    cnearest::StraightLineDiscretisation discretisation(start_position, end_position, 1);
 
     auto positions = discretisation.positions();
 
@@ -64,7 +64,7 @@ TEST(TestLineDiscretisation, TestLineDiscretisationWithMidNode) {
 TEST(TestLineDiscretisation, TestLineDiscretisationWith5MidNodes) {
     cnearest::Vector3 start_position = {1, 5, 7};
     cnearest::Vector3 end_position = {2, 8, 3};
-    cnearest::LineDiscretisation discretisation(start_position, end_position, 5);
+    cnearest::StraightLineDiscretisation discretisation(start_position, end_position, 5);
 
     auto positions = discretisation.positions();
 
@@ -167,6 +167,9 @@ TEST(TestEmpiricalDiscretisation, TestEmpiricalDiscretisation) {
     ASSERT_EQ(positions[2](0), -1.0);
     ASSERT_EQ(positions[2](1), 0);
     ASSERT_EQ(positions[2](2), 2);
+
+    cnearest::EmpiricalDiscretisation discretisation2(positions);
+    cnearest::EmpiricalDiscretisation discretisation3(std::move(positions));
 }
 
 

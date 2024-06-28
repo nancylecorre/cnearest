@@ -17,12 +17,12 @@ inline cnearest::Matrix read_csv(std::string file, int rows, int cols) {
     if (in.is_open()) {
         while (std::getline(in, line)) {
             char *ptr = (char *)line.c_str();
-            int len = line.length();
+            size_t len = line.length();
 
             col = 0;
 
             char *start = ptr;
-            for (int i = 0; i < len; i++) {
+            for (size_t i = 0; i < len; i++) {
                 if (ptr[i] == ',') {
                     res(row, col++) = atof(start);
                     start = ptr + i + 1;
