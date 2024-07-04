@@ -15,9 +15,8 @@ namespace cnearest {
         Vector3 angular_component;
     };
 
-
     /// <summary>
-    /// A toolset of operations 
+    /// A toolset of operations
     /// It can map 6dof velocities on a rigid body to nodal velocities
     /// It can accumulate nodal forces on a rigid body to a 6dof force and moment
     /// Note that these operations are difficult to reverse due to non-uniqueness
