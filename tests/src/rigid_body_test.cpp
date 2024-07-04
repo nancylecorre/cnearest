@@ -56,3 +56,15 @@ TEST_F(RigidBodyTest, test_creation_with_rotation) {
     ASSERT_EQ(body.quadrature_nodes().nodes()[0].position().y(), 1.0);
     ASSERT_EQ(body.quadrature_nodes().nodes()[0].position().z(), 7.0);
 }
+
+
+TEST_F(RigidBodyTest, test_origin_point) {
+    cnearest::SinglePointDiscretisation discretisation(1, 2, 3);
+
+    cnearest::RigidBody body(discretisation, discretisation, {2, 4, 5});
+
+    ASSERT_EQ(body.origin_point().size(), 3);
+    ASSERT_EQ(body.origin_point().x(), 2.0);
+    ASSERT_EQ(body.origin_point().y(), 4.0);
+    ASSERT_EQ(body.origin_point().z(), 5.0);
+}
