@@ -17,9 +17,8 @@ namespace cnearest {
         const RigidBody& rigid_body() const;
 
         SixDOFVector sum_nodal_forces(const std::map<const ForceNode*, Vector3>& nodal_values) const;
-        std::map<const ForceNode*, Vector3> determine_nodal_speeds
-            (const SixDOFVector& rigid_body_speed) const;
-
+        std::map<const ForceNode*, Vector3> determine_nodal_speeds(
+            const SixDOFVector& rigid_body_speed) const;
 
        private:
         const RigidBody& _rigid_body;

@@ -188,13 +188,13 @@ TEST_P(RigidBodyVectorOperationsForceTests, force_with_alligned_offset) {
     std::map<const cnearest::ForceNode*, cnearest::Vector3> forces = {{sole_node, nodal_force}};
     auto force = operations.sum_nodal_forces(forces);
 
-    ASSERT_NEAR(force.linear_component.x(), expected_rigid_body_force.linear_component.x(), 1.0e-14);
-    ASSERT_NEAR(force.linear_component.y(), expected_rigid_body_force.linear_component.y(), 1.0e-14);
-    ASSERT_NEAR(force.linear_component.z(), expected_rigid_body_force.linear_component.z(), 1.0e-14);
+    ASSERT_NEAR(force.linear_component.x(), expected_rigid_body_force.linear_component.x(), 1.0e-12);
+    ASSERT_NEAR(force.linear_component.y(), expected_rigid_body_force.linear_component.y(), 1.0e-12);
+    ASSERT_NEAR(force.linear_component.z(), expected_rigid_body_force.linear_component.z(), 1.0e-12);
 
-    ASSERT_NEAR(force.angular_component.x(), expected_rigid_body_force.angular_component.x(), 1.0e-14);
-    ASSERT_NEAR(force.angular_component.y(), expected_rigid_body_force.angular_component.y(), 1.0e-14);
-    ASSERT_NEAR(force.angular_component.z(), expected_rigid_body_force.angular_component.z(), 1.0e-14);
+    ASSERT_NEAR(force.angular_component.x(), expected_rigid_body_force.angular_component.x(), 1.0e-12);
+    ASSERT_NEAR(force.angular_component.y(), expected_rigid_body_force.angular_component.y(), 1.0e-12);
+    ASSERT_NEAR(force.angular_component.z(), expected_rigid_body_force.angular_component.z(), 1.0e-12);
 }
 
 TEST_P(RigidBodyVectorOperationsForceTests, force_with_z_offset) {

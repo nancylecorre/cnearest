@@ -21,7 +21,6 @@ namespace cnearest {
         return result;
     }
 
-    
     std::map<const ForceNode*, Vector3> RigidBodyVectorOperations::determine_nodal_speeds(
         const SixDOFVector& rigid_body_speed) const {
         std::map<const ForceNode*, Vector3> result = {};
@@ -32,10 +31,8 @@ namespace cnearest {
             Vector3 speed = rigid_body_speed.linear_component +
                             rigid_body_speed.angular_component.cross(rigid_arm_vector);
             result.insert({&node, speed});
-        
         }
 
         return result;
-
-        }
+    }
 }
