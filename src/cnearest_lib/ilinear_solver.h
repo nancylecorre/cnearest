@@ -18,7 +18,6 @@ namespace cnearest {
         /// <param name="B"> the right hand side vector to solve</param>
         virtual Vector solve(const Matrix& A, const Vector& B) const = 0;
 
-        
         /// <summary>
         /// Right hand side solve of Ax=B
         /// For multiple values of B simultaneously

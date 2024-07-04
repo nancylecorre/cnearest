@@ -1,5 +1,4 @@
 #pragma once
-
 #include "ilinear_solver.h"
 
 namespace cnearest {
