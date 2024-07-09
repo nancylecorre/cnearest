@@ -39,7 +39,6 @@ namespace cnearest {
         /// </summary>
         double quadrature_discretisation_spacing() const;
 
-
        private:
         ForceNodeCollection _force_nodes;
         QuadratureNodeCollection _quadrature_nodes;
