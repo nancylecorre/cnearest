@@ -13,7 +13,7 @@ namespace cnearest {
     /// If true then all dofs in the x/y/z direction will be adjacent (partitioning the matrix into
     ///  M*M blocks)</typeparam>
     template <bool SortByDOF = false>
-    class MatrixAssemblerByBlockAccumulation : MatrixAssemblerBase<SortByDOF> {
+    class MatrixAssemblerByBlockAccumulation : public MatrixAssemblerBase<SortByDOF> {
        public:
         MatrixAssemblerByBlockAccumulation(const GlobalIndexAssignment& index_assignment,
                                            const NearestNeighbourResults& neighbour_results, double epsilon);
