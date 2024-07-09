@@ -12,6 +12,8 @@ target_link_libraries(
     cnearest_lib
     gtest::gtest
     Eigen3::Eigen
+    BLAS::BLAS
+    LAPACK::LAPACK
     Threads::Threads
     )
 
@@ -28,5 +30,7 @@ target_link_libraries(
     cnearest_lib
     gtest::gtest
     Eigen3::Eigen
+    BLAS::BLAS
+    LAPACK::LAPACK
     Threads::Threads
     )
