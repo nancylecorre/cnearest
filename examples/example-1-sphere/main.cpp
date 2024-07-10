@@ -109,4 +109,62 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
+    print_table_header({{"N", 8}, {"Q", 8}, {"Condition Num (sum)", 20}, {"Condition Num (mean)", 20}, {"Time (s)", 15}});
+
+    for (int n : {3, 6, 12, 24}) {
+        for (int q : {12, 24, 48, 96, 192}) {
+            if (q < n) continue;
+
+            auto start = std::chrono::high_resolution_clock::now();
+            // define sphere parameters
+            double radius = 1.0;
+            int force_resolution = n;
+            int quadrature_resolution = q;
+
+            // Define regularisation
+            double epsilon = 0.01;
+
+            // Create discretisation
+            cnearest::UniformSphericalDiscretisation force_discretisation(radius, force_resolution);
+            cnearest::UniformSphericalDiscretisation quadrature_discretisation(radius, quadrature_resolution);
+
+            // Create a collection with one rigid body
+            cnearest::Collection<cnearest::RigidBody> bodies{
+                cnearest::RigidBody(force_discretisation, quadrature_discretisation)};
+
+            // Detect the nearest neighbours
+            cnearest::NearestNeighbourDetectionAlgorithm algorithm;
+            auto nearest_neighbour_results = algorithm.nearest_neighbours(bodies);
+
+            // Assign global ids to the nodes (trivial with one rigid body)
+            cnearest::GlobalIndexAssignment index_assignment(bodies);
+
+            // Construct the assembled matrix
+            cnearest::MatrixAssemblerByBlockAccumulation m(index_assignment, nearest_neighbour_results,
+                                                           epsilon);
+
+            cnearest::Matrix summed_stokeslet_matrix = m.generate_summed_stokeslet_matrix();
+            cnearest::Matrix mean_stokeslet_matrix = m.generate_mean_stokeslet_matrix();
+
+            Eigen::BDCSVD<cnearest::Matrix> svd(summed_stokeslet_matrix);
+            double condition_number_summed =
+                svd.singularValues()(0) / svd.singularValues()(svd.singularValues().size() - 1);
+            svd = Eigen::BDCSVD<cnearest::Matrix>(mean_stokeslet_matrix);
+            double condition_number_mean =
+                svd.singularValues()(0) / svd.singularValues()(svd.singularValues().size() - 1);
+
+            auto stop = std::chrono::high_resolution_clock::now();
+            auto duration = duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
+
+            print_table_row({{bodies[0].force_nodes().size(), 0, 8},
+                             {bodies[0].quadrature_nodes().size(), 0, 8},
+                             {condition_number_summed, 8, 20},
+                             {condition_number_mean, 8, 20},
+                             {duration, 8, 15}});
+        }
+    }
+
 }
