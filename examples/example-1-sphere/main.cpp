@@ -16,8 +16,6 @@ int main(int argc, char *argv[]) {
                         {"Q", 8},
                         {"Force Error", 15},
                         {"Moment Error", 15},
-                        {"CN summed", 15},
-                        {"CN mean", 15},
                         {"Time (s)", 15}});
 
     for (int n : {3, 6, 12 , 24}) {
@@ -52,17 +50,7 @@ int main(int argc, char *argv[]) {
             cnearest::MatrixAssemblerByBlockAccumulation m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
-            cnearest::Matrix stokeslet_matrix = m.generate_summed_stokeslet_matrix();
-
-            Eigen::JacobiSVD<cnearest::Matrix> svd(stokeslet_matrix);
-            double condition_number_summed =
-                svd.singularValues()(0) / svd.singularValues()(svd.singularValues().size() - 1);
-
             cnearest::Matrix mean_stokeslet_matrix = m.generate_mean_stokeslet_matrix();
-
-            svd = Eigen::JacobiSVD<cnearest::Matrix>(mean_stokeslet_matrix);
-            double condition_number_mean =
-                svd.singularValues()(0) / svd.singularValues()(svd.singularValues().size() - 1);
 
             assert(!mean_stokeslet_matrix.hasNaN());
 
@@ -117,8 +105,6 @@ int main(int argc, char *argv[]) {
                              {bodies[0].quadrature_nodes().size(), 0, 8},
                              {force_error, 8, 15},
                              {moment_error, 8, 15},
-                             {condition_number_summed, 8, 15},
-                             {condition_number_mean, 8, 15},
                              {duration, 8, 15}});
         }
     }
