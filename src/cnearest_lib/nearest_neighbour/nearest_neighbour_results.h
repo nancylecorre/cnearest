@@ -65,6 +65,13 @@ namespace cnearest {
         /// </summary>
         double quadrature_node_sum(const ForceNode& node) const;
 
+
+        /// <summary>
+        /// The weighted average of all the positions of quadrature nodes associated with a force node
+        /// </summary>
+        Vector3 quadrature_node_average_position(const ForceNode& node) const;
+
+
        private:
         std::map<const QuadratureNode*, NearestNeighbourResult> _nearest_neighbour_mapping;
     };

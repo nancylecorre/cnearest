@@ -46,4 +46,16 @@ namespace cnearest {
                                 0.0, 
                                 lambda);
     }
+
+    Vector3 NearestNeighbourResults::quadrature_node_average_position(const ForceNode& node) const {
+        Vector3 sum_positions = Vector3::Zero();
+        for (auto& [quadrature_node, r] : _nearest_neighbour_mapping) {
+            for (auto& [weight, force_node] : r) {
+                if (force_node == &node) sum_positions += weight * quadrature_node->position();
+            }
+        }
+
+        return sum_positions / quadrature_node_sum(node);
+    }
+
 }
