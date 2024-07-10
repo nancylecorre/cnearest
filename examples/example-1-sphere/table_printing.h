@@ -33,3 +33,25 @@ inline std::string centre(const std::string s, const int w) {
         ss << " ";
     return ss.str();
 }
+
+inline void print_table_header(std::vector<std::pair<std::string,int>> fields) {
+    // Print a table header
+    std::cout << "| ";
+    int size = 2;
+    for (auto& f : fields) {
+        std::cout << centre(f.first, f.second) << " | ";
+        size += f.second + 3;
+    }
+    std::cout << std::endl;
+    std::cout << std::string(size, '-') << std::endl;
+}
+
+
+inline void print_table_row(std::vector<std::tuple<double ,int, int>> fields) {
+    // Print a table row
+    std::cout <<"| ";
+    for (auto& f : fields) {
+        std::cout << prd(std::get<0>(f), std::get<1>(f), std::get<2>(f)) << " | ";
+    }
+    std::cout << std::endl;
+}
