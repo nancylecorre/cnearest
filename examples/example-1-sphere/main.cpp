@@ -87,7 +87,7 @@ int main(int argc, char *argv[]) {
             double force = summed_rigid_body_force.linear_component.x();
             double predicted_force = 6 * M_PI * radius * 1.0;
 
-            double force_error = std::abs(force - predicted_force) / ((force + predicted_force) / 2.0);
+            double force_error = (force - predicted_force) / ((predicted_force));
 
             // sum these to get the rigid body moment
             summed_rigid_body_force = o.sum_nodal_forces(nodal_forces_b, nearest_neighbour_results);
@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) {
             double moment = summed_rigid_body_force.angular_component.x();
             double predicted_moment = 8 * M_PI * radius * 1.0;
 
-            double moment_error = std::abs(moment - predicted_moment) / ((moment + predicted_moment) / 2.0);
+            double moment_error = (moment - predicted_moment) / ((predicted_moment));
 
             auto stop = std::chrono::high_resolution_clock::now();
             auto duration = duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
