@@ -28,7 +28,7 @@ bibliography: paper.bib
 
 # Summary
 
-This package implements a method for solving two fluid dynamics problems: calculating the drag force and moment on a given shaped rigid body immersed in a 'simple' (Newtonian) viscous fluid, in the limit where inertia is negligible relative to viscosity (zero Reynolds number / Stokes flow). This system is particularly relevant in microscale biological fluid dynamics systems and colloids; one specific application is the calculation of the diffusion tensor of a specified structure. The library also forms an extensible toolkit for problems involving calculations of flow fields due to flexible motions, such as cilia-driven transport, motility / swimming due to flagellar movement or surface deformations, and integration with models of actively bending elastic bodies. The underlying numerical algorithm is the nearest-neighbour implementation (Smith 2018; Gallagher et al. 2019) of regularised stokeslets (Cortez 2001; Cortez et al. 2005); this approach enables efficient and accurate calculations requiring only surface point discretisations rather than surface or volumetric meshes and completely avoids. The calculated flow field is also ensured to be regular throughout the interior, exterior and surface of the body.
+This package implements a method for solving two fluid dynamics problems: calculating the drag force and moment on a given shaped rigid body immersed in a 'simple' (Newtonian) viscous fluid, in the limit where inertia is negligible relative to viscosity (zero Reynolds number / Stokes flow). This system is particularly relevant in microscale biological fluid dynamics systems and colloids; one specific application is the calculation of the diffusion tensor of a specified structure. The library also forms an extensible toolkit for problems involving calculations of flow fields due to flexible motions, such as cilia-driven transport, motility / swimming due to flagellar movement or surface deformations, and integration with models of actively bending elastic bodies. The underlying numerical algorithm is the nearest-neighbour implementation (Smith 2018; Gallagher et al. 2019) of regularised stokeslets (Cortez 2001; Cortez et al. 2005); this approach enables efficient and accurate calculations requiring only surface point discretisations rather than surface or volumetric meshes and completely avoids. The calculated flow field is also ensured to be regular throughout the interior, exterior and surface of the body. It is a feature-complete reimplementation and further development of the key test cases in [@Smith_2018].
 
 # Statement of need
 
@@ -94,6 +94,8 @@ Potential areas for future development include solution of model cells with flex
 
 # Acknowledgements
 
+This work was partially supported by the Engineering and Physical Sciences Research Council (EP/N021096/1).
+
 We acknowledge contributions from Simon Hartley, whose earlier engagement with this problem uncovered the risk of force points which were tied in for nearest neighbour.
 
 # References
@@ -147,3 +149,5 @@ Tyrrell, J.M., D.J. Smith and R.J. Dyson (2019) Regularized Stokeslet rings - an
 Zhou, B., E. Lauga and L. Koens (2019) Method of regularized stokeslets: Flow analysis and improvement of convergence. Phys. Rev. Fluids 4(8), 084104
 
 ** need a ref for diffusion tensor - check Smith 2018 **
+
+Wegener
