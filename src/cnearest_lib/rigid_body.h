@@ -23,10 +23,12 @@ namespace cnearest {
 
         const ForceNodeCollection& force_nodes() const;
         const QuadratureNodeCollection& quadrature_nodes() const;
+        const Vector3& origin_point() const;
 
        private:
         ForceNodeCollection _force_nodes;
         QuadratureNodeCollection _quadrature_nodes;
+        Vector3 _origin_point;
     };
 
 }
