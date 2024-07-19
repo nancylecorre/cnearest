@@ -15,6 +15,14 @@ namespace cnearest {
         const Collection<ForceNode>& nodes() const;
         const size_t size() const;
 
+        /// <summary>
+        /// The maximum discretisation spacing of the force nodes
+        /// The max distance of a point to its nearest-neighbour
+        /// hf
+        /// Ref: j.jcp2017.12.008, eqn 28a.
+        /// </summary>
+        double force_discretisation_spacing() const;
+
        private:
         Collection<ForceNode> _nodes;
     };

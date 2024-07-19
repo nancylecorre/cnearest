@@ -38,4 +38,11 @@ namespace cnearest {
         return _quadrature_nodes;
     }
 
+    double RigidBody::force_discretisation_spacing() const {
+        return _force_nodes.force_discretisation_spacing();
+    }
+
+    double RigidBody::quadrature_discretisation_spacing() const {
+        return _quadrature_nodes.quadrature_discretisation_spacing();
+    }
 }
