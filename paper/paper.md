@@ -35,7 +35,7 @@ This package implements a method for solving two fluid dynamics problems: calcul
 Microscale biological flow problems typically involve complex-shaped bodies undergoing large deformations, which renders analytical calculations or methods based on volumetric meshing (finite element, finite difference) challenging to implement. However, in the case where the fluid has Newtonian or approximately Newtonian properties, the flow can be modelled through the linear Stokes flow equations,
 
 $$
--\nabla p + \nabla \cdot u = 0, \quad \nabla \cdot u = 0.
+-\nabla p + \nabla^2{u} = 0, \quad \nabla \cdot u = 0.
 $$
 
 Linearity means that the problem can be solved through techniques such as the boundary element method and method of fundamental solutions, however these techniques involve singular solutions which present challenges for numerical implementation. Moreover, despite its high numerical efficiency, the boundary element method (Pozrikidis 1992; Smith 2009) requires the user to supply a true surface mesh with connectivity table and local basis system. The method of regularised stokeslets [@cortez2001, @cortez2005] has achieved very significant success in biological fluid dynamics (see for example the Special Issue edited by Cortez and Olson [@cortez2021]) by removing both the mathematically singular behaviour, and avoiding the need to construct a true mesh.
