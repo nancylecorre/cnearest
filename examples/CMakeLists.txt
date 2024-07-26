@@ -13,3 +13,15 @@ target_link_libraries(
     LAPACK::LAPACK
     Threads::Threads
     )
+
+
+add_executable(example2prolateSpheroid "example-2-prolate-spheroid/main.cpp")
+
+target_link_libraries(
+    example2prolateSpheroid
+    cnearest_lib
+    Eigen3::Eigen
+    BLAS::BLAS
+    LAPACK::LAPACK
+    Threads::Threads
+    )
