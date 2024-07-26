@@ -21,7 +21,7 @@ namespace cnearest {
         /// and an optional distributer to use in the case of ties
         /// </summary>
         ResistanceProblemSolver(const Collection<RigidBody>& bodies, double epsilon,
-                              std::unique_ptr<iNearestNeighbourDistributer> distributer = nullptr);
+                                std::unique_ptr<iNearestNeighbourDistributer> distributer = nullptr);
 
         /// <summary>
         /// Given some 6dof speeds on the bodies, calculate the resulting 6dof forces
