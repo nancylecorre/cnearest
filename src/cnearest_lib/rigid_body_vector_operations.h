@@ -1,6 +1,7 @@
 #pragma once
 #include <map>
 
+#include "nearest_neighbour/nearest_neighbour_results.h"
 #include "rigid_body.h"
 
 namespace cnearest {
@@ -29,8 +30,17 @@ namespace cnearest {
 
         /// <summary>
         /// Sum a collection of nodal forces to give a force and a moment on the rigid body
+        /// Use the force node position to determine the rigid arm length
         /// </summary>
         SixDOFVector sum_nodal_forces(const std::map<const ForceNode*, Vector3>& nodal_values) const;
+
+        /// <summary>
+        /// Sum a collection of nodal forces to give a force and a moment on the rigid body
+        /// make use of the nearest neighbour results to determine the average quadrature node position to get
+        /// rigid arm length
+        /// </summary>
+        SixDOFVector sum_nodal_forces(const std::map<const ForceNode*, Vector3>& nodal_values,
+                                      const NearestNeighbourResults& nn) const;
 
         /// <summary>
         /// Determine nodal velocities from a given rigid body velocity (6dof)

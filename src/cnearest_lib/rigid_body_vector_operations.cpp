@@ -21,6 +21,23 @@ namespace cnearest {
         return result;
     }
 
+    SixDOFVector RigidBodyVectorOperations::sum_nodal_forces(
+        const std::map<const ForceNode*, Vector3>& nodal_values,
+                                  const NearestNeighbourResults& nn) const {
+        SixDOFVector result = {{0, 0, 0}, {0, 0, 0}};
+        Vector3 origin_point = _rigid_body.origin_point();
+
+        for (auto& [node, contribution] : nodal_values) {
+            auto p = nn.quadrature_node_average_position(*node);
+            Vector3 rigid_arm_vector = p - origin_point;
+            result.linear_component += contribution;
+            result.angular_component += rigid_arm_vector.cross(contribution);
+        }
+
+        return result;
+
+    }
+
     std::map<const ForceNode*, Vector3> RigidBodyVectorOperations::determine_nodal_speeds(
         const SixDOFVector& rigid_body_speed) const {
         std::map<const ForceNode*, Vector3> result = {};
