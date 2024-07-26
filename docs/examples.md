@@ -51,8 +51,6 @@ It then uses these 2 to discretise a single rigid body, placed at the origin.
 
 ### Error in the grand resistance matrix
 
-We then use the nearest neighbour algorithm to detect the nearest neighbours of each node
-
 The 2 resolutions do have ties, we use a trivial tiebreaker algorithm, thus leading to differences with the matlab paper. 
 
 We use the `ResistanceProblemSolver` class to encapsulate the steps carried out in example 1.

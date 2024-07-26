@@ -8,6 +8,7 @@ namespace cnearest {
     /// <summary>
     /// Class to solve the resistance problem using the default tools and solvers
     /// The resistance problem is the case where the velocities are know and the forces must be calculated
+    /// By using this technique 6 times, we can deduce the grand resistance matrix for a rigid body
     /// The only exposed option is the distributer to use in the case of ties
     /// All other options are encapsulated
     /// </summary>
@@ -28,10 +29,10 @@ namespace cnearest {
         std::map<const RigidBody*, SixDOFVector> solve_body_forces(
             const std::map<const RigidBody*, SixDOFVector>& speeds);
 
-        
         /// <summary>
         /// Calculate the grand resistance matrix of one of the rigid bodies
-        /// Works by calculating the force arising from the 6 loading directions, and using those as the columns of the matrix
+        /// Works by calculating the force arising from the 6 loading directions, and using those as the
+        /// rows of the matrix
         /// </summary>
         Matrix grand_resistance_matrix(const RigidBody&);
 
