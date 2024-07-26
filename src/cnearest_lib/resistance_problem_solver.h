@@ -16,7 +16,7 @@ namespace cnearest {
         /// <summary>
         /// define a resistance problem based on :
         /// a collection of rigid bodies,
-        /// a regulazation epsilon,
+        /// a regulasation epsilon,
         /// and an optional distributer to use in the case of ties
         /// </summary>
         ResistanceProblemSolver(const Collection<RigidBody>& bodies, double epsilon,
@@ -27,6 +27,13 @@ namespace cnearest {
         /// </summary>
         std::map<const RigidBody*, SixDOFVector> solve_body_forces(
             const std::map<const RigidBody*, SixDOFVector>& speeds);
+
+        
+        /// <summary>
+        /// Calculate the grand resistance matrix of one of the rigid bodies
+        /// Works by calculating the force arising from the 6 loading directions, and using those as the columns of the matrix
+        /// </summary>
+        Matrix grand_resistance_matrix(const RigidBody&);
 
        private:
         const cnearest::Collection<RigidBody>& _bodies;

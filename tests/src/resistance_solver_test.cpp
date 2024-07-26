@@ -91,6 +91,51 @@ TEST_P(ResistanceSolverTest, TestSolvingResistanceProblemForTwoSpheres) {
     ASSERT_NEAR(moment, predicted_moment, 2.5);
 }
 
+
+TEST_P(ResistanceSolverTest, TestSolvingResistanceMatrixForOneSphere) {
+    auto& [n, q, expected_force_error, expected_moment_error, epsilon] = GetParam();
+    // define sphere parameters
+    double radius = 1.0;
+    int force_resolution = n;
+    int quadrature_resolution = q;
+
+    // Create discretisation
+    cnearest::UniformSphericalDiscretisation force_discretisation(radius, force_resolution);
+    cnearest::UniformSphericalDiscretisation quadrature_discretisation(radius, quadrature_resolution);
+
+    // Create a collection with one rigid body
+    cnearest::Collection<cnearest::RigidBody> bodies{
+        cnearest::RigidBody(force_discretisation, quadrature_discretisation)};
+
+    cnearest::ResistanceProblemSolver solver(bodies, epsilon);
+
+    auto matrix = solver.grand_resistance_matrix(bodies[0]);
+
+}
+
+TEST_P(ResistanceSolverTest, TestSolvingResistanceMatrixForTwoSpheres) {
+    auto& [n, q, expected_force_error, expected_moment_error, epsilon] = GetParam();
+    // define sphere parameters
+    double radius = 1.0;
+    int force_resolution = n;
+    int quadrature_resolution = q;
+
+    // Create discretisation
+    cnearest::UniformSphericalDiscretisation force_discretisation(radius, force_resolution);
+    cnearest::UniformSphericalDiscretisation quadrature_discretisation(radius, quadrature_resolution);
+
+    // Create a collection with one rigid body
+    cnearest::Collection<cnearest::RigidBody> bodies{
+        cnearest::RigidBody(force_discretisation, quadrature_discretisation),
+        cnearest::RigidBody(force_discretisation, quadrature_discretisation, {10, 0, 0})};
+
+    cnearest::ResistanceProblemSolver solver(bodies, epsilon);
+
+    auto matrix0 = solver.grand_resistance_matrix(bodies[0]);
+    auto matrix1 = solver.grand_resistance_matrix(bodies[1]);
+}
+
+
 // these values come from the table in the 2018 paper
 INSTANTIATE_TEST_SUITE_P(ResistanceSolverTest, ResistanceSolverTest,
                          ::testing::Values(ResistanceProblemDataRow({3, 12, 0.0147, 0.0300}),
