@@ -34,7 +34,7 @@ This package implements a method for solving problems in very viscous fluid dyna
 
 Microscale biological flow problems typically involve complex-shaped bodies undergoing large deformations, which renders analytical calculations or methods based on volumetric meshing (finite element, finite difference) challenging to implement. However, in the case where the fluid has Newtonian or approximately Newtonian properties, following non-dimensionalisation the flow can be modelled through the linear Stokes flow equations,
 $$
-- \pmb{\nabla} p + \nabla^2{\pmb{u}} = 0, \quad \nabla \cdot \pmb{u} = 0, \quad (1)
+{-} \pmb{\nabla} p + \nabla^2{\pmb{u}} = 0, \quad \nabla \cdot \pmb{u} = 0, \quad (1)
 $$
 where $p(\pmb{x})$ and $\pmb{u}(\pmb{x})$ are respectively pressure and velocity at the point $\pmb{x}$.
 
@@ -114,6 +114,6 @@ Potential areas for future development include solution of model cells with flex
 
 This work was partially supported by the Engineering and Physical Sciences Research Council (EP/N021096/1).
 
-We acknowledge contributions from Simon Hartley, whose earlier engagement with this problem uncovered the risk of force points which were tied in for nearest neighbour.
+We acknowledge Meurig Gallagher (Centre for Systems Modelling and Quantitative Biomedicine, University of Birmingham) for his continuing work on developing the nearest-neighbour method and associated Matlab implementations since 2018. We also acknowledge Research Software Engineer Simon Hartley (Advanced Research Computing, University of Birmingham), whose earlier engagement with this problem uncovered the risk of force points which were tied in for nearest neighbour.
 
 # References
