@@ -18,8 +18,9 @@
 <article-id pub-id-type="publisher-id">0</article-id>
 <article-id pub-id-type="doi">N/A</article-id>
 <title-group>
-<article-title>CNearest: A c++ toolkit to use the nearest neighbour
-algorithm to solve fluid problems</article-title>
+<article-title>CNearest: A C++ toolkit to use the nearest-neighbour
+method of regularised stokeslets algorithm to solve viscous flow
+problems</article-title>
 </title-group>
 <contrib-group>
 <contrib contrib-type="author" equal-contrib="yes">
