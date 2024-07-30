@@ -132,7 +132,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
   properties, following non-dimensionalisation the flow can be modelled
   through the linear Stokes flow equations, <disp-formula><alternatives>
   <tex-math><![CDATA[
-  - \pmb{\nabla} p + \nabla^2{\pmb{u}} = 0, \quad \nabla \cdot \pmb{u} = 0, \quad (1)
+  {-} \pmb{\nabla} p + \nabla^2{\pmb{u}} = 0, \quad \nabla \cdot \pmb{u} = 0, \quad (1)
   ]]></tex-math>
   <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>−</mml:mi><mml:mi>𝛁</mml:mi><mml:mi>p</mml:mi><mml:mo>+</mml:mo><mml:msup><mml:mi>∇</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mi>𝐮</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mi>∇</mml:mi><mml:mo>⋅</mml:mo><mml:mi>𝐮</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
   where <inline-formula><alternatives>
@@ -160,9 +160,9 @@ a Creative Commons Attribution 4.0 International License (CC BY
   about the origin, the problem is to solve equation (1) subject to the
   boundary condition, <disp-formula><alternatives>
   <tex-math><![CDATA[
-  \pmb{u}(\pmb{x}) = \pmb{U} + \pmb{\Omega}\times\pmb{x}, \quad \mbox{for all} \quad \pmb{x}\in B, \quad (2)
+  \pmb{u}(\pmb{x}) = \pmb{U} + \pmb{\Omega}\times\pmb{x}, \quad \mathrm{for}\, \mathrm{all} \quad \pmb{x}\in B, \quad (2)
   ]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>𝐮</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝐱</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>𝐔</mml:mi><mml:mo>+</mml:mo><mml:mi>𝛀</mml:mi><mml:mo>×</mml:mo><mml:mi>𝐱</mml:mi><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mtext mathvariant="normal">for all</mml:mtext><mml:mspace width="1.0em"></mml:mspace><mml:mi>𝐱</mml:mi><mml:mo>∈</mml:mo><mml:mi>B</mml:mi><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>𝐮</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝐱</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mi>𝐔</mml:mi><mml:mo>+</mml:mo><mml:mi>𝛀</mml:mi><mml:mo>×</mml:mo><mml:mi>𝐱</mml:mi><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mi mathvariant="normal">f</mml:mi><mml:mi mathvariant="normal">o</mml:mi><mml:mi mathvariant="normal">r</mml:mi></mml:mrow><mml:mspace width="0.167em"></mml:mspace><mml:mrow><mml:mi mathvariant="normal">a</mml:mi><mml:mi mathvariant="normal">l</mml:mi><mml:mi mathvariant="normal">l</mml:mi></mml:mrow><mml:mspace width="1.0em"></mml:mspace><mml:mi>𝐱</mml:mi><mml:mo>∈</mml:mo><mml:mi>B</mml:mi><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
   and thereby calculate the force and moment
   <disp-formula><alternatives>
   <tex-math><![CDATA[
@@ -179,17 +179,19 @@ a Creative Commons Attribution 4.0 International License (CC BY
   complex problems in which the body motion is not prescribed, or the
   surface motion is non-rigid. Moreover due to the linearity and
   instantaneity of the Stokes flow equations, the solution for
-  translational velocity (U) and angular velocity
-  (<inline-formula><alternatives>
+  translational velocity <inline-formula><alternatives>
+  <tex-math><![CDATA[U]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>U</mml:mi></mml:math></alternatives></inline-formula>
+  and angular velocity <inline-formula><alternatives>
   <tex-math><![CDATA[\Omega]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Ω</mml:mi></mml:math></alternatives></inline-formula>)
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Ω</mml:mi></mml:math></alternatives></inline-formula>
   can be determined from a linear combination of the ‘basic’ modes
   corresponding to unit velocity along each cartesian axis and unit
   angular velocity about each cartesian axis; providing these
   calculations forms the basic functionality for this package. The
-  (<inline-formula><alternatives>
+  <inline-formula><alternatives>
   <tex-math><![CDATA[6\times 6]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>6</mml:mn><mml:mo>×</mml:mo><mml:mn>6</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>6</mml:mn><mml:mo>×</mml:mo><mml:mn>6</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
   matrix of forces and moments corresponding to each basic rigid body
   model is referred to as the <italic>grand resistance matrix</italic>
   (<xref alt="Pozrikidis, 2002" rid="ref-pozrikidis2002" ref-type="bibr">Pozrikidis,
@@ -250,13 +252,16 @@ a Creative Commons Attribution 4.0 International License (CC BY
   (see also Smith
   (<xref alt="2009" rid="ref-smith2009" ref-type="bibr">2009</xref>)).</p>
   <p>The method of regularised stokeslets solves the resistance problem
-  by forming a (<inline-formula><alternatives>
+  by forming a <inline-formula><alternatives>
   <tex-math><![CDATA[3Q\times 3Q]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>Q</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
-  matrix of stokeslet evaluations between each combination of (Q)
-  surface points (each stokeslet is a (<inline-formula><alternatives>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>Q</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+  matrix of stokeslet evaluations between each combination of
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[Q]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>
+  surface points (each stokeslet is a <inline-formula><alternatives>
   <tex-math><![CDATA[3\times 3]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mo>×</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mo>×</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
   rank 2 tensor), then inverting this matrix to determine stokeslet
   strengths (corresponding to surface forces) from the prescribed
   surface velocity. These stokeslet strengths can then be summed to
@@ -265,13 +270,16 @@ a Creative Commons Attribution 4.0 International License (CC BY
   in the fluid through weighting a regularised stokeslet sum. The
   mobility problem is a modest generalisation which involves instead
   prescribing the total force and moment and inverting a
-  (<inline-formula><alternatives>
+  <inline-formula><alternatives>
   <tex-math><![CDATA[3(Q+2)\times 3(Q+2)]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>Q</mml:mi><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>Q</mml:mi><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></inline-formula>)
-  matrix for the stokeslet strengths and rigid body motion (U),
-  (<inline-formula><alternatives>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>Q</mml:mi><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>Q</mml:mi><mml:mo>+</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></inline-formula>
+  matrix for the stokeslet strengths and rigid body motion
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[U]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>U</mml:mi></mml:math></alternatives></inline-formula>,
+  <inline-formula><alternatives>
   <tex-math><![CDATA[\Omega]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Ω</mml:mi></mml:math></alternatives></inline-formula>).
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Ω</mml:mi></mml:math></alternatives></inline-formula>.
   More advanced extensions such as the swimming problem involve
   extending the mobility problem by prescribing a swimming stroke
   relative to the local frame
@@ -297,21 +305,26 @@ a Creative Commons Attribution 4.0 International License (CC BY
   et al., 2005</xref>;
   <xref alt="Gallagher et al., 2019" rid="ref-gallagher2019" ref-type="bibr">Gallagher
   et al., 2019</xref>). Sources (1) and (3) have an opposite dependence
-  on the small regularisation (<inline-formula><alternatives>
+  on the small regularisation <inline-formula><alternatives>
   <tex-math><![CDATA[\epsilon]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>ϵ</mml:mi></mml:math></alternatives></inline-formula>),
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>ϵ</mml:mi></mml:math></alternatives></inline-formula>,
   the effect of which is that attempting to reduce the regularisation
-  parameter by taking (<inline-formula><alternatives>
+  parameter by taking <inline-formula><alternatives>
   <tex-math><![CDATA[\epsilon\rightarrow 0]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>ϵ</mml:mi><mml:mo>→</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>ϵ</mml:mi><mml:mo>→</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
   leads to a requirement for increasingly refined surface
   discretisations. Because the number of degrees of freedom is
   proportional to the number of discretisation points, the effect is
   that an increasingly large dense matrix must be inverted, resulting in
   high computational cost. One strategy to address this issue that has
   been developed is the use of two surface discretisations: a coarse
-  force discretisation with (N) points - which determines the number of
-  degrees of freedom, and a finer quadrature discretisation with (Q)
+  force discretisation with <inline-formula><alternatives>
+  <tex-math><![CDATA[N]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>N</mml:mi></mml:math></alternatives></inline-formula>
+  points - which determines the number of degrees of freedom, and a
+  finer quadrature discretisation with <inline-formula><alternatives>
+  <tex-math><![CDATA[Q]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>
   points - which requires more kernel evaluations but does not affect
   the size of the matrix to be inverted. Projecting the force to the
   quadrature discretisation through nearest-neighbour interpolation
@@ -398,8 +411,9 @@ a Creative Commons Attribution 4.0 International License (CC BY
   results tables published in Smith
   (<xref alt="2018" rid="ref-smith2018" ref-type="bibr">2018</xref>) for
   the force and moment on a translating and rotating sphere and prolate
-  spheroid. This comparison is presented as example 1 in how to use our
-  code (** where does this refer to?**).</p>
+  spheroid. This comparison is presented as examples 1 and 2
+  respectively (see <italic>examples/example-1-sphere</italic> and
+  <italic>examples/example-2-prolate-spheroid</italic>).</p>
 </sec>
 <sec id="reimplementation-in-c">
   <title>Reimplementation in C++</title>
@@ -435,29 +449,45 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <p><italic>Stokeslet accumulation</italic> refers to the method of
       assembling the left hand side matrix from stokeslet sums.
       Motivated by the aim of avoiding for-loops, the original NEAREST
-      implementation created a (<inline-formula><alternatives>
+      implementation created a <inline-formula><alternatives>
       <tex-math><![CDATA[3N\times 3Q]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
       stokeslet matrix then multiplied by a
-      (<inline-formula><alternatives>
+      <inline-formula><alternatives>
       <tex-math><![CDATA[3Q\times 3N]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>Q</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
-      sparse matrix to produce the (<inline-formula><alternatives>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>Q</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      sparse matrix to produce the <inline-formula><alternatives>
       <tex-math><![CDATA[3N\times 3N]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
-      left hand side. As (Q) grows, the (<inline-formula><alternatives>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      left hand side. As <inline-formula><alternatives>
+      <tex-math><![CDATA[Q]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>
+      grows, the memory required to store the
+      <inline-formula><alternatives>
       <tex-math><![CDATA[3N\times 3Q]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
-      double precision values occupies sufficient memory to
-      significantly slow the computation. By contrast, the stokeslet
-      accumulation option in cNEAREST takes the approach of adding the
-      the (<inline-formula><alternatives>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      double precision values increases, and the computational time
+      significantly grows, as shown in the timing results in Smith
+      (<xref alt="2018" rid="ref-smith2018" ref-type="bibr">2018</xref>).
+      By contrast, the stokeslet accumulation option in cNEAREST takes
+      the approach of adding the <inline-formula><alternatives>
       <tex-math><![CDATA[3\times 3]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mo>×</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)
-      stokeslet values into the (<inline-formula><alternatives>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mo>×</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+      stokeslet values into the <inline-formula><alternatives>
       <tex-math><![CDATA[3N\times 3N]]></tex-math>
-      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
-      matrix one-at-a-time through a for-loop.</p>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      matrix one-at-a-time through a for-loop over
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[Q]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>
+      quadrature points over each of the <inline-formula><alternatives>
+      <tex-math><![CDATA[N]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>N</mml:mi></mml:math></alternatives></inline-formula>
+      collocation points, which does not impose large memory
+      requirements as <inline-formula><alternatives>
+      <tex-math><![CDATA[Q]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>
+      grows.</p>
     </list-item>
     <list-item>
       <p><italic>Rescaling by local stokeslet count</italic> concerns
@@ -469,8 +499,11 @@ a Creative Commons Attribution 4.0 International License (CC BY
       increases without bound, complicating convergence tests on the
       left hand side itself. Instead, cNEAREST provides the option to
       rescale by the number of quadrature points local to each force
-      point, so that the left hand side matrix converges as (Q) is
-      increased, and each degree of freedom corresponds simply to the
+      point, so that the left hand side matrix converges as
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[Q]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>
+      is increased, and each degree of freedom corresponds simply to the
       force associated with each force point.</p>
     </list-item>
   </list>
@@ -512,9 +545,13 @@ a Creative Commons Attribution 4.0 International License (CC BY
   <title>Acknowledgements</title>
   <p>This work was partially supported by the Engineering and Physical
   Sciences Research Council (EP/N021096/1).</p>
-  <p>We acknowledge contributions from Simon Hartley, whose earlier
-  engagement with this problem uncovered the risk of force points which
-  were tied in for nearest neighbour.</p>
+  <p>We acknowledge Meurig Gallagher (Centre for Systems Modelling and
+  Quantitative Biomedicine, University of Birmingham) for his continuing
+  work on developing the nearest-neighbour method and associated Matlab
+  implementations since 2018. We also acknowledge Research Software
+  Engineer Simon Hartley (Advanced Research Computing, University of
+  Birmingham), whose earlier engagement with this problem uncovered the
+  risk of force points which were tied in for nearest neighbour.</p>
 </sec>
 </body>
 <back>
