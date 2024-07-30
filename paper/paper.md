@@ -1,5 +1,5 @@
 ---
-title: 'CNearest: A c++ toolkit to use the nearest neighbour algorithm to solve fluid problems'
+title: 'CNearest: A C++ toolkit to use the nearest-neighbour method of regularised stokeslets algorithm to solve viscous flow problems'
 tags:
   - C++
   - fluid dynamics
