@@ -40,7 +40,7 @@ where $p(\pmb{x})$ and $\pmb{u}(\pmb{x})$ are respectively pressure and velocity
 
 One of the basic problems of Stokes flow is the calculation of the force and moment on a body immersed in a fluid and subject to no-slip, no-penetration boundary conditions, due to specific rigid body motion. Mathematically, for body with surface $B$ subject to translational velocity $\pmb{U}$ and angular velocity $\pmb{\Omega}$ about the origin, the problem is to solve equation (1) subject to the boundary condition,
 $$
-\pmb{u}(\pmb{x}) = \pmb{U} + \pmb{\Omega}\times\pmb{x}, \quad \mbox{for all} \quad \pmb{x}\in B, \quad (2)
+\pmb{u}(\pmb{x}) = \pmb{U} + \pmb{\Omega}\times\pmb{x}, \quad \mathrm{for}\, \mathrm{all} \quad \pmb{x}\in B, \quad (2)
 $$
 and thereby calculate the force and moment
 $$
