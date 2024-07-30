@@ -108,9 +108,9 @@ a Creative Commons Attribution 4.0 International License (CC BY
   <xref alt="Cortez et al., 2005" rid="ref-cortez2005" ref-type="bibr">Cortez
   et al., 2005</xref>); this approach enables efficient and accurate
   calculations requiring only surface point discretisations rather than
-  surface or volumetric meshes and completely avoids. The calculated
-  flow field is also ensured to be regular throughout the interior,
-  exterior and surface of the body. It is a feature-complete
+  surface or volumetric meshes and completely avoids singular integrals.
+  The calculated flow field is also ensured to be regular throughout the
+  interior, exterior and surface of the body. It is a feature-complete
   reimplementation and further development of the key test cases in
   Smith
   (<xref alt="2018" rid="ref-smith2018" ref-type="bibr">2018</xref>).
@@ -118,10 +118,9 @@ a Creative Commons Attribution 4.0 International License (CC BY
   user’s own surface discretisation to calculate the force and moment on
   any given three dimensional body undergoing rigid body motion. The
   library also forms an extensible toolkit for problems involving
-  calculations of flow fields due to flexible motions, such as
-  cilia-driven transport, motility / swimming due to flagellar movement
-  or surface deformations, and integration with models of actively
-  bending elastic bodies.</p>
+  calculations of flow fields due to flexible motions such as
+  cilia-driven transport and flagellar motility, potentially through
+  integration with models of actively bending elastic bodies.</p>
 </sec>
 <sec id="statement-of-need">
   <title>Statement of need</title>
