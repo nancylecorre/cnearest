@@ -38,13 +38,14 @@ lint-clang-format:
       - find src -iname *.h -o -iname *.cpp | xargs clang-format -i --dry-run -Werror
 
 
-doxygen:
+pages:
     image: alpine
     stage: documentation
     script:
         - apk update
         - apk add doxygen
         - doxygen doxygen/Doxyfile
+        - mv documentation/html/ public/
     artifacts:
         paths:
-        - documentation/html/
+            - public
