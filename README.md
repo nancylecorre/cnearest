@@ -13,6 +13,9 @@ The calculated flow field is also ensured to be regular throughout the interior,
 
 The library also forms an extensible toolkit for problems involving calculations of flow fields due to flexible motions, such as cilia-driven transport, motility / swimming due to flagellar movement or surface deformations, and integration with models of actively bending elastic bodies. 
 
+## Documentation
+
+For documentation see out gitlab pages <https://djsmithbham.gitlab.io/cnearest/>.
 
 ## Deliverable
 
