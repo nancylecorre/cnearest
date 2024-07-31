@@ -487,7 +487,21 @@ a Creative Commons Attribution 4.0 International License (CC BY
       requirements as <inline-formula><alternatives>
       <tex-math><![CDATA[Q]]></tex-math>
       <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>
-      grows.</p>
+      grows. For example, the test case to calculate the translational
+      and rotational modes of a sphere with
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[N=3456]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>N</mml:mi><mml:mo>=</mml:mo><mml:mn>3456</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+      and <inline-formula><alternatives>
+      <tex-math><![CDATA[Q=221184]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>Q</mml:mi><mml:mo>=</mml:mo><mml:mn>221184</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+      has timing results <inline-formula><alternatives>
+      <tex-math><![CDATA[263]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mn>263</mml:mn></mml:math></alternatives></inline-formula>
+      s in cNEAREST and <inline-formula><alternatives>
+      <tex-math><![CDATA[1758]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mn>1758</mml:mn></mml:math></alternatives></inline-formula>
+      s in Matlab NEAREST on comparable notebook computers.</p>
     </list-item>
     <list-item>
       <p><italic>Rescaling by local stokeslet count</italic> concerns
