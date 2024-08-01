@@ -99,10 +99,11 @@ int main(int argc, char *argv[]) {
             double moment_error = (moment - predicted_moment) / ((predicted_moment));
 
             auto stop = std::chrono::high_resolution_clock::now();
-            auto duration = duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
+            auto duration =
+                std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
 
-            print_table_row({{bodies[0].force_nodes().size(), 0, 8},
-                             {bodies[0].quadrature_nodes().size(), 0, 8},
+            print_table_row({{(double)bodies[0].force_nodes().size(), 0, 8},
+                             {(double)bodies[0].quadrature_nodes().size(), 0, 8},
                              {force_error, 8, 15},
                              {moment_error, 8, 15},
                              {duration, 8, 15}});
@@ -157,10 +158,11 @@ int main(int argc, char *argv[]) {
                 svd.singularValues()(0) / svd.singularValues()(svd.singularValues().size() - 1);
 
             auto stop = std::chrono::high_resolution_clock::now();
-            auto duration = duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
+            auto duration =
+                std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
 
-            print_table_row({{bodies[0].force_nodes().size(), 0, 8},
-                             {bodies[0].quadrature_nodes().size(), 0, 8},
+            print_table_row({{(double)bodies[0].force_nodes().size(), 0, 8},
+                             {(double)bodies[0].quadrature_nodes().size(), 0, 8},
                              {condition_number_summed, 8, 20},
                              {condition_number_mean, 8, 20},
                              {duration, 8, 15}});
