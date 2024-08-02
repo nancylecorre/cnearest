@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByBlockAccumulation m(index_assignment, nearest_neighbour_results,
+            cnearest::MatrixAssemblerByBlockAccumulation<false> m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
             cnearest::Matrix mean_stokeslet_matrix = m.generate_mean_stokeslet_matrix();
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
 
             // perform an lu decomposition to facilitate the solve
             // solve to get a unified vector of all the forces
-            cnearest::Collection<const cnearest::Vector *> us = {&u_a, &u_b};
+            cnearest::Collection<const cnearest::Vector *> us({&u_a, &u_b});
             auto f = cnearest::LinearSolverLUDirect().solve(mean_stokeslet_matrix, us);
 
             // decompose this to nodal forces
@@ -144,7 +144,7 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByBlockAccumulation m(index_assignment, nearest_neighbour_results,
+            cnearest::MatrixAssemblerByBlockAccumulation<false> m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
             cnearest::Matrix summed_stokeslet_matrix = m.generate_summed_stokeslet_matrix();
