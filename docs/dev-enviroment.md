@@ -44,6 +44,25 @@ Acquire conan (as described on their own pages). This is usually done using pip.
 
 Install a C++ compiler of your choice (e.g., Visual Studio).
 
+Use the command
+
+    conan profile detect
+
+to set up a default conan profile. You should see output to the console similar to
+
+    [settings]
+    arch=x86_64
+    build_type=Release
+    compiler=msvc
+    compiler.cppstd=17
+    compiler.runtime=dynamic
+    compiler.version=193
+    os=Windows
+
+Note the cNEAREST requires C++17 language features. If you see `compiler.cppstd=14` in the above, you will need to modify
+your default conan profile directly to update this to `17` as above. Run `conan profile default path` to find the location
+of the file to modify.
+
 Install the dependencies defined in the conanfile, using the command,
 
     conan install conanfile.txt --build=missing --output-folder=out -s build_type=Release
