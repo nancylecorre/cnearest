@@ -25,7 +25,7 @@ You will also need to make a conan profile (principally a choice of compiler), t
 
 use conan to install the dependencies of this individual project
 
-    conan install conanfile.txt --build=missing --output-folder=out
+    conan install conanfile.txt --build=missing --output-folder=out -s build_type=Release
 
 This should install the requirements defined in the file, it should also create a conan_toolchain.cmake file  (in the out directory) which contains all the information which cmake needs to find the installed packages
 
@@ -46,7 +46,7 @@ Install a C++ compiler of your choice (e.g., Visual Studio).
 
 Install the dependencies defined in the conanfile, using the command,
 
-    conan install conanfile.txt --build=missing --output-folder=out
+    conan install conanfile.txt --build=missing --output-folder=out -s build_type=Release
 
 This should install the requirements defined in the file, it should also create a conan_toolchain.cmake file  (in the out directory) which contains all the information which CMake needs to find the installed packages.
 
@@ -56,7 +56,7 @@ Now you use the `cmake` command with the additional argument
 
 to locate the dependencies:
 
-    cmake . -G "Visual Studio 17 2022"  -DCMAKE_TOOLCHAIN_FILE="out/conan_toolchain.cmake" -DCMAKE_POLICY_DEFAULT_CMP0091=NEW
+    cmake . -G "Visual Studio 17 2022"  -DCMAKE_TOOLCHAIN_FILE="out/conan_toolchain.cmake" -DCMAKE_POLICY_DEFAULT_CMP0091=NEW -DCMAKE_BUILD_TYPE=Release
 
 Use CMake to perform your build and test.
 E.g., for Visual Studio 2022, something like:
