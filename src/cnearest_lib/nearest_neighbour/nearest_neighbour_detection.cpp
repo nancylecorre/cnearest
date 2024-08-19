@@ -43,16 +43,15 @@ namespace cnearest {
         // return or invoke distributer
         switch (tied_nodes.size()) {
             case 1:
-                results.insert(std::pair(&quadrature_node, NearestNeighbourResult(tied_nodes[0])));
+                results.insert({&quadrature_node, NearestNeighbourResult(tied_nodes[0])});
                 break;
             case 0:
                 throw std::runtime_error("no valid neighbours");
                 break;
             default:
                 if (_distributer)
-                    results.insert(std::pair(&quadrature_node,
-                                             _distributer->nearest_neighbour_result(
-                                                                   quadrature_node, tied_nodes)));
+                    results.insert({&quadrature_node,
+                                    _distributer->nearest_neighbour_result(quadrature_node, tied_nodes)});
                 else
                     throw std::runtime_error(
                         "There was a tie and no distributer was provided");

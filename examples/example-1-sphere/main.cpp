@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByBlockAccumulation m(index_assignment, nearest_neighbour_results,
+            cnearest::MatrixAssemblerByBlockAccumulation<false> m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
             cnearest::Matrix mean_stokeslet_matrix = m.generate_mean_stokeslet_matrix();
@@ -73,7 +73,7 @@ int main(int argc, char *argv[]) {
 
             // perform an lu decomposition to facilitate the solve
             // solve to get a unified vector of all the forces
-            cnearest::Collection<const cnearest::Vector *> us = {&u_a, &u_b};
+            cnearest::Collection<const cnearest::Vector *> us({&u_a, &u_b});
             auto f = cnearest::LinearSolverLUDirect().solve(mean_stokeslet_matrix, us);
 
             // decompose this to nodal forces
@@ -99,10 +99,11 @@ int main(int argc, char *argv[]) {
             double moment_error = (moment - predicted_moment) / ((predicted_moment));
 
             auto stop = std::chrono::high_resolution_clock::now();
-            auto duration = duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
+            auto duration =
+                std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
 
-            print_table_row({{bodies[0].force_nodes().size(), 0, 8},
-                             {bodies[0].quadrature_nodes().size(), 0, 8},
+            print_table_row({{(double)bodies[0].force_nodes().size(), 0, 8},
+                             {(double)bodies[0].quadrature_nodes().size(), 0, 8},
                              {force_error, 8, 15},
                              {moment_error, 8, 15},
                              {duration, 8, 15}});
@@ -143,7 +144,7 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByBlockAccumulation m(index_assignment, nearest_neighbour_results,
+            cnearest::MatrixAssemblerByBlockAccumulation<false> m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
             cnearest::Matrix summed_stokeslet_matrix = m.generate_summed_stokeslet_matrix();
@@ -157,10 +158,11 @@ int main(int argc, char *argv[]) {
                 svd.singularValues()(0) / svd.singularValues()(svd.singularValues().size() - 1);
 
             auto stop = std::chrono::high_resolution_clock::now();
-            auto duration = duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
+            auto duration =
+                std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
 
-            print_table_row({{bodies[0].force_nodes().size(), 0, 8},
-                             {bodies[0].quadrature_nodes().size(), 0, 8},
+            print_table_row({{(double)bodies[0].force_nodes().size(), 0, 8},
+                             {(double)bodies[0].quadrature_nodes().size(), 0, 8},
                              {condition_number_summed, 8, 20},
                              {condition_number_mean, 8, 20},
                              {duration, 8, 15}});
