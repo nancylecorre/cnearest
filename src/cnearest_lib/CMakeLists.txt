@@ -14,4 +14,5 @@ target_link_libraries(
     Eigen3::Eigen
     BLAS::BLAS
     LAPACK::LAPACK
+    Kokkos::kokkos
     )
