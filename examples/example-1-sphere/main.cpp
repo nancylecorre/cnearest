@@ -4,13 +4,17 @@
 #include "global_index_assignment.h"
 #include "matrix_assembly/matrix_assembler_by_nn_multiplication.h"
 #include "matrix_assembly/matrix_assembler_by_block_accumulation.h"
+#include "matrix_assembly/matrix_assembler_by_kokkos.h"
+#include "matrix_assembly/matrix_assembler_by_kokkos_batch.h"
 #include "rigid_body_vector_operations.h"
 #include "linear_solve/linear_solver_lu_direct.h"
 #include "table_printing.h"
 #include <chrono>
+#include<Kokkos_Core.hpp>
 
 int main(int argc, char *argv[]) {
 
+    Kokkos::initialize();
     
     print_table_header({{"N", 8},
                         {"Q", 8},
@@ -47,8 +51,8 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByBlockAccumulation<false> m(index_assignment, nearest_neighbour_results,
-                                                           epsilon);
+            cnearest::MatrixAssemblerByKokkosBatch<false> m(index_assignment, nearest_neighbour_results,
+                                                           epsilon, 1000);
 
             cnearest::Matrix mean_stokeslet_matrix = m.generate_mean_stokeslet_matrix();
 
@@ -144,7 +148,7 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByBlockAccumulation<false> m(index_assignment, nearest_neighbour_results,
+            cnearest::MatrixAssemblerByKokkosBatch<false> m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
             cnearest::Matrix summed_stokeslet_matrix = m.generate_summed_stokeslet_matrix();
