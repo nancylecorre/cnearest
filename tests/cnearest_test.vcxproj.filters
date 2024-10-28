@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\discretisations_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\force_node_set_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\force_nodes_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\global_index_assignment_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\linear_solver_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\matrix_assembler_base_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\matrix_assembler_base_test_permuted.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\matrix_assembler_permuted_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\matrix_assembler_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\nearest_neighbour_distributer_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\nearest_neighbour_extreme_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\nearest_neighbour_multiple_body_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\nearest_neighbour_results_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\nearest_neighbour_single_body_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\quadrature_node_set_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\quadrature_nodes_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\regularised_stokelet_tensor_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\regularised_stokeslet_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\resistance_solver_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\rigid_bdy_vector_operations_force_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\rigid_bdy_vector_operations_velocity_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\rigid_body_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\trivial_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\src\uniform_sphere_discretisation_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{85F3C90B-2AA8-32B1-A9A3-940811C5AECF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

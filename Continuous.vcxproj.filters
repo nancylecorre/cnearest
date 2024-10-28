@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\CMakeFiles\ea7bf896a9a0eee6a2974dab5216d4f2\Continuous.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\CMakeFiles\Continuous" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{312541B4-DB15-3098-8DF2-5307DF2BE13B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

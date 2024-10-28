@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\matlab_test\2018_tables_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\matlab_test\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\matlab_test\matlab_tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2024\cnearest_RSE_project\cnearest_new\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{85F3C90B-2AA8-32B1-A9A3-940811C5AECF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
