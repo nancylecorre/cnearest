@@ -10,7 +10,7 @@ add_executable(cnearest_test ${TEST_SOURCES})
 target_link_libraries(
     cnearest_test
     cnearest_lib
-    gtest::gtest
+    GTest::GTest
     Eigen3::Eigen
     BLAS::BLAS
     LAPACK::LAPACK
@@ -28,7 +28,7 @@ add_executable(cnearest_matlab_tests ${TEST_SOURCES})
 target_link_libraries(
     cnearest_matlab_tests
     cnearest_lib
-    gtest::gtest
+    GTest::GTest
     Eigen3::Eigen
     BLAS::BLAS
     LAPACK::LAPACK

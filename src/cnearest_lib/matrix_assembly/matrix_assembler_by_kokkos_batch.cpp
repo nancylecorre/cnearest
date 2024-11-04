@@ -132,18 +132,18 @@ namespace cnearest {
                                 weight.weight * h_r(force_index, quadrature_index, 2);
 
                             result(3 * force_index + 1, 3 * neighbour_index) +=
-                                weight.weight * r(force_index, quadrature_index, 3);
+                                weight.weight * h_r(force_index, quadrature_index, 3);
                             result(3 * force_index + 1, 3 * neighbour_index + 1) +=
-                                weight.weight * r(force_index, quadrature_index, 4);
+                                weight.weight * h_r(force_index, quadrature_index, 4);
                             result(3 * force_index + 1, 3 * neighbour_index + 2) +=
-                                weight.weight * r(force_index, quadrature_index, 5);
+                                weight.weight * h_r(force_index, quadrature_index, 5);
 
                             result(3 * force_index + 2, 3 * neighbour_index) +=
-                                weight.weight * r(force_index, quadrature_index, 6);
+                                weight.weight * h_r(force_index, quadrature_index, 6);
                             result(3 * force_index + 2, 3 * neighbour_index + 1) +=
-                                weight.weight * r(force_index, quadrature_index, 7);
+                                weight.weight * h_r(force_index, quadrature_index, 7);
                             result(3 * force_index + 2, 3 * neighbour_index + 2) +=
-                                weight.weight * r(force_index, quadrature_index, 8);
+                                weight.weight * h_r(force_index, quadrature_index, 8);
                         }
                     }
                 }
