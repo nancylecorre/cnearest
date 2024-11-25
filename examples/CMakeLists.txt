@@ -8,6 +8,7 @@ add_executable(example1sphere "example-1-sphere/main.cpp")
 target_link_libraries(
     example1sphere
     cnearest_lib
+    cnearest_extensions
     Eigen3::Eigen
     BLAS::BLAS
     LAPACK::LAPACK
@@ -20,8 +21,29 @@ add_executable(example2prolateSpheroid "example-2-prolate-spheroid/main.cpp")
 target_link_libraries(
     example2prolateSpheroid
     cnearest_lib
+    cnearest_extensions
     Eigen3::Eigen
     BLAS::BLAS
     LAPACK::LAPACK
     Threads::Threads
     )
+    
+find_package(Kokkos)
+
+if(Kokkos_FOUND)
+
+add_executable(example3spherekokkos "example-3-sphere-kokkos/main.cpp")
+
+target_link_libraries(
+    example3spherekokkos
+    cnearest_lib
+    cnearest_extensions
+    Eigen3::Eigen
+    BLAS::BLAS
+    LAPACK::LAPACK
+    Threads::Threads
+    )
+
+else()
+message("Kokkos not found")
+endif()
