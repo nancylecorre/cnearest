@@ -14,8 +14,8 @@ namespace cnearest {
     class MatrixAssemblerByKokkos : public MatrixAssemblerBase<SortByDOF> {
        public:
         MatrixAssemblerByKokkos(const GlobalIndexAssignment& index_assignment,
-                                     const NearestNeighbourResults& neighbour_results, double epsilon,
-                                     int batch_size = 1000);
+                                const NearestNeighbourResults& neighbour_results, double epsilon,
+                                int batch_size = 1000);
 
         /// <summary>
         /// Generate the discretised resistance matrix by accumulating stokeslets (3M*3M)
