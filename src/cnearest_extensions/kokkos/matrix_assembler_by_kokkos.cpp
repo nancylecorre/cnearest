@@ -1,6 +1,6 @@
 #include <Kokkos_Core.hpp>
 
-#include "matrix_assembler_by_kokkos_2.h"
+#include "matrix_assembler_by_kokkos.h"
 #include "regularised_stokeslet.h"
 
 namespace cnearest {

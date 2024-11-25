@@ -4,7 +4,7 @@
 #include "global_index_assignment.h"
 #include "matrix_assembly/matrix_assembler_by_nn_multiplication.h"
 #include "matrix_assembly/matrix_assembler_by_block_accumulation.h"
-#include "matrix_assembler_by_kokkos_2.h"
+#include "matrix_assembler_by_kokkos.h"
 #include "rigid_body_vector_operations.h"
 #include "linear_solve/linear_solver_lu_direct.h"
 #include "table_printing.h"
