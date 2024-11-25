@@ -11,8 +11,7 @@
             "CMAKE_C_COMPILER": "cl.exe",
             "CMAKE_CXX_COMPILER": "cl.exe",
             "CMAKE_TOOLCHAIN_FILE": "out/conan_toolchain.cmake",
-            "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
-            "Kokkos_DIR": "C:/Users/butchena/Documents/tools/kokkos/kokkos-4.3.01/kokkos-build"
+            "CMAKE_POLICY_DEFAULT_CMP0091":  "NEW"
           },
             "condition": {
                 "type": "equals",

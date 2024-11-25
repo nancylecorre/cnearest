@@ -24,5 +24,11 @@ target_link_libraries(
     Eigen3::Eigen
     BLAS::BLAS
     LAPACK::LAPACK
+    )
+
+if(Kokkos_FOUND)
+target_link_libraries(
+    cnearest_extensions
     Kokkos::kokkos
     )
+endif()
