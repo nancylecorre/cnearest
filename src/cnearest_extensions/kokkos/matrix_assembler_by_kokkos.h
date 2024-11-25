@@ -11,9 +11,9 @@ namespace cnearest {
     /// If true then all dofs in the x/y/z direction will be adjacent (partitioning the matrix into
     ///  M*M blocks)</typeparam>
     template <bool SortByDOF = false>
-    class MatrixAssemblerByKokkos2 : public MatrixAssemblerBase<SortByDOF> {
+    class MatrixAssemblerByKokkos : public MatrixAssemblerBase<SortByDOF> {
        public:
-        MatrixAssemblerByKokkos2(const GlobalIndexAssignment& index_assignment,
+        MatrixAssemblerByKokkos(const GlobalIndexAssignment& index_assignment,
                                      const NearestNeighbourResults& neighbour_results, double epsilon,
                                      int batch_size = 1000);
 

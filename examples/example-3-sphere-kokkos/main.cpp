@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByKokkos2<false> m(index_assignment, nearest_neighbour_results,
+            cnearest::MatrixAssemblerByKokkos<false> m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
             cnearest::Matrix mean_stokeslet_matrix = m.generate_mean_stokeslet_matrix();
@@ -147,7 +147,7 @@ int main(int argc, char *argv[]) {
             cnearest::GlobalIndexAssignment index_assignment(bodies);
 
             // Construct the assembled matrix
-            cnearest::MatrixAssemblerByKokkos2<false> m(index_assignment, nearest_neighbour_results,
+            cnearest::MatrixAssemblerByKokkos<false> m(index_assignment, nearest_neighbour_results,
                                                            epsilon);
 
             cnearest::Matrix summed_stokeslet_matrix = m.generate_summed_stokeslet_matrix();

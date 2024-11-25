@@ -79,7 +79,7 @@ struct MatrixContribution {
     }
 
     template <bool SortByDOF>
-    MatrixAssemblerByKokkos2<SortByDOF>::MatrixAssemblerByKokkos2(
+    MatrixAssemblerByKokkos<SortByDOF>::MatrixAssemblerByKokkos(
         const GlobalIndexAssignment& index_assignment, const NearestNeighbourResults& neighbour_results,
         double epsilon, int batch_size)
         : MatrixAssemblerBase<SortByDOF>(index_assignment, neighbour_results),
@@ -87,7 +87,7 @@ struct MatrixContribution {
           _batch_size(batch_size) {}
 
     template <bool SortByDOF>
-    Matrix MatrixAssemblerByKokkos2<SortByDOF>::generate_summed_stokeslet_matrix() const {
+    Matrix MatrixAssemblerByKokkos<SortByDOF>::generate_summed_stokeslet_matrix() const {
         Matrix result = Matrix::Zero(3 * this->number_of_force_nodes(), 3 * this->number_of_force_nodes());
 
         int n = static_cast<int>(this->number_of_force_nodes());
@@ -138,11 +138,11 @@ struct MatrixContribution {
     }
 
     template <bool SortByDOF>
-    Matrix MatrixAssemblerByKokkos2<SortByDOF>::generate_mean_stokeslet_matrix() const {
+    Matrix MatrixAssemblerByKokkos<SortByDOF>::generate_mean_stokeslet_matrix() const {
         return generate_summed_stokeslet_matrix() * this->inverse_quadrature_node_sum_by_dof().asDiagonal();
     }
 
     // Explicit template instantiation
-    template class MatrixAssemblerByKokkos2<true>;
-    template class MatrixAssemblerByKokkos2<false>;
+    template class MatrixAssemblerByKokkos<true>;
+    template class MatrixAssemblerByKokkos<false>;
 }
