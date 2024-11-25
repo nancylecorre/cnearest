@@ -11,7 +11,6 @@ endif (WIN32)
 
 project ("cnearest")
 
-find_package(Kokkos REQUIRED)
 find_package(BLAS REQUIRED)
 find_package(LAPACK REQUIRED)
 find_package(Eigen3 REQUIRED NO_MODULE)
