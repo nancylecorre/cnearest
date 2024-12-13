@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
 
     print_table_header({{"N", 8}, {"Q", 8}, {"Force", 15}, {"Moment", 15}, {"Time (s)", 15}});
 
-    for (int quadrature_resolution : {12, 24, 48, 96, 192 , 384}) {
+    for (int quadrature_resolution = 12; quadrature_resolution < 500; quadrature_resolution += 40) {
         auto start = std::chrono::high_resolution_clock::now();
         // define sphere parameters
         double radius = 1.0;
