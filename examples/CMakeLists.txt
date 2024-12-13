@@ -44,6 +44,14 @@ target_link_libraries(
     Threads::Threads
     )
 
+
+add_executable(example5mandlebrook "example-5-mandlebrook/main.cpp")
+
+target_link_libraries(
+    example5mandlebrook
+    cnearest_lib
+    cnearest_extensions
+    )
 else()
 message("Kokkos not found")
 endif()
