@@ -12,6 +12,23 @@
 #include <chrono>
 #include<Kokkos_Core.hpp>
 
+KOKKOS_INLINE_FUNCTION static bool is_point_in_m_set(double x0, double y0, double max_iteration) {
+    double x2 = 0;
+    double y2 = 0;
+    double w = 0;
+    int iteration = 0;
+
+    while (x2 + y2 <= 4 and iteration < max_iteration) {
+        double x = x2 - y2 + x0;
+        double y = w - x2 - y2 + y0;
+        x2 = x * x;
+        y2 = y * y;
+        w = (x + y) * (x + y);
+        iteration = iteration + 1;
+    }
+    return iteration == max_iteration;
+}
+
 class MandelbrokSurfaceDiscretisation : public cnearest::iDiscretisation {
    public:
     MandelbrokSurfaceDiscretisation() : _resolution(0), _scale(1.0){};
@@ -56,23 +73,81 @@ class MandelbrokSurfaceDiscretisation : public cnearest::iDiscretisation {
         return yes_count >= 3 && yes_count <=5;
     }
 
-    bool _is_point_in_set(double x0, double y0) const {
-        double x2 = 0;
-        double y2 = 0;
-        double w = 0;
-        int iteration = 0;
+    bool _is_point_in_set(double x0, double y0) const { return is_point_in_m_set(x0, y0, _max_iteration); }
 
-        while (x2 + y2 <= 4 and iteration < _max_iteration) {
-            double x = x2 - y2 + x0;
-            double y = w - x2 - y2 + y0;
-            x2 = x * x;
-            y2 = y * y;
-            w = (x + y) * (x + y);
-            iteration = iteration + 1;
+};
+
+
+typedef Kokkos::MDRangePolicy<Kokkos::Rank<2>> mdrange_policy;
+class MandelbrokSurfaceDiscretisationKokkos : public cnearest::iDiscretisation {
+   public:
+    MandelbrokSurfaceDiscretisationKokkos() : _resolution(0), _scale(1.0){};
+    MandelbrokSurfaceDiscretisationKokkos(int resolution, double scale)
+        : _resolution(resolution), _scale(scale){};
+    ~MandelbrokSurfaceDiscretisationKokkos() = default;
+
+    cnearest::Collection<cnearest::Vector3> positions() const override {
+
+        cnearest::Collection<cnearest::Vector3> result;
+
+        int batches = _resolution / 10000+1;
+        int batch_size = _resolution / batches;
+
+        Kokkos::View<int **> s("in_set", batch_size, batch_size);
+        Kokkos::View<bool **> r("on_boundary", batch_size, batch_size);
+
+        double resolution = _resolution;
+        int max_iteration = _max_iteration;
+
+        for (int batch_i = 0; batch_i < batches; batch_i++) {
+            for (int batch_j = 0; batch_j < batches; batch_j++) {
+                Kokkos::parallel_for(
+                    "set", mdrange_policy({0, 0}, {batch_size, batch_size}),
+                    KOKKOS_LAMBDA(const int i, const int j) {
+                        double x = (i + batch_size * batch_i) * 4.0 / resolution - 2.0;
+                        double y = (j + batch_size * batch_j) * 4.0 / resolution - 2.0;
+                        s(i, j) = is_point_in_m_set(x, y, max_iteration) ? 1 : 0;
+                    });
+
+                Kokkos::fence();
+                Kokkos::parallel_for(
+                    "bound", mdrange_policy({1, 1}, {batch_size - 1, batch_size - 1}),
+                    KOKKOS_LAMBDA(const int i, const int j) {
+                        int count = 0;
+                        count += s(i - 1, j - 1);
+                        count += s(i - 1, j);
+                        count += s(i - 1, j + 1);
+                        count += s(i, j - 1);
+                        count += s(i, j + 1);
+                        count += s(i + 1, j - 1);
+                        count += s(i + 1, j);
+                        count += s(i + 1, j + 1);
+                        r(i, j) = s(i, j) == 1 && count <= 5 && count >= 3;
+                    });
+
+                Kokkos::fence();
+
+                auto h_r = Kokkos::create_mirror_view(r);
+                Kokkos::deep_copy(h_r, r);
+
+                for (int i = 0; i < batch_size; i++) {
+                    for (int j = 0; j < batch_size; j++) {
+                        double x = (i + batch_size * batch_i) * 4.0 / _resolution - 2.0;
+                        double y = (j + batch_size * batch_j) * 4.0 / _resolution - 2.0;
+                        if (h_r(i, j)) {
+                            result.push_back({x * _scale, y * _scale, 0});
+                        }
+                    }
+                }
+            }
         }
-        return iteration == _max_iteration;
+        return result;
     }
 
+   private:
+    int _resolution;
+    double _scale;
+    int _max_iteration = 100;
 };
 
 
@@ -166,15 +241,14 @@ int main(int argc, char *argv[]) {
 
     int force_resolution = 200;
 
-    for (int quadrature_resolution = 10000; quadrature_resolution < 20000; quadrature_resolution += 400) {
+    for (int quadrature_resolution = 10000; quadrature_resolution < 200000; quadrature_resolution += 4000) {
 
-        auto start = std::chrono::high_resolution_clock::now();
         // Define regularisation
         double epsilon = 0.01;
 
         // Create discretisation
-        MandelbrokSurfaceDiscretisation force_discretisation(force_resolution, 1.0);
-        MandelbrokSurfaceDiscretisation quadrature_discretisation(quadrature_resolution, 1.0);
+        MandelbrokSurfaceDiscretisationKokkos force_discretisation(force_resolution, 1.0);
+        MandelbrokSurfaceDiscretisationKokkos quadrature_discretisation(quadrature_resolution, 1.0);
 
         // Create a collection with one rigid body
         cnearest::Collection<cnearest::RigidBody> bodies{
@@ -188,6 +262,7 @@ int main(int argc, char *argv[]) {
         // Assign global ids to the nodes (trivial with one rigid body)
         cnearest::GlobalIndexAssignment index_assignment(bodies);
 
+        auto start = std::chrono::high_resolution_clock::now();
         // Construct the assembled matrix
         cnearest::MatrixAssemblerByKokkos<false> m(index_assignment, nearest_neighbour_results, epsilon);
 
@@ -231,5 +306,6 @@ int main(int argc, char *argv[]) {
                          {moment, 8, 15},
                          {duration, 8, 15}});
     }
+    Kokkos::finalize();
 }
     

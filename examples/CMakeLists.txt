@@ -9,10 +9,6 @@ target_link_libraries(
     example1sphere
     cnearest_lib
     cnearest_extensions
-    Eigen3::Eigen
-    BLAS::BLAS
-    LAPACK::LAPACK
-    Threads::Threads
     )
 
 
@@ -22,10 +18,6 @@ target_link_libraries(
     example2prolateSpheroid
     cnearest_lib
     cnearest_extensions
-    Eigen3::Eigen
-    BLAS::BLAS
-    LAPACK::LAPACK
-    Threads::Threads
     )
     
 find_package(Kokkos)
@@ -38,10 +30,14 @@ target_link_libraries(
     example3spherekokkos
     cnearest_lib
     cnearest_extensions
-    Eigen3::Eigen
-    BLAS::BLAS
-    LAPACK::LAPACK
-    Threads::Threads
+    )
+    
+add_executable(example4chain "example-4-chain/main.cpp")
+
+target_link_libraries(
+    example4chain
+    cnearest_lib
+    cnearest_extensions
     )
 
 

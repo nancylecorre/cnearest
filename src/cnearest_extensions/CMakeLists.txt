@@ -11,7 +11,7 @@ message("Kokkos not found")
 endif()
 
 add_library(cnearest_extensions ${LIB_SOURCES} ${KOKKOS_LIB_SOURCES})
-
+target_compile_definitions(cnearest_extensions PUBLIC EIGEN_NO_CUDA)
 target_include_directories(cnearest_extensions PUBLIC .)
 
 if(Kokkos_FOUND)
