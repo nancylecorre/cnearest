@@ -8,8 +8,8 @@
 class MatrixAssemblerBaseTestPermuted : public ::testing::Test {
    protected:
     cnearest::Collection<cnearest::RigidBody> bodies;
-    std::optional<cnearest::NearestNeighbourResults> nearest_neighbours;
     std::optional<cnearest::GlobalIndexAssignment> assignment;
+    cnearest::NearestNeighbourDetectionAlgorithm algorithm;
     virtual void SetUp() {
         cnearest::StraightLineDiscretisation force_discretisation({0, 0, 1}, {0, 0, -1}, 3);
         cnearest::StraightLineDiscretisation quadrature_discretisation({0, 0, 1.05}, {0, 0, -1.05}, 10);
@@ -17,26 +17,26 @@ class MatrixAssemblerBaseTestPermuted : public ::testing::Test {
         bodies.emplace_back(force_discretisation, quadrature_discretisation);
 
         assignment = cnearest::GlobalIndexAssignment(bodies);
-        cnearest::NearestNeighbourDetectionAlgorithm algorithm;
-        auto nn = algorithm.nearest_neighbours(bodies);
-        nearest_neighbours = std::move(nn);
     };
 
     virtual void TearDown() {};
 };
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_m) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
     ASSERT_EQ(assembler.number_of_force_nodes(), 5);
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_q) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
     ASSERT_EQ(assembler.number_of_quadrature_nodes(), 12);
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_force_positions) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
     auto v = assembler.concatenated_vector_of_force_positions();
     ASSERT_EQ(v.size(), 3 * 5);
     for (auto& [node, index] : assignment->force_node_indicies()) {
@@ -47,7 +47,8 @@ TEST_F(MatrixAssemblerBaseTestPermuted, test_force_positions) {
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_quadrature_positions) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
     auto v = assembler.concatenated_vector_of_quadrature_positions();
     ASSERT_EQ(v.size(), 3 * 12);
     for (auto& [node, index] : assignment->quadrature_node_indicies()) {
@@ -58,7 +59,8 @@ TEST_F(MatrixAssemblerBaseTestPermuted, test_quadrature_positions) {
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_neighbour_matrix) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
     auto v = assembler.nearest_neighbour_matrix();
     ASSERT_EQ(v.rows(), 12);
     ASSERT_EQ(v.cols(), 5);
@@ -68,7 +70,8 @@ TEST_F(MatrixAssemblerBaseTestPermuted, test_neighbour_matrix) {
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_neighbour_matrix_by_dof) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
     auto v = assembler.nearest_neighbour_matrix_by_dof();
     ASSERT_EQ(v.rows(), 3 * 12);
     ASSERT_EQ(v.cols(), 3 * 5);
@@ -78,7 +81,8 @@ TEST_F(MatrixAssemblerBaseTestPermuted, test_neighbour_matrix_by_dof) {
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_assembly_disassembly_of_force_vector) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
 
     cnearest::Vector v = cnearest::Vector::Random(15);
 
@@ -98,7 +102,8 @@ TEST_F(MatrixAssemblerBaseTestPermuted, test_assembly_disassembly_of_force_vecto
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_assembly_disassembly_of_quadrature_vector) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
 
     cnearest::Vector v = cnearest::Vector::Random(36);
 
@@ -118,7 +123,8 @@ TEST_F(MatrixAssemblerBaseTestPermuted, test_assembly_disassembly_of_quadrature_
 }
 
 TEST_F(MatrixAssemblerBaseTestPermuted, test_inverse_quadrature_node_sum) {
-    cnearest::MatrixAssemblerBase<true> assembler(*assignment, *nearest_neighbours);
+    auto nearest_neighbours = algorithm.nearest_neighbours(bodies);
+    cnearest::MatrixAssemblerBase<true> assembler(*assignment, nearest_neighbours);
     auto v = assembler.inverse_quadrature_node_sum_by_dof();
     ASSERT_EQ(v.size(), 3 * 5);
     for (auto& [node, index] : assignment->force_node_indicies()) {
