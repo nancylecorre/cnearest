@@ -1,8 +1,8 @@
 #pragma once
-#include <Eigen/Sparse>
-
+#include "definitions.h"
 #include "global_index_assignment.h"
 #include "nearest_neighbour/nearest_neighbour_detection.h"
+#include <Eigen/Sparse>
 
 namespace cnearest {
     /// <summary>

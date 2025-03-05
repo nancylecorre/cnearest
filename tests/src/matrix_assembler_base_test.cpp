@@ -1,7 +1,4 @@
 #include "matrix_assembly/matrix_assembler_base.h"
-
-#include <optional>
-
 #include "discretisations/straight_line_discretisation.h"
 #include "global_index_assignment.h"
 #include "gtest/gtest.h"
