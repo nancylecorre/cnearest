@@ -18,7 +18,7 @@ class MatrixAssemblerBaseTestPermuted : public ::testing::Test {
 
         assignment = cnearest::GlobalIndexAssignment(bodies);
         cnearest::NearestNeighbourDetectionAlgorithm algorithm;
-        nearest_neighbours = std::move(algorithm.nearest_neighbours(bodies));
+        nearest_neighbours.swap(algorithm.nearest_neighbours(bodies));
     };
 
     virtual void TearDown() {};
