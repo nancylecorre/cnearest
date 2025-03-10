@@ -11,11 +11,12 @@ class NearestNeighbourDistributerForMatlabTest : public cnearest::iNearestNeighb
     cnearest::NearestNeighbourResult nearest_neighbour_result(
         const cnearest::QuadratureNode& n,
         cnearest::Collection<const cnearest::ForceNode*> candidates) const override {
-        for (auto& [a, b] : mapping) {
-            if (assignment.index(n) == a) {
+        for (auto& [quad_node_index, force_node_index] : mapping) {
+            int fni = force_node_index;
+            if (assignment.index(n) == quad_node_index) {
                 auto findResult = std::find_if(std::begin(assignment.force_node_indicies()),
                                                std::end(assignment.force_node_indicies()),
-                                               [&](auto& a) { return a.second == b; });
+                                               [&](auto& force_node_data) { return force_node_data.second == fni; });
                 return findResult->first;
             }
         }
