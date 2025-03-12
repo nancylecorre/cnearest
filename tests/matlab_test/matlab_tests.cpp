@@ -95,7 +95,7 @@ TEST_F(MatlabTest, test_single_stokeslet_maths) {
 
     cnearest::Matrix SxX = read_csv(data_folder + "_S_xX.dat", 162, 2592);
 
-    auto stokeslet = cnearest::RegularisedStokeslet::stokeslet_tensor(first_force_node, first_quad_node, epsilon)/8/M_PI;
+    cnearest::Matrix stokeslet = cnearest::RegularisedStokeslet::stokeslet_tensor(first_force_node, first_quad_node, epsilon)/8/M_PI;
 
 
     EXPECT_NEAR(SxX(0, 0), stokeslet(0, 0), 1.0e-4);
@@ -123,7 +123,7 @@ TEST_F(MatlabTest, test_single_stokeslet_maths_2) {
 
     cnearest::Matrix SxX = read_csv(data_folder + "_S_xX.dat", 162, 2592);
 
-    auto stokeslet =
+    cnearest::Matrix stokeslet =
         cnearest::RegularisedStokeslet::stokeslet_tensor(first_force_node, first_quad_node, epsilon) / 8 /
         M_PI;
 
