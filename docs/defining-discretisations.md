@@ -24,7 +24,7 @@ The library provides some standard options for discretising simple shapes. These
 + A tapered rod
 + A cube
 + A sphere generated from a projection of the cube
-+ Fibonachi Sphere
++ Fibonacci Sphere
 
 
 ### Empirical discretisation

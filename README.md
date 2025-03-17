@@ -15,7 +15,7 @@ The library also forms an extensible toolkit for problems involving calculations
 
 ## Documentation
 
-For documentation see out gitlab pages <https://djsmithbham.gitlab.io/cnearest/>.
+For documentation see our gitlab pages <https://djsmithbham.gitlab.io/cnearest/>.
 
 ## Deliverable
 
@@ -68,7 +68,7 @@ Since the primary users will be mathematicians and physicists, we'll keep the na
     using cnearest::Vector = Eigen::VectorXd;
 
 We will give an alias to the std::vector, and will call it our Collection.
-While computer scientists may know that collections can be depicted in may alternative ways, we intend to use this versatile class for the majority of collections throughout this codebase, justifying the alias.
+While computer scientists may know that collections can be depicted in many alternative ways, we intend to use this versatile class for the majority of collections throughout this codebase, justifying the alias.
 
     using cnearest::Collection = std::vector;
 
