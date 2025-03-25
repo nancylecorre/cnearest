@@ -2,4 +2,4 @@
 
 add_subdirectory(cnearest_lib)
 
-add_subdirectory(cnearest_extensions)
+add_subdirectory(kokkos_extensions)
