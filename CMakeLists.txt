@@ -3,7 +3,7 @@
 set(CMAKE_CXX_STANDARD 20)
 
 if (WIN32)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive-")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /permissive- /openmp")
 else (WIN32)
 set(CMAKE_CXX_FLAGS         "${CMAKE_CXX_FLAGS} --coverage")
 set(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} --coverage")
