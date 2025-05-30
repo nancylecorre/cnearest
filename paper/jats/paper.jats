@@ -256,21 +256,51 @@ a Creative Commons Attribution 4.0 International License (CC BY
   <xref alt="Gallagher &amp; Smith, 2018" rid="ref-gallagher2018" ref-type="bibr">Gallagher
   &amp; Smith, 2018</xref>).</p>
   <p>Despite its proven effectiveness, a barrier to wider adoption of
-  NEAREST is that the existing implementation underpinning most of the
-  references above is an undocumented research code implemented in
-  Matlab. That implementation primarily uses built-in linear algebra
-  operations throughout the workflow, from stokeslet evaluation through
-  matrix assembly, and avoids the use of for loops. While this approach
-  has some advantages - notably brief code and very simple exploitation
-  of parallelism
+  the nearest neighbour discretisation is that the existing
+  implementation underpinning most of the references above is an
+  undocumented research code implemented in Matlab. That implementation
+  primarily uses built-in linear algebra operations throughout the
+  workflow, from stokeslet evaluation through matrix assembly, and
+  avoids the use of for loops. While this approach has some advantages -
+  notably brief code and very simple exploitation of parallelism
   (<xref alt="Gallagher &amp; Smith, 2020" rid="ref-gallagher2020" ref-type="bibr">Gallagher
   &amp; Smith, 2020</xref>), it tends to result in the storage of large
   stokeslet matrices, which can be highly inefficient as the quadrature
   discretisation is refined. CNearest addresses these limitations.</p>
-  <p>CNearest is therefore designed to address the need for an
-  extensible, accessible and efficient methodology for Stokes flow
-  problems. To enable efficient and scalable use of computing resources,
-  the package is implemented in C++, with the widely-used
+  <p>In the wider setting of software packages and code for Stokes flow,
+  we note several existing packages with related but distinct aims,
+  which the present package is intended to complement. pyStokes
+  (<xref alt="Singh &amp; Adhikari, 2020" rid="ref-Singh2020" ref-type="bibr">Singh
+  &amp; Adhikari, 2020</xref>) implements an efficient method for
+  solving coupled Stokes and Laplace problems associated with phoretic
+  swimmers, utilising a spectral approximation to the flow field around
+  potentially large numbers of spherical particles. It is therefore
+  particularly suited to problems involving many bodies, but is less
+  focused on detailed resolution of swimmer morphology. Along similar
+  lines, “Stokesian dynamics in Python”
+  (<xref alt="Townsend, 2024" rid="ref-townsend2024" ref-type="bibr">Townsend,
+  2024</xref>) addresses the need for efficient approximation of long
+  range interactions of many particles; an older package implementing a
+  similar method in Python is “StokeD”
+  (<xref alt="Parker, 2016" rid="ref-parker2016" ref-type="bibr">Parker,
+  2016</xref>), also coded in Python. Implementations of the method of
+  regularised stokeslets include an undocumented parallelized code
+  repository of the classical method
+  (<xref alt="Copos, 2020" rid="ref-copos2020" ref-type="bibr">Copos,
+  2020</xref>), and a more recent package which enables the use of
+  analytic surface integrals
+  (<xref alt="Ferranti, 2024" rid="ref-ferranti2024package" ref-type="bibr">Ferranti,
+  2024</xref>;
+  <xref alt="Ferranti &amp; Cortez, 2024" rid="ref-ferranti2024" ref-type="bibr">Ferranti
+  &amp; Cortez, 2024</xref>). The latter method greatly improves the
+  accuracy and efficiency of the method of regularised stokeslets,
+  however it does require the generation of a true surface mesh rather
+  than a point cloud discretisation. Taken together, we believe that the
+  present package addresses a gap for an extensible, accessible and
+  efficient methodology for Stokes flow problems, particularly those
+  involving complex geometries.</p>
+  <p>To enable efficient and scalable use of computing resources, the
+  package is implemented in C++, with the widely-used
   <italic>eigen</italic> package handling linear algebra operations
   (<xref alt="Guennebaud et al., 2010" rid="ref-eigenweb" ref-type="bibr">Guennebaud
   et al., 2010</xref>). The package also provides three specific
@@ -408,6 +438,16 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <lpage>4616</lpage>
     </element-citation>
   </ref>
+  <ref id="ref-copos2020">
+    <element-citation>
+      <person-group person-group-type="author">
+        <name><surname>Copos</surname><given-names>C. A.</given-names></name>
+      </person-group>
+      <article-title>Parallelized CUDA method of regularized stokeslets</article-title>
+      <year iso-8601-date="2020">2020</year>
+      <uri>https://github.com/calinacopos/Parallelized-CUDA-Method-of-Regularized-Stokeslets</uri>
+    </element-citation>
+  </ref>
   <ref id="ref-cortez2001">
     <element-citation publication-type="article-journal">
       <person-group person-group-type="author">
@@ -496,6 +536,32 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <article-title>Eigen v3</article-title>
       <year iso-8601-date="2010">2010</year>
       <uri>http://eigen.tuxfamily.org</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-ferranti2024package">
+    <element-citation>
+      <person-group person-group-type="author">
+        <name><surname>Ferranti</surname><given-names>D.</given-names></name>
+      </person-group>
+      <article-title>Regularized stokeslet surfaces</article-title>
+      <year iso-8601-date="2024">2024</year>
+      <uri>https://github.com/djferranti/RegularizedStokesletSurfaces</uri>
+    </element-citation>
+  </ref>
+  <ref id="ref-ferranti2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Ferranti</surname><given-names>D.</given-names></name>
+        <name><surname>Cortez</surname><given-names>R.</given-names></name>
+      </person-group>
+      <article-title>Regularized stokeslet surfaces</article-title>
+      <source>J. Comput. Phys</source>
+      <year iso-8601-date="2024">2024</year>
+      <volume>508</volume>
+      <uri>https://www.sciencedirect.com/science/article/pii/S0021999124002535</uri>
+      <pub-id pub-id-type="doi">https://doi.org/10.1016/j.jcp.2024.113004</pub-id>
+      <fpage>113004</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-gallagher2018">
@@ -620,6 +686,16 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <uri>https://github.com/djsmithbham/NearestStokeslets</uri>
     </element-citation>
   </ref>
+  <ref id="ref-parker2016">
+    <element-citation>
+      <person-group person-group-type="author">
+        <name><surname>Parker</surname><given-names>J.</given-names></name>
+      </person-group>
+      <article-title>StokeD</article-title>
+      <year iso-8601-date="2016">2016</year>
+      <uri>https://github.com/johnaparker/stoked</uri>
+    </element-citation>
+  </ref>
   <ref id="ref-pozrikidis1992">
     <element-citation publication-type="book">
       <person-group person-group-type="author">
@@ -640,6 +716,24 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <publisher-name>CRC</publisher-name>
       <year iso-8601-date="2002">2002</year>
       <pub-id pub-id-type="doi">10.1017/S0022112004008201</pub-id>
+    </element-citation>
+  </ref>
+  <ref id="ref-Singh2020">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Singh</surname><given-names>Rajesh</given-names></name>
+        <name><surname>Adhikari</surname><given-names>Ronojoy</given-names></name>
+      </person-group>
+      <article-title>PyStokes: Phoresis and stokesian hydrodynamics in python</article-title>
+      <source>Journal of Open Source Software</source>
+      <publisher-name>The Open Journal</publisher-name>
+      <year iso-8601-date="2020">2020</year>
+      <volume>5</volume>
+      <issue>50</issue>
+      <uri>https://doi.org/10.21105/joss.02318</uri>
+      <pub-id pub-id-type="doi">10.21105/joss.02318</pub-id>
+      <fpage>2318</fpage>
+      <lpage></lpage>
     </element-citation>
   </ref>
   <ref id="ref-rostami2016">
@@ -710,6 +804,23 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <uri>https://doi.org/10.1098/rspa.2009.0295</uri>
       <pub-id pub-id-type="doi">10.1098/rspa.2009.0295</pub-id>
       <fpage>411</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-townsend2024">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Townsend</surname><given-names>A. K.</given-names></name>
+      </person-group>
+      <article-title>Stokesian Dynamics in Python</article-title>
+      <source>Journal of Open Source Software</source>
+      <publisher-name>The Open Journal</publisher-name>
+      <year iso-8601-date="2024">2024</year>
+      <volume>9</volume>
+      <issue>94</issue>
+      <uri>https://doi.org/10.21105/joss.06011</uri>
+      <pub-id pub-id-type="doi">10.21105/joss.06011</pub-id>
+      <fpage>6011</fpage>
       <lpage></lpage>
     </element-citation>
   </ref>
