@@ -96,10 +96,8 @@ a Creative Commons Attribution 4.0 International License (CC BY
   microscale biological systems and colloids; one specific application
   is the calculation of the diffusion tensor of a specified structure.
   The underlying algorithm is the nearest-neighbour implementation
-  (<xref alt="Gallagher et al., 2019" rid="ref-gallagher2019" ref-type="bibr">Gallagher
-  et al., 2019</xref>;
-  <xref alt="Smith, 2018" rid="ref-smith2018" ref-type="bibr">Smith,
-  2018</xref>) of regularised stokeslets
+  (<xref alt="Smith, 2018b" rid="ref-smith2018" ref-type="bibr">Smith,
+  2018b</xref>) of the method of regularised stokeslets
   (<xref alt="Cortez, 2001" rid="ref-cortez2001" ref-type="bibr">Cortez,
   2001</xref>;
   <xref alt="Cortez et al., 2005" rid="ref-cortez2005" ref-type="bibr">Cortez
@@ -108,7 +106,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
   surface or volumetric meshes and avoids singular integrals. It is a
   feature-complete reimplementation and further development of the key
   test cases in Smith
-  (<xref alt="2018" rid="ref-smith2018" ref-type="bibr">2018</xref>).
+  (<xref alt="2018b" rid="ref-smith2018" ref-type="bibr">2018b</xref>).
   The package also serves as an extensible library that can be utilised
   with the user’s own surface discretisation to calculate the force and
   moment on any given three dimensional body undergoing rigid body
@@ -125,9 +123,9 @@ a Creative Commons Attribution 4.0 International License (CC BY
   properties, following non-dimensionalisation the flow can be modelled
   through the linear Stokes flow equations, <disp-formula><alternatives>
   <tex-math><![CDATA[
-  {-} \pmb{\nabla} p + \nabla^2{\pmb{u}} = 0, \quad \nabla \cdot \pmb{u} = 0, \quad (1)
+  {-} \pmb{\nabla} p + \nabla^2{\pmb{u}} = 0, \quad \pmb{\nabla} \cdot \pmb{u} = 0, \quad (1)
   ]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>−</mml:mi><mml:mi>𝛁</mml:mi><mml:mi>p</mml:mi><mml:mo>+</mml:mo><mml:msup><mml:mi>∇</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mi>𝐮</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mi>∇</mml:mi><mml:mo>⋅</mml:mo><mml:mi>𝐮</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>−</mml:mi><mml:mi>𝛁</mml:mi><mml:mi>p</mml:mi><mml:mo>+</mml:mo><mml:msup><mml:mi>∇</mml:mi><mml:mn>2</mml:mn></mml:msup><mml:mi>𝐮</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mi>𝛁</mml:mi><mml:mo>⋅</mml:mo><mml:mi>𝐮</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
   where <inline-formula><alternatives>
   <tex-math><![CDATA[p(\pmb{x})]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝐱</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></inline-formula>
@@ -160,34 +158,34 @@ a Creative Commons Attribution 4.0 International License (CC BY
   and thereby calculate the force and moment
   <disp-formula><alternatives>
   <tex-math><![CDATA[
-  \pmb{F}=\iint_B \pmb{\sigma} \cdot \pmb{n} dS(\pmb{x}), \quad \pmb{M}=\iint_B\pmb{x}\times\pmb{\sigma}\cdot\pmb{n}dS(\pmb{x}), \quad (3)
+  \pmb{F}=\iint_B \pmb{\sigma} \cdot \pmb{n} \, dS(\pmb{x}), \quad \pmb{M}=\iint_B\pmb{x}\times\pmb{\sigma}\cdot\pmb{n} \, dS(\pmb{x}), \quad (3)
   ]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>𝐅</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mo>∬</mml:mo><mml:mi>B</mml:mi></mml:msub><mml:mi>𝛔</mml:mi><mml:mo>⋅</mml:mo><mml:mi>𝐧</mml:mi><mml:mi>d</mml:mi><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝐱</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mi>𝐌</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mo>∬</mml:mo><mml:mi>B</mml:mi></mml:msub><mml:mi>𝐱</mml:mi><mml:mo>×</mml:mo><mml:mi>𝛔</mml:mi><mml:mo>⋅</mml:mo><mml:mi>𝐧</mml:mi><mml:mi>d</mml:mi><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝐱</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>3</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>𝐅</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mo>∬</mml:mo><mml:mi>B</mml:mi></mml:msub><mml:mi>𝛔</mml:mi><mml:mo>⋅</mml:mo><mml:mi>𝐧</mml:mi><mml:mspace width="0.167em"></mml:mspace><mml:mi>d</mml:mi><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝐱</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mi>𝐌</mml:mi><mml:mo>=</mml:mo><mml:msub><mml:mo>∬</mml:mo><mml:mi>B</mml:mi></mml:msub><mml:mi>𝐱</mml:mi><mml:mo>×</mml:mo><mml:mi>𝛔</mml:mi><mml:mo>⋅</mml:mo><mml:mi>𝐧</mml:mi><mml:mspace width="0.167em"></mml:mspace><mml:mi>d</mml:mi><mml:mi>S</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝐱</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>3</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
   where the stress tensor is given in terms of the pressure and velocity
   by, <disp-formula><alternatives>
   <tex-math><![CDATA[
-  \pmb{\sigma} = -p\pmb{I}+\pmb{\nabla}\pmb{u}+(\pmb{\nabla}\pmb{u})^T, (4)
+  \pmb{\sigma} = -p\pmb{I}+\pmb{\nabla}\pmb{u}+(\pmb{\nabla}\pmb{u})^T. (4)
   ]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>𝛔</mml:mi><mml:mo>=</mml:mo><mml:mi>−</mml:mi><mml:mi>p</mml:mi><mml:mi>𝐈</mml:mi><mml:mo>+</mml:mo><mml:mi>𝛁</mml:mi><mml:mi>𝐮</mml:mi><mml:mo>+</mml:mo><mml:msup><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝛁</mml:mi><mml:mi>𝐮</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mi>T</mml:mi></mml:msup><mml:mo>,</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>4</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
-  is the stress tensor. The system (1-4) forms the basis for more
-  complex problems in which the body motion is not prescribed, or the
-  surface motion is non-rigid. Moreover due to the linearity and
-  instantaneity of the equations, the solution for translational
-  velocity <inline-formula><alternatives>
-  <tex-math><![CDATA[U]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>U</mml:mi></mml:math></alternatives></inline-formula>
+  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>𝛔</mml:mi><mml:mo>=</mml:mo><mml:mi>−</mml:mi><mml:mi>p</mml:mi><mml:mi>𝐈</mml:mi><mml:mo>+</mml:mo><mml:mi>𝛁</mml:mi><mml:mi>𝐮</mml:mi><mml:mo>+</mml:mo><mml:msup><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>𝛁</mml:mi><mml:mi>𝐮</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mi>T</mml:mi></mml:msup><mml:mi>.</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>4</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+  The system (1–4) forms the basis for more complex problems in which
+  the body motion is not prescribed, or the surface motion is non-rigid.
+  Moreover due to the linearity and instantaneity of the equations, the
+  solution for translational velocity <inline-formula><alternatives>
+  <tex-math><![CDATA[\pmb{U}]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>𝐔</mml:mi></mml:math></alternatives></inline-formula>
   and angular velocity <inline-formula><alternatives>
-  <tex-math><![CDATA[\Omega]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Ω</mml:mi></mml:math></alternatives></inline-formula>
+  <tex-math><![CDATA[\pmb{\Omega}]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>𝛀</mml:mi></mml:math></alternatives></inline-formula>
   can be determined from a linear combination of the ‘basic’ modes
-  corresponding to unit velocity along each cartesian axis and unit
-  angular velocity about each cartesian axis; the basic functionality of
-  cNEAREST is to perform these calculations. The
+  corresponding to unit velocity along each Cartesian axis and unit
+  angular velocity about each Cartesian axis; the basic functionality of
+  CNearest is to perform these calculations. The
   <inline-formula><alternatives>
   <tex-math><![CDATA[6\times 6]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>6</mml:mn><mml:mo>×</mml:mo><mml:mn>6</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
-  matrix of forces and moments corresponding to each basic rigid body
-  model is referred to as the <italic>grand resistance matrix</italic>
+  matrix of force and moment coefficients corresponding to each basic
+  rigid body mode is referred to as the <italic>grand resistance
+  matrix</italic>
   (<xref alt="Pozrikidis, 2002" rid="ref-pozrikidis2002" ref-type="bibr">Pozrikidis,
   2002</xref>) or <italic>frictional tensor</italic>
   (<xref alt="Wegener, 1981" rid="ref-wegener1981" ref-type="bibr">Wegener,
@@ -198,35 +196,27 @@ a Creative Commons Attribution 4.0 International License (CC BY
   1981</xref>).</p>
   <p>Linearity means that (1-4) can be solved through techniques such as
   the boundary element method, which results in a linear algebra problem
-  of the form, <disp-formula><alternatives>
-  <tex-math><![CDATA[
-  A f = u,
-  ]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>A</mml:mi><mml:mi>f</mml:mi><mml:mo>=</mml:mo><mml:mi>u</mml:mi><mml:mo>,</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
-  where <inline-formula><alternatives>
-  <tex-math><![CDATA[A]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>A</mml:mi></mml:math></alternatives></inline-formula>
+  of the form, <disp-formula><tex-math><![CDATA[
+  \left[{\sf A}\right] {\sf f} = {\sf u},
+  ]]></tex-math></disp-formula> where
+  <inline-formula><tex-math><![CDATA[\left[{\sf A}\right]]]></tex-math></inline-formula>
   is a <inline-formula><alternatives>
   <tex-math><![CDATA[3N\times 3N]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi><mml:mo>×</mml:mo><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
   matrix formed by evaluating or integrating fundamental solutions of
-  (1), <inline-formula><alternatives>
-  <tex-math><![CDATA[f]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>f</mml:mi></mml:math></alternatives></inline-formula>
+  (1),
+  <inline-formula><tex-math><![CDATA[{\sf f}]]></tex-math></inline-formula>
   is a <inline-formula><alternatives>
   <tex-math><![CDATA[3N]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>-vector
   of unknown traction or force values at each degree of freedom, and
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[u]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>u</mml:mi></mml:math></alternatives></inline-formula>
+  <inline-formula><tex-math><![CDATA[{\sf u}]]></tex-math></inline-formula>
   is a <inline-formula><alternatives>
   <tex-math><![CDATA[3N]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>3</mml:mn><mml:mi>N</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>-vector
   of velocities at each point of the discretisation. For more details,
-  see for example references
-  (<xref alt="Pozrikidis, 1992" rid="ref-pozrikidis1992" ref-type="bibr">Pozrikidis,
-  1992</xref>,
+  see for example Pozrikidis
+  (<xref alt="1992" rid="ref-pozrikidis1992" ref-type="bibr">1992</xref>,
   <xref alt="2002" rid="ref-pozrikidis2002" ref-type="bibr">2002</xref>).
   However these techniques involve singular solutions which present
   challenges for implementation. Moreover, despite its high numerical
@@ -246,8 +236,9 @@ a Creative Commons Attribution 4.0 International License (CC BY
   (<xref alt="2009" rid="ref-smith2009" ref-type="bibr">2009</xref>)).
   This package implements an extension of the method of regularised
   stokeslets which utilises separate discretisations for the surface
-  traction and quadrature. The method (previously implemented in Matlab
-  as NEAREST) is based on nearest-neighbour interpolation, and it
+  traction and quadrature. The method, previously implemented in Matlab
+  (<xref alt="Smith, 2018a" rid="ref-neareststokeslets2018" ref-type="bibr">Smith,
+  2018a</xref>) is based on nearest-neighbour interpolation, and it
   removes the dependence of the linear system size on the quadrature
   error, greatly improving accuracy and efficiency. The method
   distinguishes the size of the force discretisation
@@ -258,10 +249,12 @@ a Creative Commons Attribution 4.0 International License (CC BY
   (<inline-formula><alternatives>
   <tex-math><![CDATA[Q]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>).
-  For more details, see references
-  (<xref alt="Gallagher &amp; Smith, 2018" rid="ref-gallagher2018" ref-type="bibr">Gallagher
-  &amp; Smith, 2018</xref>;
-  <xref alt="gallager2019?" rid="ref-gallager2019" ref-type="bibr"><bold>gallager2019?</bold></xref>).</p>
+  For more details, including application to swimming problems and error
+  analysis, see references
+  (<xref alt="Gallagher et al., 2019" rid="ref-gallagher2019" ref-type="bibr">Gallagher
+  et al., 2019</xref>;
+  <xref alt="Gallagher &amp; Smith, 2018" rid="ref-gallagher2018" ref-type="bibr">Gallagher
+  &amp; Smith, 2018</xref>).</p>
   <p>Despite its proven effectiveness, a barrier to wider adoption of
   NEAREST is that the existing implementation underpinning most of the
   references above is an undocumented research code implemented in
@@ -273,8 +266,8 @@ a Creative Commons Attribution 4.0 International License (CC BY
   (<xref alt="Gallagher &amp; Smith, 2020" rid="ref-gallagher2020" ref-type="bibr">Gallagher
   &amp; Smith, 2020</xref>), it tends to result in the storage of large
   stokeslet matrices, which can be highly inefficient as the quadrature
-  discretisation is refined. cNEAREST addresses these limitations.</p>
-  <p>cNEAREST is therefore designed to address the need for an
+  discretisation is refined. CNearest addresses these limitations.</p>
+  <p>CNearest is therefore designed to address the need for an
   extensible, accessible and efficient methodology for Stokes flow
   problems. To enable efficient and scalable use of computing resources,
   the package is implemented in C++, with the widely-used
@@ -325,11 +318,11 @@ a Creative Commons Attribution 4.0 International License (CC BY
   nearest neighbours, managing degrees of freedom, assembling matrices
   from the regularised stokeslets, and assembling vectors from the
   boundary conditions. A linear solver (either the default solver based
-  on LU-decomposition with pivoting or alternative chosen by the user)
-  is invoked to find the unknown force distribution over the nodes.
-  Finally the same tools which constructed the full size vectors are
-  used to decompose them back to the total physical force and moment on
-  the body.</p>
+  on LU-decomposition with pivoting or an alternative chosen by the
+  user) is invoked to find the unknown force distribution over the
+  nodes. Finally the same tools which constructed the full size vectors
+  are used to decompose them back to the total physical force and moment
+  on the body.</p>
 </sec>
 <sec id="validation">
   <title>Validation</title>
@@ -337,9 +330,9 @@ a Creative Commons Attribution 4.0 International License (CC BY
   (established) Matlab codebase. This comparison goes to make one of our
   suites of unit tests. This code is also capable of reproducing the
   results tables published in Smith
-  (<xref alt="2018" rid="ref-smith2018" ref-type="bibr">2018</xref>) for
-  the force and moment on a translating and rotating sphere and prolate
-  spheroid. This comparison is presented as examples 1 and 2
+  (<xref alt="2018b" rid="ref-smith2018" ref-type="bibr">2018b</xref>)
+  for the force and moment on a translating and rotating sphere and
+  prolate spheroid. This comparison is presented as examples 1 and 2
   respectively (see <italic>examples/example-1-sphere</italic> and
   <italic>examples/example-2-prolate-spheroid</italic>).</p>
 </sec>
@@ -355,9 +348,11 @@ a Creative Commons Attribution 4.0 International License (CC BY
   (<xref alt="Ainley et al., 2008" rid="ref-ainley2008" ref-type="bibr">Ainley
   et al., 2008</xref>;
   <xref alt="Cortez &amp; Varela, 2015" rid="ref-cortez2015" ref-type="bibr">Cortez
-  &amp; Varela, 2015</xref>), stokeslet lines Cortez
-  (<xref alt="2018" rid="ref-cortez2018" ref-type="bibr">2018</xref>),
-  stokeslets with improved far field behaviour
+  &amp; Varela, 2015</xref>), stokeslet lines
+  (<xref alt="Cortez, 2018" rid="ref-cortez2018" ref-type="bibr">Cortez,
+  2018</xref>;
+  <xref alt="Smith, 2009" rid="ref-smith2009" ref-type="bibr">Smith,
+  2009</xref>), stokeslets with improved far field behaviour
   (<xref alt="Zhao et al., 2019" rid="ref-zhao2019" ref-type="bibr">Zhao
   et al., 2019</xref>), integration with elastohydrodynamics
   (<xref alt="Hall-McNair et al., 2019" rid="ref-hall2019" ref-type="bibr">Hall-McNair
@@ -408,6 +403,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>227</volume>
       <issue>9</issue>
       <uri>https://doi.org/10.1016/j.jcp.2008.01.032</uri>
+      <pub-id pub-id-type="doi">10.1016/j.jcp.2008.01.032</pub-id>
       <fpage>4600</fpage>
       <lpage>4616</lpage>
     </element-citation>
@@ -424,6 +420,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>23</volume>
       <issue>4</issue>
       <uri>https://doi.org/10.1137/S106482750038146X</uri>
+      <pub-id pub-id-type="doi">10.1137/S106482750038146X</pub-id>
       <fpage>1204</fpage>
       <lpage>1225</lpage>
     </element-citation>
@@ -442,6 +439,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>17</volume>
       <issue>3</issue>
       <uri>https://doi.org/10.1063/1.1830486</uri>
+      <pub-id pub-id-type="doi">10.1063/1.1830486</pub-id>
     </element-citation>
   </ref>
   <ref id="ref-cortez2015">
@@ -456,6 +454,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <year iso-8601-date="2015">2015</year>
       <volume>285</volume>
       <uri>https://doi.org/10.1016/j.jcp.2015.01.019</uri>
+      <pub-id pub-id-type="doi">10.1016/j.jcp.2015.01.019</pub-id>
       <fpage>41</fpage>
       <lpage>54</lpage>
     </element-citation>
@@ -471,6 +470,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <year iso-8601-date="2018">2018</year>
       <volume>375</volume>
       <uri>https://doi.org/10.1016/j.jcp.2018.08.055</uri>
+      <pub-id pub-id-type="doi">10.1016/j.jcp.2018.08.055</pub-id>
       <fpage>783</fpage>
       <lpage>796</lpage>
     </element-citation>
@@ -511,6 +511,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>3</volume>
       <issue>5</issue>
       <uri>https://doi.org/10.1103/PhysRevFluids.3.053101</uri>
+      <pub-id pub-id-type="doi">10.1103/PhysRevFluids.3.053101</pub-id>
       <fpage>053101</fpage>
       <lpage></lpage>
     </element-citation>
@@ -529,6 +530,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>41</volume>
       <issue>1</issue>
       <uri>https://doi.org/10.1137/18M1191816</uri>
+      <pub-id pub-id-type="doi">10.1137/18M1191816</pub-id>
       <fpage>B139</fpage>
       <lpage>B152</lpage>
     </element-citation>
@@ -546,6 +548,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>378</volume>
       <issue>2179</issue>
       <uri>https://doi.org/10.1098/rsta.2019.0528</uri>
+      <pub-id pub-id-type="doi">10.1098/rsta.2019.0528</pub-id>
       <fpage>20190528</fpage>
       <lpage></lpage>
     </element-citation>
@@ -563,6 +566,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>8</volume>
       <issue>5</issue>
       <uri>https://doi.org/10.1098/rsos.210108</uri>
+      <pub-id pub-id-type="doi">10.1098/rsos.210108</pub-id>
       <fpage>210108</fpage>
       <lpage></lpage>
     </element-citation>
@@ -583,6 +587,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>4</volume>
       <issue>11</issue>
       <uri>https://doi.org/10.1103/PhysRevFluids.4.113101</uri>
+      <pub-id pub-id-type="doi">10.1103/PhysRevFluids.4.113101</pub-id>
       <fpage>113101</fpage>
       <lpage></lpage>
     </element-citation>
@@ -600,8 +605,19 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <year iso-8601-date="2015">2015</year>
       <volume>38</volume>
       <uri>https://doi.org/10.1140/epje/i2015-15139-7</uri>
+      <pub-id pub-id-type="doi">10.1140/epje/i2015-15139-7</pub-id>
       <fpage>1</fpage>
       <lpage>7</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-neareststokeslets2018">
+    <element-citation>
+      <person-group person-group-type="author">
+        <name><surname>Smith</surname><given-names>D. J.</given-names></name>
+      </person-group>
+      <article-title>Matlab/GNU octave code for the nearest neighbour regularised stokeslets method for stokes flow</article-title>
+      <year iso-8601-date="2018">2018</year>
+      <uri>https://github.com/djsmithbham/NearestStokeslets</uri>
     </element-citation>
   </ref>
   <ref id="ref-pozrikidis1992">
@@ -612,6 +628,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <source>Boundary integral and singularity methods for linearized viscous flow</source>
       <publisher-name>Cambridge University</publisher-name>
       <year iso-8601-date="1992">1992</year>
+      <pub-id pub-id-type="doi">10.1017/CBO9780511624124</pub-id>
     </element-citation>
   </ref>
   <ref id="ref-pozrikidis2002">
@@ -622,6 +639,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <source>A practical guide to boundary element methods with the software library BEMLIB</source>
       <publisher-name>CRC</publisher-name>
       <year iso-8601-date="2002">2002</year>
+      <pub-id pub-id-type="doi">10.1017/S0022112004008201</pub-id>
     </element-citation>
   </ref>
   <ref id="ref-rostami2016">
@@ -636,6 +654,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <year iso-8601-date="2016">2016</year>
       <volume>67</volume>
       <uri>https://doi.org/10.1016/j.jfluidstructs.2016.07.006</uri>
+      <pub-id pub-id-type="doi">10.1016/j.jfluidstructs.2016.07.006</pub-id>
       <fpage>60</fpage>
       <lpage>84</lpage>
     </element-citation>
@@ -652,6 +671,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>465</volume>
       <issue>2112</issue>
       <uri>https://doi.org/10.1098/rspa.2009.0295</uri>
+      <pub-id pub-id-type="doi">10.1098/rspa.2009.0295</pub-id>
       <fpage>3605</fpage>
       <lpage>3626</lpage>
     </element-citation>
@@ -688,6 +708,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>6</volume>
       <issue>11</issue>
       <uri>https://doi.org/10.1098/rspa.2009.0295</uri>
+      <pub-id pub-id-type="doi">10.1098/rspa.2009.0295</pub-id>
       <fpage>411</fpage>
       <lpage></lpage>
     </element-citation>
@@ -706,6 +727,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>4</volume>
       <issue>6</issue>
       <uri>https://doi.org/10.1103/PhysRevFluids.4.063102</uri>
+      <pub-id pub-id-type="doi">10.1103/PhysRevFluids.4.063102</pub-id>
       <fpage>063102</fpage>
       <lpage></lpage>
     </element-citation>
@@ -721,6 +743,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>20</volume>
       <issue>2</issue>
       <uri>https://doi.org/10.1002/bip.1981.360200205</uri>
+      <pub-id pub-id-type="doi">10.1002/bip.1981.360200205</pub-id>
       <fpage>303</fpage>
       <lpage>326</lpage>
     </element-citation>
@@ -739,6 +762,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <volume>4</volume>
       <issue>8</issue>
       <uri>https://doi.org/10.1103/PhysRevFluids.4.084104</uri>
+      <pub-id pub-id-type="doi">10.1103/PhysRevFluids.4.084104</pub-id>
       <fpage>084104</fpage>
       <lpage></lpage>
     </element-citation>
