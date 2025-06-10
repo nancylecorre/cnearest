@@ -269,7 +269,8 @@ a Creative Commons Attribution 4.0 International License (CC BY
   discretisation is refined. CNearest addresses these limitations.</p>
   <p>In the wider setting of software packages and code for Stokes flow,
   we note several existing packages with related but distinct aims,
-  which the present package is intended to complement. pyStokes
+  which the present package is intended to complement.
+  <italic>pyStokes</italic>
   (<xref alt="Singh &amp; Adhikari, 2020" rid="ref-Singh2020" ref-type="bibr">Singh
   &amp; Adhikari, 2020</xref>) implements an efficient method for
   solving coupled Stokes and Laplace problems associated with phoretic
@@ -281,7 +282,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
   (<xref alt="Townsend, 2024" rid="ref-townsend2024" ref-type="bibr">Townsend,
   2024</xref>) addresses the need for efficient approximation of long
   range interactions of many particles; an older package implementing a
-  similar method in Python is “StokeD”
+  similar method is <italic>StokeD</italic>
   (<xref alt="Parker, 2016" rid="ref-parker2016" ref-type="bibr">Parker,
   2016</xref>), also coded in Python. Implementations of the method of
   regularised stokeslets include an undocumented parallelized code
