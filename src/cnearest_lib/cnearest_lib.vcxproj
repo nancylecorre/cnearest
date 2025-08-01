@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5EFD2223-9842-349F-B95B-07FADE28F7DD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>cnearest_lib</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cnearest_lib.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cnearest_lib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cnearest_lib.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cnearest_lib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">cnearest_lib.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">cnearest_lib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">cnearest_lib.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">cnearest_lib</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "C:/Users/Djsmi/.conan2/p/eigen3d88c0279cc26/p/include/eigen3"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;C:\Users\Djsmi\.conan2\p\eigen3d88c0279cc26\p\include\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;C:\Users\Djsmi\.conan2\p\eigen3d88c0279cc26\p\include\eigen3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ConformanceMode>true</ConformanceMode>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ConformanceMode>true</ConformanceMode>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ProcessorNumber>8</ProcessorNumber>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\.;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations;C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" "-BC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" --check-stamp-file "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" "-BC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" --check-stamp-file "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" "-BC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" --check-stamp-file "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" "-BC:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025" --check-stamp-file "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/src/cnearest_lib/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\force_node.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\force_node_collection.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\global_index_assignment.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\quadrature_node.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\quadrature_node_collection.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\regularised_stokeslet.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\resistance_problem_solver.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\rigid_body.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\rigid_body_vector_operations.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations\conglomerate_discretisation.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations\empirical_discretisation.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations\fibonacci_sphere_discretisation.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations\tapered_rod_discretisation.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\discretisations\uniform_spherical_discretisation.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\linear_solve\linear_solver_lu_direct.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\matrix_assembly\matrix_assembler_base.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\matrix_assembly\matrix_assembler_by_block_accumulation.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\matrix_assembly\matrix_assembler_by_nn_multiplication.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour\nearest_neighbour_detection.cpp" />
+    <ClCompile Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\src\cnearest_lib\nearest_neighbour\nearest_neighbour_results.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\ZERO_CHECK.vcxproj">
+      <Project>{92508E10-887B-37E9-A805-12EFC5AF547F}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,681 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      The system is: Windows - 10.0.19045 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: /MP8
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.8.5+b5265ef37 for .NET Framework
+      Build started 01/08/2025 12:24:50.
+      
+      Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\3.28.3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\3.28.3\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\3.28.3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.36
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/3.28.3/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:12 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: /permissive-
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.8.5+b5265ef37 for .NET Framework
+      Build started 01/08/2025 12:24:51.
+      
+      Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\3.28.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\3.28.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\3.28.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.83
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/3.28.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-c75ixc"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-c75ixc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/MP8 /DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-c75ixc'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7d3e8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:24:53.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-c75ixc\\cmTC_7d3e8.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_7d3e8.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-c75ixc\\Debug\\".
+          Creating directory "cmTC_7d3e8.dir\\Debug\\cmTC_7d3e8.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_7d3e8.dir\\Debug\\cmTC_7d3e8.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_7d3e8.dir\\Debug\\cmTC_7d3e8.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7d3e8.dir\\Debug\\\\" /Fd"cmTC_7d3e8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7d3e8.dir\\Debug\\\\" /Fd"cmTC_7d3e8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-c75ixc\\Debug\\cmTC_7d3e8.exe" /INCREMENTAL /ILK:"cmTC_7d3e8.dir\\Debug\\cmTC_7d3e8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-c75ixc/Debug/cmTC_7d3e8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-c75ixc/Debug/cmTC_7d3e8.lib" /MACHINE:X64  /machine:x64 cmTC_7d3e8.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_7d3e8.vcxproj -> C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-c75ixc\\Debug\\cmTC_7d3e8.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_7d3e8.dir\\Debug\\cmTC_7d3e8.tlog\\unsuccessfulbuild".
+          Touching "cmTC_7d3e8.dir\\Debug\\cmTC_7d3e8.tlog\\cmTC_7d3e8.lastbuildstate".
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-c75ixc\\cmTC_7d3e8.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.66
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:12 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-dqtzbi"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-dqtzbi"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: " /permissive-"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-dqtzbi'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_92e17.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:24:54.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-dqtzbi\\cmTC_92e17.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_92e17.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-dqtzbi\\Debug\\".
+          Creating directory "cmTC_92e17.dir\\Debug\\cmTC_92e17.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_92e17.dir\\Debug\\cmTC_92e17.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_92e17.dir\\Debug\\cmTC_92e17.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++20 /permissive- /Fo"cmTC_92e17.dir\\Debug\\\\" /Fd"cmTC_92e17.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++20 /permissive- /Fo"cmTC_92e17.dir\\Debug\\\\" /Fd"cmTC_92e17.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-dqtzbi\\Debug\\cmTC_92e17.exe" /INCREMENTAL /ILK:"cmTC_92e17.dir\\Debug\\cmTC_92e17.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-dqtzbi/Debug/cmTC_92e17.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-dqtzbi/Debug/cmTC_92e17.lib" /MACHINE:X64  /machine:x64 cmTC_92e17.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_92e17.vcxproj -> C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-dqtzbi\\Debug\\cmTC_92e17.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_92e17.dir\\Debug\\cmTC_92e17.tlog\\unsuccessfulbuild".
+          Touching "cmTC_92e17.dir\\Debug\\cmTC_92e17.tlog\\cmTC_92e17.lastbuildstate".
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-dqtzbi\\cmTC_92e17.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.63
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindBLAS.cmake:372 (check_function_exists)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindBLAS.cmake:416 (check_blas_libraries)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Looking for sgemm_"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ikep6g"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ikep6g"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/MP8 /DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "BLAS_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ikep6g'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8e41f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:24:55.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\cmTC_8e41f.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_8e41f.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\Debug\\".
+          Creating directory "cmTC_8e41f.dir\\Debug\\cmTC_8e41f.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8e41f.dir\\Debug\\cmTC_8e41f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8e41f.dir\\Debug\\cmTC_8e41f.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sgemm_ /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8e41f.dir\\Debug\\\\" /Fd"cmTC_8e41f.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sgemm_ /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8e41f.dir\\Debug\\\\" /Fd"cmTC_8e41f.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\Debug\\cmTC_8e41f.exe" /INCREMENTAL /ILK:"cmTC_8e41f.dir\\Debug\\cmTC_8e41f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ikep6g/Debug/cmTC_8e41f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ikep6g/Debug/cmTC_8e41f.lib" /MACHINE:X64  /machine:x64 cmTC_8e41f.dir\\Debug\\CheckFunctionExists.obj
+        CheckFunctionExists.obj : error LNK2019: unresolved external symbol sgemm_ referenced in function main [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\cmTC_8e41f.vcxproj]
+        C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\Debug\\cmTC_8e41f.exe : fatal error LNK1120: 1 unresolved externals [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\cmTC_8e41f.vcxproj]
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\cmTC_8e41f.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\cmTC_8e41f.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          CheckFunctionExists.obj : error LNK2019: unresolved external symbol sgemm_ referenced in function main [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\cmTC_8e41f.vcxproj]
+          C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\Debug\\cmTC_8e41f.exe : fatal error LNK1120: 1 unresolved externals [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ikep6g\\cmTC_8e41f.vcxproj]
+        
+            0 Warning(s)
+            2 Error(s)
+        
+        Time Elapsed 00:00:00.70
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindBLAS.cmake:470 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-3qnlq7"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-3qnlq7"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/MP8 /DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-3qnlq7'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_43a99.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:24:57.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\cmTC_43a99.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_43a99.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\Debug\\".
+          Creating directory "cmTC_43a99.dir\\Debug\\cmTC_43a99.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_43a99.dir\\Debug\\cmTC_43a99.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_43a99.dir\\Debug\\cmTC_43a99.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_43a99.dir\\Debug\\\\" /Fd"cmTC_43a99.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_43a99.dir\\Debug\\\\" /Fd"cmTC_43a99.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\src.c"
+          src.c
+        C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\cmTC_43a99.vcxproj]
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\cmTC_43a99.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\cmTC_43a99.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-3qnlq7\\cmTC_43a99.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.84
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindBLAS.cmake:470 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-o14077"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-o14077"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/MP8 /DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-o14077'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_05db0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:24:58.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\cmTC_05db0.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_05db0.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\Debug\\".
+          Creating directory "cmTC_05db0.dir\\Debug\\cmTC_05db0.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_05db0.dir\\Debug\\cmTC_05db0.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_05db0.dir\\Debug\\cmTC_05db0.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_05db0.dir\\Debug\\\\" /Fd"cmTC_05db0.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_05db0.dir\\Debug\\\\" /Fd"cmTC_05db0.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\Debug\\cmTC_05db0.exe" /INCREMENTAL /ILK:"cmTC_05db0.dir\\Debug\\cmTC_05db0.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-o14077/Debug/cmTC_05db0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-o14077/Debug/cmTC_05db0.lib" /MACHINE:X64  /machine:x64 cmTC_05db0.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\cmTC_05db0.vcxproj]
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\cmTC_05db0.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\cmTC_05db0.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-o14077\\cmTC_05db0.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.73
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindBLAS.cmake:470 (find_package)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ojj73w"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ojj73w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/MP8 /DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ojj73w'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b65f7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:24:59.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\cmTC_b65f7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_b65f7.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\Debug\\".
+          Creating directory "cmTC_b65f7.dir\\Debug\\cmTC_b65f7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_b65f7.dir\\Debug\\cmTC_b65f7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_b65f7.dir\\Debug\\cmTC_b65f7.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b65f7.dir\\Debug\\\\" /Fd"cmTC_b65f7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b65f7.dir\\Debug\\\\" /Fd"cmTC_b65f7.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\Debug\\cmTC_b65f7.exe" /INCREMENTAL /ILK:"cmTC_b65f7.dir\\Debug\\cmTC_b65f7.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ojj73w/Debug/cmTC_b65f7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-ojj73w/Debug/cmTC_b65f7.lib" /MACHINE:X64  /machine:x64 cmTC_b65f7.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\cmTC_b65f7.vcxproj]
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\cmTC_b65f7.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\cmTC_b65f7.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-ojj73w\\cmTC_b65f7.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.67
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindBLAS.cmake:372 (check_function_exists)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindBLAS.cmake:753 (check_blas_libraries)"
+      - "CMakeLists.txt:14 (find_package)"
+    checks:
+      - "Looking for sgemm_"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-jvwcf5"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-jvwcf5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/MP8 /DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "BLAS_openblas_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-jvwcf5'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_050ae.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:25:01.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-jvwcf5\\cmTC_050ae.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_050ae.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-jvwcf5\\Debug\\".
+          Creating directory "cmTC_050ae.dir\\Debug\\cmTC_050ae.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_050ae.dir\\Debug\\cmTC_050ae.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_050ae.dir\\Debug\\cmTC_050ae.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sgemm_ /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_050ae.dir\\Debug\\\\" /Fd"cmTC_050ae.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-jvwcf5\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=sgemm_ /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_050ae.dir\\Debug\\\\" /Fd"cmTC_050ae.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-jvwcf5\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-jvwcf5\\Debug\\cmTC_050ae.exe" /INCREMENTAL /ILK:"cmTC_050ae.dir\\Debug\\cmTC_050ae.ilk" /NOLOGO C:\\Users\\Djsmi\\.conan2\\p\\openb97738184faee3\\p\\lib\\openblas.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-jvwcf5/Debug/cmTC_050ae.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-jvwcf5/Debug/cmTC_050ae.lib" /MACHINE:X64  /machine:x64 cmTC_050ae.dir\\Debug\\CheckFunctionExists.obj
+          cmTC_050ae.vcxproj -> C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-jvwcf5\\Debug\\cmTC_050ae.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_050ae.dir\\Debug\\cmTC_050ae.tlog\\unsuccessfulbuild".
+          Touching "cmTC_050ae.dir\\Debug\\cmTC_050ae.tlog\\cmTC_050ae.lastbuildstate".
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-jvwcf5\\cmTC_050ae.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.82
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindLAPACK.cmake:220 (check_function_exists)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/FindLAPACK.cmake:397 (check_lapack_libraries)"
+      - "CMakeLists.txt:15 (find_package)"
+    checks:
+      - "Looking for cheev_"
+    directories:
+      source: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-zh0quf"
+      binary: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-zh0quf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/MP8 /DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/out"
+      CMAKE_MSVC_RUNTIME_LIBRARY: "$<$<CONFIG:Release>:MultiThreadedDLL>"
+    buildResult:
+      variable: "LAPACK_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-zh0quf'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fbe70.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.8.5+b5265ef37 for .NET Framework
+        Build started 01/08/2025 12:25:02.
+        
+        Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_fbe70.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\Debug\\".
+          Creating directory "cmTC_fbe70.dir\\Debug\\cmTC_fbe70.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_fbe70.dir\\Debug\\cmTC_fbe70.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_fbe70.dir\\Debug\\cmTC_fbe70.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=cheev_ /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fbe70.dir\\Debug\\\\" /Fd"cmTC_fbe70.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.38.33135 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /MP8 /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=cheev_ /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fbe70.dir\\Debug\\\\" /Fd"cmTC_fbe70.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\Debug\\cmTC_fbe70.exe" /INCREMENTAL /ILK:"cmTC_fbe70.dir\\Debug\\cmTC_fbe70.ilk" /NOLOGO C:\\Users\\Djsmi\\.conan2\\p\\openb97738184faee3\\p\\lib\\openblas.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-zh0quf/Debug/cmTC_fbe70.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Djsmi/OneDrive - University of Birmingham/Research/cnearest-2025/CMakeFiles/CMakeScratch/TryCompile-zh0quf/Debug/cmTC_fbe70.lib" /MACHINE:X64  /machine:x64 cmTC_fbe70.dir\\Debug\\CheckFunctionExists.obj
+        openblas.lib(cheev.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cheev.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clanhe.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clanhe.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clascl.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clascl.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slamch.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slamch.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(chetrd.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(chetrd.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(ilaenv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ilaenv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(csteqr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(csteqr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(cungtr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cungtr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(ssterf.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ssterf.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(scombssq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(scombssq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(classq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(classq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(sisnan.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(sisnan.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(chetd2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(chetd2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clatrd.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clatrd.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(ieeeck.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ieeeck.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(iparmq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(iparmq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slae2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slae2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clasr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clasr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slaev2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slaev2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slapy2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slapy2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(claset.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(claset.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slascl.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slascl.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slartg.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slartg.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slanst.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slanst.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slasrt.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slasrt.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(cungql.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cungql.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(cungqr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cungqr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slaisnan.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slaisnan.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clarfg.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarfg.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clacgv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clacgv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slassq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slassq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(cung2l.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cung2l.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clarfb.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarfb.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clarft.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarft.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(cung2r.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cung2r.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(slapy3.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slapy3.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(cladiv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cladiv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(clarf.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarf.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(sladiv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(sladiv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(ilaclc.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ilaclc.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        openblas.lib(ilaclr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ilaclr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          cmTC_fbe70.vcxproj -> C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\Debug\\cmTC_fbe70.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_fbe70.dir\\Debug\\cmTC_fbe70.tlog\\unsuccessfulbuild".
+          Touching "cmTC_fbe70.dir\\Debug\\cmTC_fbe70.tlog\\cmTC_fbe70.lastbuildstate".
+        Done Building Project "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj" (default targets).
+        
+        Build succeeded.
+        
+        "C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          openblas.lib(cheev.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cheev.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clanhe.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clanhe.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clascl.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clascl.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slamch.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slamch.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(chetrd.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(chetrd.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(ilaenv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ilaenv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(csteqr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(csteqr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(cungtr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cungtr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(ssterf.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ssterf.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(scombssq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(scombssq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(classq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(classq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(sisnan.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(sisnan.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(chetd2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(chetd2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clatrd.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clatrd.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(ieeeck.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ieeeck.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(iparmq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(iparmq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slae2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slae2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clasr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clasr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slaev2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slaev2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slapy2.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slapy2.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(claset.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(claset.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slascl.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slascl.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slartg.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slartg.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slanst.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slanst.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slasrt.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slasrt.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(cungql.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cungql.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(cungqr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cungqr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slaisnan.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slaisnan.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clarfg.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarfg.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clacgv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clacgv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slassq.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slassq.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(cung2l.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cung2l.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clarfb.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarfb.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clarft.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarft.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(cung2r.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cung2r.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(slapy3.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(slapy3.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(cladiv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(cladiv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(clarf.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(clarf.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(sladiv.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(sladiv.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(ilaclc.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ilaclc.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+          openblas.lib(ilaclr.obj) : warning LNK4099: PDB '' was not found with 'openblas.lib(ilaclr.obj)' or at ''; linking object as if no debug info [C:\\Users\\Djsmi\\OneDrive - University of Birmingham\\Research\\cnearest-2025\\CMakeFiles\\CMakeScratch\\TryCompile-zh0quf\\cmTC_fbe70.vcxproj]
+        
+            41 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.95
+        
+      exitCode: 0
+...

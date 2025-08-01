@@ -1,5 +1,9 @@
 # Example Cases
 
+To run the examples, first follow the instructions in "Setting up a Development Environment" (dev-environment.md), then execute examples/example1sphere and examples/example2prolatespheroid
+
+The examples below typically take around 32 minutes and 5 minutes respectively on a moderate specification (11th Generation Intel Core(TM) i5) notebook computer. Most of the computational cost in example 1 arises from the computation of the condition number.
+
 ## Example 1 - sphere
 
 This example recreates tables 2 and 3 in the paper.

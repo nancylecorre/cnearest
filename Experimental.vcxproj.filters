@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\CMakeFiles\a359c813fd7fc355d151327f8636c31d\Experimental.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Djsmi\OneDrive - University of Birmingham\Research\cnearest-2025\CMakeFiles\Experimental" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{29A4DB3D-6FF4-368B-A370-3259FCF4CB19}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
