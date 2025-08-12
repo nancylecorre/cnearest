@@ -13,11 +13,13 @@ authors:
   - name: James Tyrrell
     equal-contrib: true 
     affiliation: 1
+    orcid: 0000-0002-2344-737X
   - name: David Smith
     equal-contrib: true 
     affiliation: 2
+    orcid: 0000-0002-3427-0936
 affiliations:
- - name: ARC, University of Birmingham, Edgbaston, Birmingham, UK
+ - name: Advanced Research Computing, University of Birmingham, Edgbaston, Birmingham, UK
    index: 1
  - name: School of Mathematics and Centre for Systems Modelling and Quantitative Biomedicine, University of Birmingham, Edgbaston, Birmingham, UK
    index: 2
