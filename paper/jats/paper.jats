@@ -31,6 +31,7 @@ problems</article-title>
 <xref ref-type="aff" rid="aff-1"/>
 </contrib>
 <contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-2344-737X</contrib-id>
 <name>
 <surname>Tyrrell</surname>
 <given-names>James</given-names>
@@ -38,6 +39,7 @@ problems</article-title>
 <xref ref-type="aff" rid="aff-1"/>
 </contrib>
 <contrib contrib-type="author" equal-contrib="yes">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-3427-0936</contrib-id>
 <name>
 <surname>Smith</surname>
 <given-names>David</given-names>
@@ -46,8 +48,8 @@ problems</article-title>
 </contrib>
 <aff id="aff-1">
 <institution-wrap>
-<institution>ARC, University of Birmingham, Edgbaston, Birmingham,
-UK</institution>
+<institution>Advanced Research Computing, University of Birmingham,
+Edgbaston, Birmingham, UK</institution>
 </institution-wrap>
 </aff>
 <aff id="aff-2">
@@ -70,7 +72,7 @@ Birmingham, UK</institution>
 <copyright-statement>Authors of papers retain copyright and release the
 work under a Creative Commons Attribution 4.0 International License (CC
 BY 4.0)</copyright-statement>
-<copyright-year>2022</copyright-year>
+<copyright-year>1970</copyright-year>
 <copyright-holder>The article authors</copyright-holder>
 <license license-type="open-access" xlink:href="https://creativecommons.org/licenses/by/4.0/">
 <license-p>Authors of papers retain copyright and release the work under
@@ -560,7 +562,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <year iso-8601-date="2024">2024</year>
       <volume>508</volume>
       <uri>https://www.sciencedirect.com/science/article/pii/S0021999124002535</uri>
-      <pub-id pub-id-type="doi">https://doi.org/10.1016/j.jcp.2024.113004</pub-id>
+      <pub-id pub-id-type="doi">10.1016/j.jcp.2024.113004</pub-id>
       <fpage>113004</fpage>
       <lpage></lpage>
     </element-citation>
@@ -802,8 +804,8 @@ a Creative Commons Attribution 4.0 International License (CC BY
       <year iso-8601-date="2021">2021</year>
       <volume>6</volume>
       <issue>11</issue>
-      <uri>https://doi.org/10.1098/rspa.2009.0295</uri>
-      <pub-id pub-id-type="doi">10.1098/rspa.2009.0295</pub-id>
+      <uri>https://doi.org/10.3390/fluids6110411</uri>
+      <pub-id pub-id-type="doi">10.3390/fluids6110411</pub-id>
       <fpage>411</fpage>
       <lpage></lpage>
     </element-citation>
