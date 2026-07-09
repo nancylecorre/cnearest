@@ -17,7 +17,7 @@ The library also forms an extensible toolkit for problems involving calculations
 
 For documentation see our gitlab pages <https://djsmithbham.gitlab.io/cnearest/>. 
 
-In particular, to set up build environment including pre-requisite packages (BLAS, LAPACK, Eigen, gtest), visit <https://djsmithbham.gitlab.io/cnearest/d9/d44/md_docs_2dev-environment.html>.
+In particular, to set up build environment including pre-requisite packages (BLAS, LAPACK, Eigen, gtest), visit the above link and choose "Setting up a development environment" from the left hand menu.
 
 ## Deliverable
 
