@@ -21,11 +21,15 @@ The problem can be solved by:
 ### Building OpenBLAS from source
 
 git clone https://github.com/OpenMath/OpenBLAS
+
 cd OpenBLAS
+
 make TARGET=HASWELL
+
 sudo make PREFIX=/usr/local install
 
 ### Forcing cmake to point to the new OpenBLAS library
 
 cmake -DBLAS_LIBRARIES=/usr/local/lib/libopenblas.so -DLAPACK_LIBRARIES=/usr/local/lib/libopenblas.so
+
 make
