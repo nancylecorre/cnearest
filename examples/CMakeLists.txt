@@ -25,3 +25,15 @@ target_link_libraries(
     LAPACK::LAPACK
     Threads::Threads
     )
+
+
+add_executable(example3mobility "example-3-mobility/main.cpp")
+
+target_link_libraries(
+    example3mobility
+    cnearest_lib
+    Eigen3::Eigen
+    BLAS::BLAS
+    LAPACK::LAPACK
+    Threads::Threads
+    )
