@@ -87,7 +87,6 @@ applied_loads << 6 * M_PI, 0, 0, 8 * M_PI, 0, 0;
 Eigen::Matrix<double, 6, 1> velocities = resistance_matrix.colPivHouseholderQr().solve(applied_loads);
 std::cout << "Vitesse de Translation trouvee (U) : (" << velocities(0) << ", " << velocities(1) << ", " << velocities(2) << ")" << std::endl;
 std::cout << "Vitesse de Rotation trouvee (W) : (" << velocities(3) << ", " << velocities(4) << ", " << velocities(5) << ")" << std::endl;
-std::cout << "Attendu (Comme en Python) : (1, 0, 0) pour les deux !" << std::endl;
 return 0;
 }
 
